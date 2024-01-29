@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(images/bg_blue.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.login-container{ 
+    border-radius: 12px;
+    background: linear-gradient(45deg, #ffffff, rgb(20, 139, 249));
+    border: 0.7px solid rgb(40, 38, 38);
+    padding: 20px;
+    text-align: center;
+    box-shadow:  4px 4px 20px rgb(0, 0, 0);
+    padding-bottom: 15px;
+    padding-top: 8px;
+}
+.form-container{
+    padding-bottom: 30px;
+    margin-top: 15px;
+}
+
+.login-container h2{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;  
+}
+.input-box input{
+    width: 50%;
+    height: 100%;
+    margin: 20px;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(31, 22, 22);
+}
+.input-box .name1{
+ margin-right: 195px;
+  font-weight: 600;
+  padding-top: 20px;
+}
+.input-box .name2{
+   margin-right: 160px;
+  font-weight: 600;
+}
+.input-box{
+    justify-content: center;
+    text-align: center;
+}
+.btn{
+    margin-top: 37px;
+    padding: 5px 100px;
+    color: white;
+    border-radius: 20px;
+    background-color: rgb(69, 52, 253);
+    font-size: 1.14rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 2px 3px 5px rgba(27, 18, 18, 0.85);
+}
+.btn:hover{
+    background-color: rgb(26, 26, 248);
+}
+.forgot-password{
+    text-decoration: none;
+    opacity: 1;
+    margin-top: 1px;
+    margin-left: 95px;
+    font-size: 0.95rem;
+}
+.input-box i{
+    position: relative;
+    right: 39px;
+}
+.input-box .textbox{
+    
+    margin-left: 39px;
+    margin-top: 10px;
+    font-size:15px;
+    width: 240px;
+}
+.box{
+     margin-top: 18px;
+}
+.input-box .textbox::placeholder {
+    color: #474747; 
+}
+.error-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* padding: 10px 30px 10px 30px; */
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(254, 74, 74);
+    width: auto;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9); /*Increase the spread and blur radius */
+    animation: glow 1.2s infinite alternate;
+}
+ @keyframes glow {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.87); /* Initial box shadow */
+     }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 1); /* Increase the glow size */
+     }
+} 
+.error-show i{
+    font-size: 1.95rem;
+    
+   
+}
+.set-size{
+    
+}
+.error-show p{
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0 10px 3px;
+    
+}

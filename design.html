@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro designing</title>
+</head>
+<body>
+    <style>
+    .btn{
+        border: 0.5px solid rgb(56, 69, 247);
+        /* border-color: rgb(82, 82, 253); */
+        border-style: solid;     /*  important css property*/
+        cursor: pointer; 
+        /* border: none; */
+        padding: 5px;  
+        transition: background-color 0.6s ease;
+        box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.8);  /*  4px is horizontal shadow, 5px is vertical shadow and 6px is blur to the right*/
+        object-fit: cover; /* Scale the image to maintain its aspect ratio and cover its container. property to deal with stretched image  */   
+        vertical-align: top;  /* to align multiple items/containers in same line   */
+    }
+    
+
+    .btn:hover{
+        background-color: rgb(47, 255, 92);
+    }
+    .btn:active{           /*  important css property. It only works when button is clicked*/
+        background-color: rgb(255, 0, 0);
+
+    }
+    .item1{
+        background-color: rgb(158, 252, 194);
+        /* height: 250px; */
+    }
+    .item2{
+        background-color: rgb(238, 146, 24);
+        height: 250px;
+    }
+    .item3{
+        background-color: rgb(24, 238, 38);
+        height: 250px;
+    }
+    .item4{
+        background-color: rgb(78, 24, 238);
+        height: 250px;
+    }
+    .item5{
+        background-color: rgb(238, 24, 56);
+        height: 250px;
+    }
+    .item6{
+        background-color: rgb(227, 238, 24);
+        height: 250px;
+    }
+ 
+    .container-div1{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border: 2px solid red;
+        margin-top: 20px;
+        column-gap: 25px;
+        row-gap: 50px;
+        margin-bottom: 50px;
+    }
+    .gridcont{
+        width: 80%;
+    }
+    .container-div2{
+      display: flex;
+      /* width: 50%; */
+      flex-direction: row-reverse;
+      justify-content: space-evenly;
+      /* align-items: center; */
+      margin-bottom: 20px;
+      height: 200px;
+      border: 2px solid red;
+     
+    }
+    .flex1{
+        background-color: aqua;
+        flex: 1;
+        margin-left: 10px;
+        /* margin-bottom: 20px; */
+    }
+    .flex2{
+        background-color: rgb(196, 235, 54);
+        /* height: 100px; */
+        flex: 1;
+        
+        
+    }
+    .container-div3{
+        display: inline-block;
+    }
+
+    </style>
+
+    <!-- Note: To adjust the size of an image, height will automatically adjust when width is adjusted -->
+    
+    <!-- <button class="btn">SUBMIT</button> -->
+
+
+            <!-- CSS Grid -->
+
+ <div class="gridcont">
+    <div class="container-div1">
+        <div class="item1">
+          Item_1
+        </div>
+        <div class="item2">
+            Item_2 
+        </div>
+        <div class="item3">
+            Item_3 
+        </div>
+        <div class="item4">
+          Item_1
+        </div>
+        <div class="item5">
+            Item_2 
+        </div>
+        <div class="item6">
+            <p>sabin </p>
+            Item_3 
+        </div>
+    </div>
+</div>
+
+    <!-- CSS Flexbox -->
+
+    <div class="container-div2">
+        <div class="flex1">
+            This is first box
+        </div>
+        <div class="flex2">
+            This is second box
+        </div>
+
+    </div>
+    <div class="container-div3">
+        <div class="flex1">
+            This is third box
+        </div>
+        <div class="flex2">
+            This is fourth box
+        </div>
+
+    </div>
+    <p>hello</p>
+
+</body>
+</html>

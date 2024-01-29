@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px 80px 80px 80px;
+    background:  #fff; 
+    backdrop-filter: blur(50px); /* Adjust the blur value as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.backgroundimage img {
+    width: 490px;
+    margin-right: 150px;
+}
+.vaccineCont {
+    display: flex;
+    /* border: 1px solid rgb(153, 153, 153); */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1); 
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 10px;
+    background-color: rgba(85, 85, 85, 0.2); 
+}
+
+.Vaccinetitle p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.Vaccinetitle img{
+    width: 30px;
+}
+.Vaccinetitle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.horizontalcont{
+    display: flex;
+    flex-direction: row; 
+    margin-top: 70px;
+}
+.input-box1 input{
+    padding: 7px;
+    width: 290px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+.input-box2 input{
+    padding: 7px;
+    width: 290px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+    font-size: 15px;
+}
+.dozeOfVaccine{
+    margin-bottom: 25px;
+}
+.btn{
+    margin-top: 35px;
+    width: 100%;
+    padding: 6px 0 6px 0;
+    border-radius: 7px;
+    border: none;
+    background-color:  rgb(68, 68, 250);
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 1); 
+}
+.btn:hover{
+    background-color: rgb(76, 46, 209);
+}
+.name1{
+    font-weight: 500;
+    font-size: 18px;
+}
+.name2{
+    font-weight: 500;
+    font-size: 18px;
+}
+.name3{
+    font-weight: 500;
+    font-size: 18px;
+    display: inline-block;
+}
+.combobox{
+    border: 1.5px solid black;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 110px;
+}
+.msg-show1{
+    background-color: rgb(105, 241, 75);
+    color: black;
+    text-align: center;
+    width: 25%;
+    display: flex;
+    border-radius: 5px;
+    margin-top: -38px;
+    margin-left: 745px;;
+}
+
+
+.adjust1{
+    padding: 5px 10px 5px 10px;
+
+}
