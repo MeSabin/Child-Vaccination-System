@@ -8,6 +8,7 @@
 <body>
    <div class="container">
       <a href="VaccineForm.php"><button class="VaccineAdd" name="VaccineAdd">Add Vaccine</button></a>
+      <a href="VaccineForm.php"><button class="VaccineAdd" name="VaccineAdd">Add Vaccine</button></a>
    </div>
 </body>
 </html>
