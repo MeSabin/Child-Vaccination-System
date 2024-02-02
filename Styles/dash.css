@@ -6,13 +6,19 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+body{
+    min-height: 100vh;
+    display: flex;
+}
 
 .side-navbar{
     
     /* background-color: rgb(108, 53, 248); */
     background-color: rgb(53, 84, 255);
+    /* position: fixed; */
     width: 210px;
     height: 100vh;
+    display: inline-block;
     /* border-right: 2px solid rgb(87, 88, 89); */
     box-shadow: 3px 0 3px rgba(83, 83, 83, 0.7);
     /* border-right: 20px; */
@@ -114,4 +120,24 @@
     position: relative;
     top: 55px;
     right: 300px;
+}
+.sessionUsername p{
+    margin-right: 60px;
+}
+.sessionUsername {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(213, 213, 213);
+    margin-left: 2px;
+    flex: 1;
+    height: 60px;
+}
+.profile img{
+    margin-top: 6px;
+    width: 40px;
+    margin-right: 10px;
+    border: 1px solid black;
+    border-radius: 30px;
+    
 }

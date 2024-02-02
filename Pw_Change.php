@@ -13,11 +13,16 @@ if(isset($_POST['UpdPass'])){
         $token= $_GET['token'];
         $NewPassword= mysqli_real_escape_string($conn, $_POST['Password']);
         $Cpassword= mysqli_real_escape_string($conn, $_POST['C_Password']);
-  
+
+        $selectquery ="select * from admin where token ='$token'";
+        $reflectquery= $conn->query($selectquery);
+        $result =$reflectquery->fetch_assoc();
         if($NewPassword ===$Cpassword) {
-            $updatequery= "UPDATE admin set password='$NewPassword' where token='$token'";
+            $hashed_password = password_hash($NewPassword, PASSWORD_BCRYPT);
+            $updatequery= "UPDATE admin set password='$hashed_password' where token='$token'";
           
-            $iquery =mysqli_query($conn, $updatequery);
+            // $iquery =mysqli_query($conn, $updatequery);
+            $iquery= $conn->query($updatequery);
 
             if($iquery){
 
@@ -48,7 +53,7 @@ if(isset($_POST['UpdPass'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Style_Pw.css">
+    <link rel="stylesheet" href="Styles/Style_Pw.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>

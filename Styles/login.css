@@ -12,85 +12,86 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(images/bg_blue.svg);
+    background: url(../images/bg_blue.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 .login-container{ 
     border-radius: 12px;
-    background: linear-gradient(45deg, #ffffff, rgb(20, 139, 249));
-    border: 0.7px solid rgb(40, 38, 38);
-    padding: 20px;
+    /* background: linear-gradient(45deg, #ffffff, rgb(20, 139, 249)); */
+    padding: 10px 5px 5px 5px;
     text-align: center;
-    box-shadow:  4px 4px 20px rgb(0, 0, 0);
-    padding-bottom: 15px;
-    padding-top: 8px;
+    box-shadow:  0 0 9px rgb(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
 }
 .form-container{
-    padding-bottom: 30px;
-    margin-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5px;
 }
 
 .login-container h2{
     font-weight: 700;
-    text-align: center;
-    margin-bottom: 10px;  
+    font-size: 1.15rem;
 }
 .input-box input{
-    width: 50%;
-    height: 100%;
     margin: 20px;
     background: none;
     border: none;
     outline: none;
     border-bottom: 2px solid rgb(31, 22, 22);
-}
-.input-box .name1{
- margin-right: 195px;
-  font-weight: 600;
-  padding-top: 20px;
-}
-.input-box .name2{
-   margin-right: 160px;
-  font-weight: 600;
+    margin-left: 39px;
+    margin-top: 10px;
+    font-size:12px;
+    width: 205px;
 }
 .input-box{
-    justify-content: center;
+    text-align: center;
+}
+.input-box .name1{
+ margin-right: 165px;
+  font-weight: 600;
+  padding-top: 13px;
+  font-size: 14px;
+}
+.input-box .name2{
+    margin-right: 133px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.input-box{
+
     text-align: center;
 }
 .btn{
-    margin-top: 37px;
-    padding: 5px 100px;
+    margin-top: 7px;
+    padding: 4px 84px;
     color: white;
     border-radius: 20px;
     background-color: rgb(69, 52, 253);
-    font-size: 1.14rem;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
-    box-shadow: 2px 3px 5px rgba(27, 18, 18, 0.85);
+    box-shadow: 1px 2px 5px rgba(27, 18, 18, 0.85);
 }
 .btn:hover{
     background-color: rgb(26, 26, 248);
+    color: white;
+}
+
+.btn:focus {
+    outline: none;
 }
 .forgot-password{
     text-decoration: none;
-    opacity: 1;
-    margin-top: 1px;
     margin-left: 95px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
 }
 .input-box i{
     position: relative;
     right: 39px;
 }
-.input-box .textbox{
-    
-    margin-left: 39px;
-    margin-top: 10px;
-    font-size:15px;
-    width: 240px;
-}
+
 .box{
      margin-top: 18px;
 }
@@ -120,15 +121,14 @@ body {
 } 
 .error-show i{
     font-size: 1.95rem;
+    padding-left: 3px;
     
    
 }
-.set-size{
-    
-}
+
 .error-show p{
     font-size: 16px;
     text-align: center;
-    padding: 10px 0 10px 3px;
+    padding: 10px 7px 10px 3px;
     
 }

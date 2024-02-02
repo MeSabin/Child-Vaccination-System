@@ -1,20 +1,23 @@
 <?php
 session_start();
-include ("Config.php");
 
+include ("Config.php");
 if(isset($_POST['AddVaccine'])){
     //mysqli_real_escape_string stores special characters in the database
     $vaccineName= mysqli_real_escape_string($conn, $_POST['Vaccine']);
     $dozeNumber= mysqli_real_escape_string($conn, $_POST['Dose']);
     $ageRecommended= mysqli_real_escape_string($conn, $_POST['Recommended']);
 
-    $query = "INSERT INTO addvaccine (Vaccine_Name, Dose, Recommended_for_child_under) VALUES ('$vaccineName', '$dozeNumber', '$ageRecommended')";
+    $query = "INSERT INTO addvaccine (Name, Dose, Age) VALUES ('$vaccineName', '$dozeNumber', '$ageRecommended')";
 
     $result= $conn->query($query); //it reflects the actual query from $query into the database
     if($result){
         $_SESSION['successMessage'] = "Vaccine added succssfully !";
-        header("location:VaccineForm.php");
-        exit();
+        echo '<script>
+        setTimeout(function() {
+            window.location.href = "VaccineTable.php";
+        }, 400);
+    </script>';
     }
     else{
         echo "Data not inserted";
@@ -28,14 +31,14 @@ if(isset($_POST['AddVaccine'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccine Crud</title>
-    <link rel="stylesheet" href="VaccineForm.css">
+    <link rel="stylesheet" href="Styles/VaccineForm.css">
 </head>
 <body>
         
     <div class="main-container">
     <div class="Vaccinetitle">
            <p>Add Vaccine From Here...</p>
-           <img src="images/vaccineIcon.svg" alt="Image not found..">
+           <img src="./images/vaccineIcon.svg" alt="Image not found..">
         </div>
         <div class="msg-show1">
          <?php 
@@ -46,7 +49,7 @@ if(isset($_POST['AddVaccine'])){
             ?> </div>
         <div class="horizontalcont">
         <div class="backgroundimage">
-            <img src="images/VaccineBackg.svg" alt="Image is not found..">
+            <img src="./images/VaccineBackg.svg" alt="Image is not found..">
         </div>
         
         <div class="vaccineCont">

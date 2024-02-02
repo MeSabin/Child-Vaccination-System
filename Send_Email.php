@@ -7,17 +7,20 @@
     $email = mysqli_real_escape_string($conn, $_POST['email']);
 
     $emailquery= "select *from admin where email= '$email' ";
-    $query= mysqli_query($conn, $emailquery);
+    // $query= mysqli_query($conn, $emailquery);
+    $query= $conn->query($emailquery);
     
     $emailcount= mysqli_num_rows($query);
+    
 
       if ($emailcount) {
          
-        $userdata= mysqli_fetch_array($query);
+        // $userdata= mysqli_fetch_array($query);
+        $userdata= $query->fetch_assoc();
         $token= $userdata['token'];
 
           $subject ="Password Reset";
-          $body = "Click here to reset your password http://localhost/Project/Admin/Pw_Change.php?token=$token ";
+          $body = "Click here to reset your password http://localhost/Child-Vaccination-System/Pw_Change.php?token=$token ";
           $sender_email = "From: kaphlesabin789@gmail.com";
           
           if(mail($email, $subject, $body, $sender_email)){
@@ -50,7 +53,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Style_Email.css">
+    <link rel="stylesheet" href="Styles/Style_Email.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
     <body>
