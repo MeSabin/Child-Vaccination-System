@@ -2,7 +2,7 @@
 <?php
            
 session_start();
-ob_start();
+// ob_start();
           
 include("Config.php");
 
@@ -38,12 +38,13 @@ if(isset($_POST['UpdPass'])){
         }
         else{
                $_SESSION['passmsg1'] = "Password is not matching";
-               header("location:Pw_Change.php");
+               header("location:Pw_Change.php?token=$token");
                exit();
         }
     }
         
 }
+$conn->close();
 ?>
 
 

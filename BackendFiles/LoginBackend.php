@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
     $emailUsername = mysqli_real_escape_string($conn, $_POST['Email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $query = "SELECT * FROM admin WHERE (email ='$emailUsername' OR username ='$emailUsername') and password='$password'" ;
+    $query = "SELECT * FROM admin WHERE (email ='$emailUsername' OR username ='$emailUsername')" ;
     $result = $conn->query($query);
 
     if ($result->num_rows == 1) {
@@ -55,8 +55,14 @@ if (isset($_POST['submit'])) {
             header("location: Login.php");
             exit();
         }
+        } else {
+            // Invalid password
+            $_SESSION['error_message'] = "Invalid Email/Username or Password";
+            header("location: Login.php");
+            exit();
+        }
     }
-}
+
 
 // Closing the database connection after the login page connection has performed
 $conn->close();

@@ -23,7 +23,7 @@ body {
     padding: 10px 5px 5px 5px;
     text-align: center;
     box-shadow:  0 0 9px rgb(0, 0, 0, 0.7);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(40px);
 }
 .form-container{
     padding-bottom: 15px;
@@ -32,7 +32,8 @@ body {
 
 .login-container h2{
     font-weight: 700;
-    font-size: 1.15rem;
+    font-size: 1.3rem;
+    color: rgb(4, 0, 255);
 }
 .input-box input{
     margin: 20px;
@@ -49,7 +50,7 @@ body {
     text-align: center;
 }
 .input-box .name1{
- margin-right: 165px;
+ margin-right: 85px;
   font-weight: 600;
   padding-top: 13px;
   font-size: 14px;
@@ -102,33 +103,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    /* this makes error message appear always */
     /* padding: 10px 30px 10px 30px; */
     color: rgb(255, 255, 255);
     border-radius: 5px;
     background-color: rgb(254, 74, 74);
-    width: auto;
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9); /*Increase the spread and blur radius */
-    animation: glow 1.2s infinite alternate;
-}
- @keyframes glow {
-    0% {
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.87); /* Initial box shadow */
-     }
-    100% {
-        box-shadow: 0 0 30px rgba(255, 0, 0, 1); /* Increase the glow size */
-     }
-} 
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6); /*Increase the spread and blur radius */
+}   
 .error-show i{
-    font-size: 1.95rem;
+    font-size: 1.4rem;
     padding-left: 3px;
     
    
 }
 
 .error-show p{
-    font-size: 16px;
-    text-align: center;
+    font-size: 13px;
     padding: 10px 7px 10px 3px;
+    margin-bottom: 0;
     
 }

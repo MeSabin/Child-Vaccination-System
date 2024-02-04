@@ -29,8 +29,8 @@ include "./BackendFiles/LoginBackend.php";
         <form name="form" class="form-container1" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="showSpinner()">
 
             <div class="input-box">
-                <p class="name1">Email:</p> 
-                <input name="Email" class="textbox" placeholder="Enter your email" required>
+                <p class="name1">Username/Email:</p> 
+                <input name="Email" class="textbox" placeholder="Enter username or email" required>
                 <i class='bx bxs-user'></i>
             </div> 
 
@@ -52,6 +52,13 @@ include "./BackendFiles/LoginBackend.php";
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- Add this CSS for hiding the spinner initially -->
+<style>
+    .Spinner {
+        display: none;
+    }
+</style>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var form = document.forms['form'];
@@ -62,8 +69,17 @@ include "./BackendFiles/LoginBackend.php";
     });
 
     function showSpinner() {
+        // Show the spinner
         document.querySelector('.Spinner').style.display = 'block';
+
+        // Delay the redirection by 1 second
+        setTimeout(function () {
+            // Redirect to the dashboard after 1 second
+            window.location.href = 'dashboard.php';
+        }, 1000);
     }
+</script>
+
 </script>
 </body>
 </html>

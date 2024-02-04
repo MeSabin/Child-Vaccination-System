@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="Styles/VaccineTable.css">
 </head>
 <body>
+
    <div class="main-container">
    <div class="table-container">
       <p class="TableInfo">List of Child Vaccines</p>
@@ -22,7 +23,8 @@
             <tbody>
                <?php
                  include "Config.php"; 
-                 
+                
+               
                  $selectQuery ="SELECT * from addvaccine";
                  $reflectQuery =$conn->query($selectQuery);
                  

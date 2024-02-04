@@ -8,31 +8,20 @@
 }
 body{
     min-height: 100vh;
-    display: flex;
+    background-color: rgb(219, 219, 219);
 }
-
 .side-navbar{
-    
-    /* background-color: rgb(108, 53, 248); */
-    background-color: rgb(53, 84, 255);
-    /* position: fixed; */
-    width: 210px;
+    background-color: rgb(255, 255, 255);
     height: 100vh;
     display: inline-block;
-    /* border-right: 2px solid rgb(87, 88, 89); */
-    box-shadow: 3px 0 3px rgba(83, 83, 83, 0.7);
-    /* border-right: 20px; */
-    /* backdrop-filter: blur(10px); */
-    
+    box-shadow: 3px 0 2px rgba(95, 95, 95, 0.4);    
 }
 .logo{
     display: flex;
-    border-bottom: 2px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(58, 58, 58);
     cursor: pointer;
     margin-bottom: 5px;
-
-    
-
+    width: 190px;
 }
 .logo p{
     margin-top: 40px;
@@ -40,57 +29,51 @@ body{
     margin-bottom: 42px;
     font-weight: bold;
     font-size: 0.85rem;
-    color: whitesmoke;
-    
+    color: rgb(23, 23, 23);
 }
-
 .logo-img{
-    width: 88px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 90%;
     margin-left: 7px;
     margin-top: 15px;
-    /* object-fit: cover; */
-    
 }
 .list-container{
     margin-top: 45px;
-    
+    width: 190px;
 }
 .list-container a{
     color: black;
     text-decoration: none;
 }
-
 .side-navbar ul li img{
-    width: 35px;
-    height: 35px;
+    width: 25px;
     margin-left: 25px;
-    margin-right: 20px;
+    margin-right: 15px;
     color: white;
 }
-
 .side-navbar ul li{
-    /* margin: 40px 0px; */
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    filter: invert(100%);
-
+}
+.list-container ul{
+    padding-left: 0;
 }
 .side-navbar ul li:hover {
-    background-color: rgb(225, 225, 225);
-    filter: invert(0%); /* Change  background color on hover */
-    border-radius: 5px;
-  }
-
+    background-color: rgb(101, 144, 254);
+    color: white;
+}
 .side-navbar ul li p{
     font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 17px;
+    color:  rgb(23, 23, 23);
+    margin-bottom: 0;
 }
-
-.top-bar{
+/* .top-bar{
     position: absolute;
     display: flex;
     top: 0;
@@ -99,19 +82,15 @@ body{
     right: 0;
     justify-content: center;
     background-color: rgb(53, 84, 255);
-    /* background-color: blueviolet; */
     color: white;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8);
-    /* border-left: 2px solid white; */
-    z-index: -1;
-    
-}
-.top-bar img{
+} */
+/* .top-bar img{
     margin-top: 7px;
     height: 75px;
     width: auto;
-}
-.top-bar p{
+} */
+/* .top-bar p{
     margin-top: 30px;
     font-weight: 700;
     font-size: 1.1rem;
@@ -120,24 +99,69 @@ body{
     position: relative;
     top: 55px;
     right: 300px;
+} */
+
+/* css code for modal  */
+.overlay{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: 1s  ;
 }
-.sessionUsername p{
-    margin-right: 60px;
+.showOverlay{
+    opacity: 1;
+    z-index: 1;
 }
-.sessionUsername {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: rgb(213, 213, 213);
-    margin-left: 2px;
-    flex: 1;
-    height: 60px;
+.confirmLogout{
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(4, 0, 255, 0.6);
+    background-color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    /* height: 140px; */
+    padding: 7px;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    z-index: 5;
+    /* to position the container exactly at the center */
+    transform: translate(-50%,-50%);
+    transition: 0.5s ease-in-out;
 }
-.profile img{
-    margin-top: 6px;
-    width: 40px;
-    margin-right: 10px;
-    border: 1px solid black;
-    border-radius: 30px;
-    
+.showLogout{
+    top: 50%;
+}
+.logoutmessage{
+    text-align: center;
+}
+.btn-logout{
+    margin-left: 92px;
+    margin-top: 70px;
+}
+.cancelbutton{
+    background-color: rgb(248, 108, 99);
+    padding: 5px;
+    border: 2px solid rgb(44, 44, 44);
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 400;
+}
+.confirmbutton{
+    background-color: rgb(62, 148, 247);
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    color: white;
+    border: 2px solid rgb(44, 44, 44);
+    cursor: pointer;
+}
+.line{
+    height: 2px;
+    background-color: rgb(54, 54, 54);
 }
