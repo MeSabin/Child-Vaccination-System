@@ -1,28 +1,6 @@
 <?php
-session_start();
-
-include ("Config.php");
-if(isset($_POST['AddVaccine'])){
-    //mysqli_real_escape_string stores special characters in the database
-    $vaccineName= mysqli_real_escape_string($conn, $_POST['Vaccine']);
-    $dozeNumber= mysqli_real_escape_string($conn, $_POST['Dose']);
-    $ageRecommended= mysqli_real_escape_string($conn, $_POST['Recommended']);
-
-    $query = "INSERT INTO addvaccine (Name, Dose, Age) VALUES ('$vaccineName', '$dozeNumber', '$ageRecommended')";
-
-    $result= $conn->query($query); //it reflects the actual query from $query into the database
-    if($result){
-        $_SESSION['successMessage'] = "Vaccine added succssfully !";
-        echo '<script>
-        setTimeout(function() {
-            window.location.href = "VaccineTable.php";
-        }, 400);
-    </script>';
-    }
-    else{
-        echo "Data not inserted";
-    }
-}
+include "Dashboard.php";
+include "../BackendFiles/VaccineFormBack.php";
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +9,22 @@ if(isset($_POST['AddVaccine'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaccine Crud</title>
-    <link rel="stylesheet" href="Styles/VaccineForm.css">
+    <link rel="stylesheet" href="../Styles/VaccineForm.css">
 </head>
 <body>
         
     <div class="main-container">
     <div class="Vaccinetitle">
            <p>Add Vaccine From Here...</p>
-           <img src="./images/vaccineIcon.svg" alt="Image not found..">
+           <img src="../images/vaccineIcon.svg" alt="Image not found..">
         </div>
+        
+        <div class="horizontalcont">
+        <div class="backgroundimage">
+            <img src="../images/VaccineBackg.svg" alt="Image is not found..">
+        </div>
+        
+        <div class="vaccineCont">
         <div class="msg-show1">
          <?php 
             if(isset($_SESSION['successMessage'])){
@@ -47,12 +32,6 @@ if(isset($_POST['AddVaccine'])){
                 unset($_SESSION['successMessage']);
             }
             ?> </div>
-        <div class="horizontalcont">
-        <div class="backgroundimage">
-            <img src="./images/VaccineBackg.svg" alt="Image is not found..">
-        </div>
-        
-        <div class="vaccineCont">
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
             <div class="input-box1">
                 <p class="name1">Vaccine Name:</p> <input type="" name="Vaccine" class="textbox" placeholder="Enter the name of vaccine" required>

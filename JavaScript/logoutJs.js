@@ -1,4 +1,5 @@
 
+          // Modal js code for logout(dash.css)
           function showModal(){
             document.querySelector('.overlay').classList.add('showOverlay');
             document.querySelector('.confirmLogout').classList.add('showLogout');
@@ -8,7 +9,7 @@
             document.querySelector('.confirmLogout').classList.remove('showLogout');
           }
 
-          const btnLogin= document.querySelector('.profile');
+          const btnLogin= document.querySelector('.logout');
           btnLogin.addEventListener("click",showModal);
 
           const cancelLogout= document.querySelector('.cancelbutton');
@@ -16,4 +17,3 @@
           
           const clickToCancel= document.querySelector('.overlay');
           clickToCancel.addEventListener("click",closeModal);
-         

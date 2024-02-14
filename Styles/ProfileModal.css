@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.overlay1 {
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0); /* Semi-transparent black overlay */
+   z-index: 1; /* Place the overlay above other elements */
+}
+
+/* Styling for the popup */
+.popup {
+   display: none;
+   position: absolute;
+   background-color: #fff;
+   padding: 0 28px 10px 20px;
+   border-radius: 8px;
+   color: rgb(65, 65, 65);
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   transition: opacity 4s ease-in;
+   top: 55px; /* Adjusted top position */
+   right: 65px;
+   font-weight: 600;
+   z-index: 2; /* Place the modal above the overlay */
+}
+
+/* Close button styling */
+.close {
+   position: absolute;
+   right: 5px;
+   cursor: pointer;
+   top: -4px;
+   right: 4px;
+   font-size: 20px;
+}
+
+.Email{
+   font-size: 13px;
+   margin-bottom: 0;
+   margin-top: 10px;
+   color: lightcoral;
+}
+
+.logout{
+   display: inline-block;
+   font-size: 13px;
+   margin-bottom: 0;
+   cursor: pointer;
+   color: lightcoral;
+}
+.logout:hover{
+   color: rgb(109, 152, 244);
+   
+}
+
+.popup img{
+   margin-right: 4px;
+   width: 15px;
+}
+.logoutdiv{
+   display: flex;
+   align-items: center;
+   margin-top: 10px;
+
+
+}

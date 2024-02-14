@@ -8,18 +8,25 @@
 }
 body{
     min-height: 100vh;
-    background-color: rgb(219, 219, 219);
+    background-color: rgb(236, 236, 236) !important;
+    padding-left: 57px !important;
+    /* padding-top: 250px !important; */
 }
 .side-navbar{
     background-color: rgb(255, 255, 255);
     height: 100vh;
     display: inline-block;
-    box-shadow: 3px 0 2px rgba(95, 95, 95, 0.4);    
+    box-shadow: 2px 0 2px rgba(141, 141, 141, 0.3);  
+    position: fixed;
+    left: 0;  
+    top: 0;
 }
 .logo{
     display: flex;
     border-bottom: 1px solid rgb(58, 58, 58);
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 5px;
     width: 190px;
 }
@@ -32,11 +39,9 @@ body{
     color: rgb(23, 23, 23);
 }
 .logo-img{
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     border-radius: 90%;
-    margin-left: 7px;
-    margin-top: 15px;
 }
 .list-container{
     margin-top: 45px;
@@ -59,12 +64,18 @@ body{
     align-items: center;
     cursor: pointer;
 }
+.side-navbar ul li.active{
+    background-color: rgb(12, 98, 246);
+}
 .list-container ul{
     padding-left: 0;
 }
 .side-navbar ul li:hover {
     background-color: rgb(101, 144, 254);
     color: white;
+    margin-left: 3px;
+    margin-right: 3px;
+    border-radius: 6px;
 }
 .side-navbar ul li p{
     font-weight: 700;
@@ -73,95 +84,84 @@ body{
     color:  rgb(23, 23, 23);
     margin-bottom: 0;
 }
-/* .top-bar{
-    position: absolute;
-    display: flex;
-    top: 0;
-    width: 1711px;
-    height: 100px;
-    right: 0;
-    justify-content: center;
-    background-color: rgb(53, 84, 255);
-    color: white;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.8);
-} */
-/* .top-bar img{
-    margin-top: 7px;
-    height: 75px;
-    width: auto;
-} */
-/* .top-bar p{
-    margin-top: 30px;
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-.top-bar h2{
-    position: relative;
-    top: 55px;
-    right: 300px;
-} */
 
 /* css code for modal  */
 .overlay{
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    background: rgba(49, 49, 49, 0.5);
+    position: fixed;
+    left: 0;
     top: 0;
     z-index: -1;
     opacity: 0;
-    transition: 1s  ;
+    transition: 0.5s ease;
 }
 .showOverlay{
     opacity: 1;
-    z-index: 1;
+    z-index: 20;
 }
 .confirmLogout{
     display: inline-block;
-    box-shadow: 0 0 10px rgba(4, 0, 255, 0.6);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     background-color: white;
     font-weight: 600;
     border-radius: 4px;
     /* height: 140px; */
     padding: 7px;
     position: absolute;
-    top: -50%;
+    top: -20%;
     left: 50%;
-    z-index: 5;
+    z-index: 21;
     /* to position the container exactly at the center */
     transform: translate(-50%,-50%);
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease;
+    
 }
 .showLogout{
     top: 50%;
 }
 .logoutmessage{
     text-align: center;
+    margin-bottom: 0;
 }
 .btn-logout{
     margin-left: 92px;
     margin-top: 70px;
 }
 .cancelbutton{
-    background-color: rgb(248, 108, 99);
+    /* border: 1px solid rgb(39, 39, 39); */
     padding: 5px;
-    border: 2px solid rgb(44, 44, 44);
+    color: beige;
     border-radius: 5px;
-    color: white;
+    color: rgb(0, 0, 0);
+    border: none;
     cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
     font-weight: 400;
 }
+.cancelbutton:hover{
+    background-color: rgb(177, 177, 177);
+}
 .confirmbutton{
-    background-color: rgb(62, 148, 247);
+    background-color: rgb(63, 129, 252);
     padding: 5px;
+    color: white;
     border: none;
     border-radius: 5px;
     margin-left: 15px;
-    color: white;
-    border: 2px solid rgb(44, 44, 44);
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }
-.line{
-    height: 2px;
-    background-color: rgb(54, 54, 54);
+.confirmbutton:hover{
+    background-color: rgb(12, 98, 246);
 }
+.line{
+    height: 1px;
+    background-color: rgb(54, 54, 54);
+    opacity: 1;
+    margin: 0;
+    margin-top: 10px;
+}
+

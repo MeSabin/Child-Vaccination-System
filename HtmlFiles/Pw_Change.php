@@ -1,50 +1,7 @@
 
 <?php
-           
-session_start();
-// ob_start();
-          
-include("Config.php");
+include "../BackendFiles/PwChangeBackend.php"
 
-if(isset($_POST['UpdPass'])){
-
-    if(isset($_GET['token'])){
-
-        $token= $_GET['token'];
-        $NewPassword= mysqli_real_escape_string($conn, $_POST['Password']);
-        $Cpassword= mysqli_real_escape_string($conn, $_POST['C_Password']);
-
-        $selectquery ="select * from admin where token ='$token'";
-        $reflectquery= $conn->query($selectquery);
-        $result =$reflectquery->fetch_assoc();
-        if($NewPassword ===$Cpassword) {
-            $hashed_password = password_hash($NewPassword, PASSWORD_BCRYPT);
-            $updatequery= "UPDATE admin set password='$hashed_password' where token='$token'";
-          
-            // $iquery =mysqli_query($conn, $updatequery);
-            $iquery= $conn->query($updatequery);
-
-            if($iquery){
-
-                $_SESSION['passmsg']= "Your password has been updated";
-                    echo '<script>
-                setTimeout(function() {
-                    window.location.href = "Login.php";
-                }, 2000);
-            </script>';
-                   
-             }
-        
-        }
-        else{
-               $_SESSION['passmsg1'] = "Password is not matching";
-               header("location:Pw_Change.php?token=$token");
-               exit();
-        }
-    }
-        
-}
-$conn->close();
 ?>
 
 
@@ -54,7 +11,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Styles/Style_Pw.css">
+    <link rel="stylesheet" href="../Styles/Style_Pw.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>

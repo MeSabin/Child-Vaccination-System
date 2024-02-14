@@ -21,11 +21,9 @@ body {
 }
 
 .mail-container {
-    width: auto;
-    height: auto;
     border-radius: 8px;
     background-color: rgb(255, 255, 255);
-    padding: 20px 40px 20px 40px;
+    padding: 20px;
     text-align: center;
     box-sizing: border-box;
     
@@ -87,10 +85,10 @@ body {
     
 }
 .msg-show1 {
-    color: rgb(0, 0, 0);
     border-radius: 5px;
     text-align: center;
-    background-color: rgb(25, 241, 83);
+    background-color: rgb(9 127 0);
+    color: white;
     width: auto;
 }
 .adjust{
