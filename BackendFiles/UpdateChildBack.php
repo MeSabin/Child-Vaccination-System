@@ -9,7 +9,7 @@ $showdata = $conn->query($showquery);
 $arrDatas = $showdata->fetch_assoc();
 
 // Fetch all vaccine names for the select field
-$getVaccineQuery = "SELECT VaccineName FROM ChildList";
+$getVaccineQuery = "SELECT Distinct VaccineName FROM ChildList ";
 $query = $conn->query($getVaccineQuery);
 
 // Function to generate HTML options for the vaccine name select field
@@ -39,20 +39,22 @@ if (isset($_POST['updateChildBtn'])) {
     $vaccineDose = mysqli_real_escape_string($conn, $_POST['vaccineDose']);
     $vaccineDate = mysqli_real_escape_string($conn, $_POST['vaccineDate']);
     $doctorName = mysqli_real_escape_string($conn, $_POST['doctorName']);
+    
 
     $updateQuery = "UPDATE ChildList set Name='$childName', DOB='$childDob', Age='$childAge', Gender='$childGender', FatherName='$fatherName', MotherName='$motherName', Phone='$phone', Address='$address', VaccineName='$vaccineType', VaccineDose='$vaccineDose', VaccineDate='$vaccineDate', DoctorName='$doctorName' WHERE RegisterId=$ids";
 
     $res = $conn->query($updateQuery); //it reflects the actual query from $query into the database
     if ($res) {
-
-        $_SESSION['Message'] = "Data updated successfully !";
+        $_SESSION['ChildUpdMsg'] = "Child Data updated successfully !";
         echo '<script>
                     setTimeout(function() {
-                        window.location.href = "VaccineTable.php";
-                    }, 1000);
+                        window.location.href = "ChildTable.php";
+                    }, 1200);
                 </script>';
     } else {
         echo "Data not inserted";
     }
 }
+
+$conn->close();
 ?>

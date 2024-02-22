@@ -17,12 +17,19 @@
 <div class="registerCont">
 <form action="" method="post">
    <h3 class="formTitle">Child Registration Form</h3>
+   <div class="msg-show1">
+         <?php 
+            if(isset($_SESSION['ChildUpdMsg'])){
+                echo '<div class="adjust1">' . $_SESSION['ChildUpdMsg'] . '</div>';
+                unset($_SESSION['ChildUpdMsg']);
+            }
+            ?> </div>
   <h3 class="childInfo">Child Information</h3>
 
 <div class="childForm">
     <div class="registerId">
       <label class="labelText">Registration Id:</label>
-      <input type="text" class="registrationNum" name="registrationNum" placeholder="Enter registration Id" value="<?php echo $arrDatas['RegisterId']; ?> " required>
+      <input type="text" class="registrationNum" name="registrationNum" placeholder="Enter registration Id" value="<?php echo $arrDatas['RegisterId']; ?> " readonly>
     </div>
     <div class="childName">
       <label class="labelText">Child Name:</label>
@@ -34,8 +41,8 @@
       <input type="date" class="dob" name="dob" placeholder="Enter child DOB" value="<?php echo isset($arrDatas['DOB']) ? $arrDatas['DOB'] : ''; ?>" required>
     </div>
       <div class="alignAge">
-        <label class="labelText">Child Age [In months]:</label>
-        <input type="number" class="childAge" name="childAge" placeholder="Child age in months" value="<?php echo $arrDatas['Age']; ?>" required>
+        <label class="labelText">Child Age [In Weeks/Months]:</label>
+        <input type="text" class="childAge" name="childAge" placeholder="Child age in months" value="<?php echo $arrDatas['Age']; ?>" required>
       </div>
    </div>
 

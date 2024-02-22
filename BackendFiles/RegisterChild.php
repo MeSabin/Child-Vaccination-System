@@ -34,16 +34,25 @@ if (isset($_POST['clickRegister'])) {
    $vaccineDate=mysqli_real_escape_string($conn, $_POST['vaccineDate']);
    $doctorName=mysqli_real_escape_string($conn, $_POST['doctorName']);
 
+   $checkQuery = "SELECT RegisterId FROM ChildList WHERE RegisterId = '$registerId'";
+   $checkResult = $conn->query($checkQuery);
+   if ($checkResult->num_rows > 0) {
+       $_SESSION['showIdWarning'] = "Register Id is already registered.";
+       header("Location:registerChild.php");
+       exit();
+   }
+   else{
+
    $insertChildQuery= "INSERT INTO ChildList (RegisterId, Name, DOB, Age, Gender, FatherName, MotherName, Phone, Address, VaccineName, VaccineDose, VaccineDate, DoctorName) VALUES ('$registerId', '$childName', '$childDob', '$childAge', '$childGender', '$fatherName', '$motherName', '$phone', '$address', '$vaccineType', '$vaccineDose', '$vaccineDate', '$doctorName')";
    
    $reflectInsChlQur= $conn->query($insertChildQuery); 
 
    if($reflectInsChlQur){
-      $_SESSION['successMessage'] = "Child registered successfully";
+      $_SESSION['ChildRegsMsg'] = "Child registered successfully !";
       echo '<script>
       setTimeout(function() {
           window.location.href = "childTable.php";
-      }, 1000);
+      }, 1200);
   </script>';
    }
    else{
@@ -51,5 +60,6 @@ if (isset($_POST['clickRegister'])) {
    }
    
 }
-
+}
+$conn->close();
 ?>

@@ -6,7 +6,7 @@
 <title>Unique Numeric Registration ID Generator</title>
 <script>
 // Initialize a counter variable
-var idCounter = 11111;
+var idCounter = 11112;
 
 function generateNumericId() {
     var numericId = idCounter++; // Increment the counter and assign it as the ID
@@ -20,7 +20,8 @@ function generateNumericId() {
 
 <form>
     <label for="registrationId">Registration ID:</label><br>
-    <input type="text" id="registrationId" name="registrationId" readonly><br><br>
+    <!-- Display the initial value of 11111 -->
+    <input type="text" id="registrationId" name="registrationId" value="11111" readonly><br><br>
     <button type="button" onclick="generateNumericId()">Generate ID</button>
 </form>
 

@@ -1,6 +1,7 @@
 <?php
   include "Dashboard.php";
   include "../BackendFiles/RegisterChild.php";
+  include "../BackendFiles/FetchRegisterId.php";
   
 ?>
 
@@ -10,23 +11,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Child Vaccination Registration</title>
-<link rel="stylesheet" href="../Styles/childRegister.css">
+<link rel="stylesheet" href="../Styles/updateChild.css">
 </head>
 <body>
 
 <div class="registerCont">
 <form action="" method="post">
    <h3 class="formTitle">Child Registration Form</h3>
+   <div class="msg-show1">
+         <?php 
+            if(isset($_SESSION['ChildRegsMsg'])){
+                echo '<div class="adjust1">' . $_SESSION['ChildRegsMsg'] . '</div>';
+                unset($_SESSION['ChildRegsMsg']);
+            }
+            ?> </div>
+   <div class="msg-show2">
+         <?php 
+            if(isset($_SESSION['showIdWarning'])){
+                echo '<div class="adjust1">' . $_SESSION['showIdWarning'] . '</div>';
+                unset($_SESSION['showIdWarning']);
+            }
+            ?> </div>
   <h3 class="childInfo">Child Information</h3>
 
 <div class="childForm">
     <div class="registerId">
       <label class="labelText">Registration Id:</label>
-      <input type="text" class="registrationNum" name="registrationNum" placeholder="Enter registration Id" required>
+      <input type="text" class="registrationNum ForJs" name="registrationNum" placeholder="Enter registration Id" value ="<?php echo empty($arrDatas['RegisterId']) ? 11111 : $arrDatas['RegisterId']; ?>" readonly>
+      <button class="generateId "  onclick="generateNumericId()">Generate</button>
     </div>
     <div class="childName">
       <label class="labelText">Child Name:</label>
-      <input type="text" class="childName" name="childName" placeholder="Enter name of a child" >
+      <input type="text" class="childName" name="childName" placeholder="Enter name of a child" required>
     </div>
   
     <div class="alignDob">
@@ -34,15 +50,15 @@
       <input type="date" class="dob" name="dob" placeholder="Enter child DOB" required>
     </div>
       <div class="alignAge">
-        <label class="labelText">Child Age [In months]:</label>
-        <input type="number" class="childAge" name="childAge" placeholder="Child age in months" required>
+        <label class="labelText">Child Age [In Weeks/Months]:</label>
+        <input type="text" class="childAge" name="childAge" placeholder="Child age in months" required>
       </div>
    </div>
 
   <div class="selectGender">
    <label class="labelText">Gender:</label>
    <div class="alignRadios">
-      <input type="radio" id="maleGender" name="gender" value="Male">
+      <input type="radio" id="maleGender" name="gender" value="Male" required>
       <label class="radioGen">Male</label>
       <input type="radio" id="femaleGender" name="gender" value="Female">
       <label class="radioGen">Female</label>
@@ -101,5 +117,15 @@
 
 </form>
 </div>
+<script>
+  var idCounter = <?php echo empty($arrDatas['RegisterId']) ? 11111 : $arrDatas['RegisterId']; ?>;
+ function generateNumericId() {
+     idCounter++; 
+     var inputField = document.querySelector('.ForJs');
+    inputField.value = idCounter;
+    inputField.style.color = 'blue'; 
+}
+</script>
+
 </body>
 </html>

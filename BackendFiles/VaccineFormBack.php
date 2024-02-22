@@ -23,4 +23,5 @@ if(isset($_POST['AddVaccine'])){
         echo "Data not inserted";
     }
 }
+$conn->close();
 ?>

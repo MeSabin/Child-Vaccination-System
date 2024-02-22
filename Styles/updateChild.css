@@ -99,3 +99,27 @@ body {
   row-gap: 8px;
   column-gap: 17px;
 }
+.msg-show1{
+  background-color: rgb(9 127 0);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+.msg-show2{
+  background-color: rgb(255, 108, 95);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+.generateId{
+  background-color: #6783ff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 2px 3px;
+  cursor: pointer;
+  position: fixed;
+  right: 686px;
+  top: 170px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+}

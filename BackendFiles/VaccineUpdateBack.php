@@ -30,4 +30,5 @@
                     echo "Data not inserted";
                 }
             }
+            $conn->close();
             ?>

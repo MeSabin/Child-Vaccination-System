@@ -21,7 +21,7 @@ include "Dashboard.php";
                <th>Registration Id</th>
                <th>Child Name</th>
                <th>Child DOB</th>
-               <th>Child Age(In Month)</th>
+               <th>Child Age(Weeks/Months)</th>
                <th>Gender</th>
                <th>Father's Name</th>
                <th>Mother's Name</th>
