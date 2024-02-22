@@ -42,7 +42,8 @@ body {
 }
  .btn{
     margin-top: 20px;
-    padding: 4px 94px;
+    padding: 5px;
+    width: 100%;
     border-radius: 6px;
     background-color: rgb(68, 68, 250);
     color: white;

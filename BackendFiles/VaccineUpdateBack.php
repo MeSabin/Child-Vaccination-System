@@ -14,12 +14,12 @@
                 $dozeNumber= mysqli_real_escape_string($conn, $_POST['Dose']);
                 $ageRecommended= mysqli_real_escape_string($conn, $_POST['Recommended']);
 
-                $updateQuery = "update addvaccine set Id=$ids, Name='$vaccineName', Dose='$dozeNumber', Age='$ageRecommended' WHERE Id=$ids";
+                $updateQuery = "update addvaccine set Name='$vaccineName', Dose='$dozeNumber', Age='$ageRecommended' WHERE Id=$ids";
 
                 $res= $conn->query($updateQuery); //it reflects the actual query from $query into the database
                 if($res){
                     
-                    $_SESSION['Message'] = "Data updated succssfully !";
+                    $_SESSION['Message'] = "Data updated successfully !";
                     echo '<script>
                     setTimeout(function() {
                         window.location.href = "VaccineTable.php";

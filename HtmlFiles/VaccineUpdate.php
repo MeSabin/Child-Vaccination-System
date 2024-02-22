@@ -43,9 +43,9 @@ include "../BackendFiles/VaccineUpdateBack.php";
     <select name="Dose" class="combobox" required>
         //when dose value is 1 in database, 1 is stored to value ie. value="1" and similarly for other 2 option tag
         //echo either outputs selected or '' selected is html attribute here to select corresponding option 
-        <option value="1" <?php echo ($arrData['Dose'] == '1') ? 'selected' : ''; ?>>First Dose</option>
-        <option value="2" <?php echo ($arrData['Dose'] == '2') ? 'selected' : ''; ?>>Second Dose</option>
-        <option value="3" <?php echo ($arrData['Dose'] == '3') ? 'selected' : ''; ?>>Third Dose</option>
+        <option value="1" <?php echo ($arrData['Dose'] == '1') ? 'selected' : ''; ?>>One</option>
+        <option value="2" <?php echo ($arrData['Dose'] == '2') ? 'selected' : ''; ?>>Two</option>
+        <option value="3" <?php echo ($arrData['Dose'] == '3') ? 'selected' : ''; ?>>Three</option>
     </select>
 </div>
 

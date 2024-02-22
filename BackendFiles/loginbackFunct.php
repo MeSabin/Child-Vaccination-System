@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include("Config.php");
 
@@ -7,7 +6,7 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
     header("Location: Dashboard.php");
 }
 
-function loginUser($conn, $emailUsername, $password, $rememberMe = false) {
+function loginUser($conn, $emailUsername, $password) {
     $query = "SELECT * FROM admin WHERE (email ='$emailUsername' OR username ='$emailUsername')";
     $result = $conn->query($query);
 
@@ -23,50 +22,58 @@ function loginUser($conn, $emailUsername, $password, $rememberMe = false) {
 
             if ($password === $storedPassword) {
                 $newHashedPassword=password_hash($storedPassword, PASSWORD_BCRYPT);
-                $updateQuery = "UPDATE admin SET Password = '$newHashedPassword' WHERE Email = '$emailUsername' OR username = '$emailUsername'";
+                $updateQuery = "UPDATE admin SET token ='$token', Password = '$newHashedPassword' WHERE Email = '$emailUsername' OR username = '$emailUsername'";
                 $queryfire = $conn->query($updateQuery);
                 if (!$queryfire) {
                     echo "Not inserted";
                 }
             }
-
-            $updateQuery = "UPDATE admin SET token = '$token' WHERE Email = '$emailUsername' OR username = '$emailUsername'";
-            $queryfire = $conn->query($updateQuery);
-
+            if(password_verify($password, $storedPassword) ){
+                $updateQuery = "UPDATE admin SET token = '$token' WHERE Email = '$emailUsername' OR username = '$emailUsername'";
+                $queryfire = $conn->query($updateQuery);
+            }
+           
             if ($queryfire) {
-                if ($rememberMe) {
-                    setcookie('emailcookie', $emailUsername, time()+1200000);
-                    setcookie('passwordcookie', $password, time()+1200000);
-                }
+                rememberMe($emailUsername, $password);
                 $_SESSION['success_message']= "Logging in.. Please wait";
-                redirectAfterDelay("Dashboard.php", 1400);
+                redirectAfterDelay();
             } else {
                 echo "Not inserted";
             }
         } else {
-            $_SESSION['error_message'] = "Invalid Email/Username or Password";
-            header("location: Login.php");
-            exit();
+            showErrorMsg();
         }
     } else { 
-        $_SESSION['error_message'] = "Invalid Email/Username or Password";
-        header("Location: Login.php");
-        exit();
+       showErrorMsg();
     }
 }
 
-function redirectAfterDelay($url, $delay) {
-    echo "<script>setTimeout(function() { window.location.href = '$url'; }, $delay);</script>";
+
+function redirectAfterDelay() {
+    echo '<script>
+    setTimeout(function() {
+        window.location.href = "Dashboard.php";
+    }, 1400);
+</script>';
+}
+function showErrorMsg(){
+    $_SESSION['error_message'] = "Invalid Email/Username or Password";
+        header("Location: Login.php");
+        exit();
+}
+function rememberMe($emailUsername, $password){
+    if (isset($_POST['remember_me'])) {
+        setcookie('emailcookie', $emailUsername, time()+1200000);
+        setcookie('passwordcookie', $password, time()+1200000);
+    }
 }
 
 if (isset($_POST['submit'])) {
     $emailUsername = mysqli_real_escape_string($conn, $_POST['Email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $rememberMe = isset($_POST['remember_me']);
 
-    loginUser($conn, $emailUsername, $password, $rememberMe);
+    loginUser($conn, $emailUsername, $password);
 }
-
 // Closing the database connection after the login page connection has performed
 $conn->close();
 ?>

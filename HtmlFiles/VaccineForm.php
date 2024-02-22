@@ -39,9 +39,9 @@ include "../BackendFiles/VaccineFormBack.php";
             <div class="dozeOfVaccine">
                 <p class="name3">No. of Dose:</p>
                 <select name="Dose" class="combobox" required>
-                    <option value="1">First Dose</option>
-                    <option value="2">Second Dose</option>
-                    <option value="3">Third Dose</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
                 </select>
             </div>
             <div class="input-box2 box">

@@ -9,8 +9,8 @@
 body{
     min-height: 100vh;
     background-color: rgb(236, 236, 236) !important;
-    padding-left: 57px !important;
-    /* padding-top: 250px !important; */
+    padding-left: 190px !important;
+    padding-top: 40px !important;
 }
 .side-navbar{
     background-color: rgb(255, 255, 255);

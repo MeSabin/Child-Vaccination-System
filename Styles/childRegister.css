@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body {
+   background-color: #f4f4f4;
+ }
+ .formTitle {
+   text-align: center;
+   color: #5474ff;
+   font-size: 18px;
+ }
+ .registerCont {
+   max-width: 550px;
+   margin: 0 auto;
+   margin-bottom: 10px;
+   margin-top: 25px;
+   background-color: #fff;
+   padding: 10px 20px 18px 20px;
+   border-radius: 8px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+ }
+ .childInfo, .parentsInfo, .vaccineInfo {
+   color: #6e6e6e;
+   font-size: 15px;
+   margin-top: 12px;
+   margin-bottom: 5px;
+ }
+ label {
+   font-weight: 500;
+   font-size: 14px;
+   color: #555;
+ } 
+ input, select {
+   padding: 5px;
+   width: 100%;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   font-size: 13px;
+ } 
+ .registerButton{
+   background-color: #5d44ff;
+   color: white;
+   padding: 5px 20px;
+   border: none;
+   border-radius: 7px;
+   cursor: pointer;
+   font-size: 16px;
+   font-weight: 500;
+   margin-top: 20px;
+   width: 100%;
+ }
+ .registerButton:hover{
+   background-color: #5237ff;
+ }
+ .alignDob input{
+  font-size: 12px;
+ }
+ .selectGender{
+  margin-top: 10px;
+ }
+ .radioGen{
+  font-size: 12px;
+ }
+ #maleGender{
+  margin-left: 0;
+  margin-right: 3px;
+ }
+ input[type="radio"] {
+  width: 12px; 
+}
+ .alignRadios{
+  display: flex;
+ }
+ .selectGender input{
+  display: inline-block;;
+ }
+ .alignRadios input{
+  margin-left: 120px;
+  margin-right: 3px;
+ }
+ .vaccineDate{
+  padding: 4px;
+ }
+.firstHr{
+  margin-top:10px;
+  border-color: rgb(228, 232, 255);
+}
+.childForm, .parentForm, .vaccineForm{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr); 
+  row-gap: 8px;
+  column-gap: 17px;
+}
