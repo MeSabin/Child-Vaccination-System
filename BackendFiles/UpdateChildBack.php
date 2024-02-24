@@ -24,7 +24,6 @@ function sendToHtml($query, $selectedVaccineName) {
     }
 }
 
-
 if (isset($_POST['updateChildBtn'])) {
     $registerId = mysqli_real_escape_string($conn, $_POST['registrationNum']);
     $childName = mysqli_real_escape_string($conn, $_POST['childName']);

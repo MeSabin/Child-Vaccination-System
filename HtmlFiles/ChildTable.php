@@ -7,9 +7,15 @@ include "Dashboard.php";
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-   <link rel="stylesheet" href="../Styles/VaccineTable.css">
+   <link rel="stylesheet" href="../Styles/RegisterChild.css">
 </head>
 <body>
+
+   <div class="searchContents">
+      <input type="text" class="childDataSearch searchInput" placeholder="Search...">
+      <img src="../images/SearchChild.png" alt="Image not found...">
+   </div>
+
 
    <div class="main-container">
    <div class="table-container">
@@ -88,5 +94,7 @@ include "Dashboard.php";
          </div>
       </div>      
       <script src="../JavaScript/delChildModal.js"></script>
+      <script src="../JavaScript/childDataSearch.js"></script>
+      
 </body>
 </html>
