@@ -27,16 +27,9 @@ include "Dashboard.php";
                <th>Registration Id</th>
                <th>Child Name</th>
                <th>Child DOB</th>
-               <th>Child Age(Weeks/Months)</th>
-               <th>Gender</th>
                <th>Father's Name</th>
                <th>Mother's Name</th>
                <th>Contact</th>
-               <th>Address</th>
-               <th>Vaccine Name</th>
-               <th>Vaccine Dose</th>
-               <th>Date Given</th>
-               <th>Given By</th>
                <th>Action</th>
             </thead>
             <tbody>
@@ -46,27 +39,24 @@ include "Dashboard.php";
                  $selectQuery ="SELECT * from ChildList";
                  $reflectQuery =$conn->query($selectQuery);
                
-                 while($result = $reflectQuery->fetch_assoc()){
+                 while($result = $reflectQuery->fetch_assoc()){ // remve
                  
                 ?> 
                <tr>
                   <td><?php echo $result['RegisterId']; ?> </td>
                   <td><?php echo $result['Name']; ?> </td>
                   <td><?php echo $result['DOB']; ?> </td>
-                  <td><?php echo $result['Age']; ?> </td>
-                  <td><?php echo $result['Gender']; ?> </td>
                   <td><?php echo $result['FatherName']; ?> </td>
                   <td><?php echo $result['MotherName']; ?> </td>
                   <td><?php echo $result['Phone']; ?> </td>
-                  <td><?php echo $result['Address']; ?> </td>
-                  <td><?php echo $result['VaccineName']; ?> </td>
-                  <td><?php echo $result['VaccineDose']; ?> </td>
-                  <td><?php echo $result['VaccineDate']; ?> </td>
-                  <td><?php echo $result['DoctorName']; ?> </td>
+
                   <td class="action-column">
                      <a class="edit" name="updateVaccine" href="ChildUpdate.php?id=<?php echo $result['RegisterId']; ?>">Edit</a>
                      <!-- Pass $id variable to JavaScript function -->
                      <a class="delete" href="#" onclick="openDelPop(<?php echo $result['RegisterId']; ?>)" name="deleteVaccine">Delete</a>
+
+                     <a class="viewDetails" href="#" onclick="" name="viewDetail">Details</a>
+                     <a class="crtAcc" href="#" onclick="" name="createAcc">Account</a>
                   </td>
                </tr>
             <?php    
@@ -87,6 +77,7 @@ include "Dashboard.php";
           <div class="deleteCont">
             <p class="deleteMessage">Do you really want to Delete?</p>
             <hr class="line1">
+            <p class="delInfo">This action is irreversible</p>
            <div class="btn-delete">
                <button class="cancelDelete" onclick="closeDelPop()">Cancel</button>            
                <a ><button class="confirmDelete">Delete</button></a>

@@ -36,17 +36,14 @@
 }
 .profileImg{
    width: 30px;
-   margin-right: 10px;
-   border: 1px solid black;
-   border-radius: 30px;
+   margin-right: 5px;
    
 }
 .dropdown{
    
-   width: 12px;
-   height: 12px;
-   margin-left: 5px;
+   width: 10px;
    filter: invert(25%);
    margin-right: 40px;
    cursor: pointer;
+   margin-top: 2px;
 }

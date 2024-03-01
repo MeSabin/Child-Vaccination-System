@@ -115,7 +115,7 @@ body{
     z-index: 21;
     /* to position the container exactly at the center */
     transform: translate(-50%,-50%);
-    transition: 0.3s ease;
+    transition: top 0.8s ease;
     
 }
 .showLogout{

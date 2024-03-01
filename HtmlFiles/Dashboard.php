@@ -20,7 +20,7 @@ if(!isset($_SESSION['back'])){
 <div class="topbar">
         <div class="sessionUsername">
           <div class="profile">
-            <img class="profileImg"src="../images/DoctorProfile.png" alt="Image not found..">
+            <img class="profileImg"src="../images/Profile.png" alt="Image not found..">
             <p>Hi, <?php echo $_SESSION['back'];?></p>
           </div>
           <img  class="dropdown" src="../images/Dropdown.png" alt="Image not found..">
