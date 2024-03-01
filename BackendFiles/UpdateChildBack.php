@@ -8,21 +8,28 @@ $showquery = "SELECT * from ChildList where  RegisterId ='$ids'";
 $showdata = $conn->query($showquery);
 $arrDatas = $showdata->fetch_assoc();
 
+//future code for vaccine details
+// function fetchChildDetails($id) {
+//     if($showdata->num_rows>0){
+
+//     }
+// }
+
 // Fetch all vaccine names for the select field
-$getVaccineQuery = "SELECT Distinct VaccineName FROM ChildList ";
-$query = $conn->query($getVaccineQuery);
+// $getVaccineQuery = "SELECT Distinct VaccineName FROM ChildList ";
+// $query = $conn->query($getVaccineQuery);
 
 // Function to generate HTML options for the vaccine name select field
-function sendToHtml($query, $selectedVaccineName) {
-    if ($query->num_rows > 0) {
-        while ($row = $query->fetch_assoc()) {
-            $selected = ($row["VaccineName"] == $selectedVaccineName) ? 'selected' : '';
-            echo '<option value="' . $row["VaccineName"] . '" ' . $selected . '>' . $row["VaccineName"] . '</option>';
-        }
-    } else {
-        echo '<option value="">No Vaccine available</option>';
-    }
-}
+// function sendToHtml($query, $selectedVaccineName) {
+//     if ($query->num_rows > 0) {
+//         while ($row = $query->fetch_assoc()) {
+//             $selected = ($row["VaccineName"] == $selectedVaccineName) ? 'selected' : '';
+//             echo '<option value="' . $row["VaccineName"] . '" ' . $selected . '>' . $row["VaccineName"] . '</option>';
+//         }
+//     } else {
+//         echo '<option value="">No Vaccine available</option>';
+//     }
+// }
 
 if (isset($_POST['updateChildBtn'])) {
     $registerId = mysqli_real_escape_string($conn, $_POST['registrationNum']);

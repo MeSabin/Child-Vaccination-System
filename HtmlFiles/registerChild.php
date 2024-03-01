@@ -37,7 +37,7 @@
 <div class="childForm">
     <div class="registerId">
       <label class="labelText">Registration Id:</label>
-      <input type="text" class="registrationNum ForJs" name="registrationNum" placeholder="Enter registration Id" value ="<?php echo empty($arrDatas['RegisterId']) ? 11111 : $arrDatas['RegisterId']; ?>" readonly>
+      <input type="text" class="registrationNum ForJs" name="registrationNum" placeholder="Enter registration Id" value ="<?php echo empty($arrData['RegisterId']) ? 11111 : $arrData['RegisterId']; ?>" readonly>
       <button class="generateId "  onclick="generateNumericId()">Generate</button>
     </div>
     <div class="childName">
@@ -49,10 +49,10 @@
       <label class="labelTextDob">Date of Birth:</label>
       <input type="date" class="dob" name="dob" placeholder="Enter child DOB" required>
     </div>
-      <div class="alignAge">
+      <!-- <div class="alignAge">
         <label class="labelText">Child Age [In Weeks/Months]:</label>
         <input type="text" class="childAge" name="childAge" placeholder="Child age in months" required>
-      </div>
+      </div> -->
    </div>
 
   <div class="selectGender">
@@ -86,13 +86,13 @@
         <input type="text" class="address" name="address" placeholder="Enter parents address" required>
       </div>
 </div>
-  <h3 class="vaccineInfo">Vaccination Details</h3>
+  <!-- <h3 class="vaccineInfo">Vaccination Details</h3>
 <div class="vaccineForm">
       <div class="vaccineName">
         <label class="labelText">Vaccine Name:</label>
         <select class="vaccineType" name="vaccineType">
          <?php
-         sendToHtml($query);
+        //  sendToHtml($query);
         ?>
         </select>
       </div>
@@ -111,14 +111,14 @@
       <div class="vaccineGivenBy">
         <label class="labelText">Given By(Doctor's Name):</label><br>
         <input type="text" class="doctorName" name="doctorName" placeholder="Vaccine given by"><br>
-      </div>
-</div>
+      </div> -->
+<!-- </div> -->
   <button class="registerButton" name="clickRegister">Register</button>
 
 </form>
 </div>
 <script>
-  var idCounter = <?php echo empty($arrDatas['RegisterId']) ? 11111 : $arrDatas['RegisterId']; ?>;
+  var idCounter = <?php echo empty($arrData['RegisterId']) ? 11111 : $arrData['RegisterId']; ?>;
  function generateNumericId() {
      idCounter++; 
      var inputField = document.querySelector('.ForJs');

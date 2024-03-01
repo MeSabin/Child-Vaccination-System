@@ -26,7 +26,6 @@ include "Dashboard.php";
             <thead>
                <th>Registration Id</th>
                <th>Child Name</th>
-               <th>Child DOB</th>
                <th>Father's Name</th>
                <th>Mother's Name</th>
                <th>Contact</th>
@@ -45,7 +44,6 @@ include "Dashboard.php";
                <tr>
                   <td><?php echo $result['RegisterId']; ?> </td>
                   <td><?php echo $result['Name']; ?> </td>
-                  <td><?php echo $result['DOB']; ?> </td>
                   <td><?php echo $result['FatherName']; ?> </td>
                   <td><?php echo $result['MotherName']; ?> </td>
                   <td><?php echo $result['Phone']; ?> </td>
@@ -56,6 +54,7 @@ include "Dashboard.php";
                      <a class="delete" href="#" onclick="openDelPop(<?php echo $result['RegisterId']; ?>)" name="deleteVaccine">Delete</a>
 
                      <a class="viewDetails" href="#" onclick="" name="viewDetail">Details</a>
+                     <a class="viewDetails" href="VaccineToChild.php?id=<?php echo $result['RegisterId']; ?>" onclick="" name="addNewVacc">Vaccine</a>
                      <a class="crtAcc" href="#" onclick="" name="createAcc">Account</a>
                   </td>
                </tr>

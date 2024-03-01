@@ -71,17 +71,18 @@ body{
     padding-left: 0;
 }
 .side-navbar ul li:hover {
-    background-color: rgb(101, 144, 254);
+    background-color: rgb(218, 228, 255);
     color: white;
     margin-left: 3px;
     margin-right: 3px;
     border-radius: 6px;
 }
 .side-navbar ul li p{
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.9rem;
     line-height: 17px;
-    color:  rgb(23, 23, 23);
+    font-size: 15px;
+    color:  rgb(45, 45, 45);
     margin-bottom: 0;
 }
 
@@ -115,7 +116,7 @@ body{
     z-index: 21;
     /* to position the container exactly at the center */
     transform: translate(-50%,-50%);
-    transition: top 0.8s ease;
+    transition: top 0.5s ease;
     
 }
 .showLogout{

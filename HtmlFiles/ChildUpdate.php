@@ -40,10 +40,10 @@
       <label class="labelTextDob">Date of Birth:</label>
       <input type="date" class="dob" name="dob" placeholder="Enter child DOB" value="<?php echo isset($arrDatas['DOB']) ? $arrDatas['DOB'] : ''; ?>" required>
     </div>
-      <div class="alignAge">
+      <!-- <div class="alignAge">
         <label class="labelText">Child Age [In Weeks/Months]:</label>
         <input type="text" class="childAge" name="childAge" placeholder="Child age in months" value="<?php echo $arrDatas['Age']; ?>" required>
-      </div>
+      </div> -->
    </div>
 
   <div class="selectGender">
@@ -77,13 +77,13 @@
         <input type="text" class="address" name="address" placeholder="Enter parents address" value="<?php echo $arrDatas['Address']; ?> " required>
       </div>
 </div>
-  <h3 class="vaccineInfo">Vaccination Details</h3>
+  <!-- <h3 class="vaccineInfo">Vaccination Details</h3>
 <div class="vaccineForm">
 <div class="vaccineName">
     <label class="labelText">Vaccine Name:</label>
     <select class="vaccineType" name="vaccineType">
         <?php
-           sendToHtml($query, $arrDatas['VaccineName']);
+          //  sendToHtml($query, $arrDatas['VaccineName']);
         ?>
     </select>
 </div>
@@ -92,20 +92,25 @@
       <label class="labelText">Vaccine Dose:</label>
     
       <select class="vaccineType" name="vaccineDose">
-        <option value="First Dose" <?php echo ($arrDatas['VaccineDose'] == 'First Dose') ? 'selected' : ''; ?>>First Dose</option>
-        <option value="Second Dose" <?php echo ($arrDatas['VaccineDose'] == 'Second Dose') ? 'selected' : ''; ?>>Second Dose</option>
-        <option value="Third Dose" <?php echo ($arrDatas['VaccineDose'] == 'Third Dose') ? 'selected' : ''; ?>>Third Dose</option>
+        <option value="First Dose" <?php 
+        // echo ($arrDatas['VaccineDose'] == 'First Dose') ? 'selected' : ''; ?>>First Dose</option>
+        <option value="Second Dose" <?php 
+        // echo ($arrDatas['VaccineDose'] == 'Second Dose') ? 'selected' : ''; ?>>Second Dose</option>
+        <option value="Third Dose" <?php 
+        // echo ($arrDatas['VaccineDose'] == 'Third Dose') ? 'selected' : ''; ?>>Third Dose</option>
       </select>
     </div>
       <div class="vaccineDateGiven">
         <label class="labelText">Date of Vaccine Given:</label><br>
-        <input type="date" class="vaccineDate" name="vaccineDate" value="<?php echo isset($arrDatas['VaccineDate']) ? $arrDatas['VaccineDate'] : '';?>" required><br>
+        <input type="date" class="vaccineDate" name="vaccineDate" value="<?php 
+        // echo isset($arrDatas['VaccineDate']) ? $arrDatas['VaccineDate'] : '';?>" required><br>
       </div>
       <div class="vaccineGivenBy">
         <label class="labelText">Given By(Doctor's Name):</label><br>
-        <input type="text" class="doctorName" name="doctorName" placeholder="Vaccine given by" value="<?php echo isset($arrDatas['DoctorName']) ? $arrDatas['DoctorName'] : '';?> " required><br>
+        <input type="text" class="doctorName" name="doctorName" placeholder="Vaccine given by" value="<?php 
+        // echo isset($arrDatas['DoctorName']) ? $arrDatas['DoctorName'] : '';?> " required><br>
       </div>
-</div>
+</div> -->
   <button class="registerButton" name="updateChildBtn">Apply Change</button>
 
 </form>

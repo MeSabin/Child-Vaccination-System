@@ -5,19 +5,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
    searchInput.addEventListener('input', function() {
        const searchText = searchInput.value.trim().toLowerCase();
-       let anyMatchFound = false; // Flag variable to track if any match is found
+       let anyMatchFound = false; 
 
        tableRows.forEach(row => {
            const rowData = row.textContent.trim().toLowerCase();
            if (rowData.includes(searchText)) {
                row.style.display = '';
-               anyMatchFound = true; // Set flag to true if a match is found
+               anyMatchFound = true; 
            } else {
                row.style.display = 'none';
            }
        });
-
-       // If no match is found, display all rows
        if (!anyMatchFound) {
            tableRows.forEach(row => {
                row.style.display = '';
