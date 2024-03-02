@@ -4,12 +4,12 @@
 include "Config.php";
 // include "VaccineUpdateBack.php";
    $getVaccineQuery="Select Name from addVaccine ";
-   $query=$conn->query($getVaccineQuery);
+   $reflectVaccineQuery=$conn->query($getVaccineQuery);
    
- function sendToHtml($query){
-   if ($query->num_rows > 0) {
+ function sendToHtml($reflectVaccineQuery){
+   if ($reflectVaccineQuery->num_rows > 0) {
       // Output data of each row
-      while ($row = $query->fetch_assoc()) {
+      while ($row = $reflectVaccineQuery->fetch_assoc()) {
           echo '<option value="' . $row["Name"] . '">' . $row["Name"] . '</option>';
       }
    } else {
@@ -34,9 +34,9 @@ if (isset($_POST['clickRegister'])) {
    // $vaccineDate=mysqli_real_escape_string($conn, $_POST['vaccineDate']);
    // $doctorName=mysqli_real_escape_string($conn, $_POST['doctorName']);
 
-   $checkQuery = "SELECT RegisterId FROM ChildList WHERE RegisterId = '$registerId'";
-   $checkResult = $conn->query($checkQuery);
-   if ($checkResult->num_rows > 0) {
+   $checkIdQuery = "SELECT RegisterId FROM ChildList WHERE RegisterId = '$registerId'";
+   $reflectCheckIdQuery = $conn->query($checkIdQuery);
+   if ($reflectCheckIdQuery->num_rows > 0) {
        $_SESSION['showIdWarning'] = "Register Id is already registered.";
        header("Location:registerChild.php");
        exit();
