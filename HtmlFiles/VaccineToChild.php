@@ -19,7 +19,7 @@
     <form id="vaccineForm">
         <div class="form-group">
             <label for="age">Registration ID:</label>
-            <input type="number" id="age" name="registerId" value="<?php  echo $arrDatas['RegisterId']; ?>" readonly>
+            <input type="number" id="age" name="registerId" value="<?php  echo $getchildData['RegisterId']; ?>" readonly>
         </div>
         <div class="form-group">
             <label for="age">Age:</label>
@@ -29,7 +29,7 @@
             <label for="vaccineName">Vaccine Name:</label>
         <select class="vaccineType" name="vaccineType">
          <?php
-         sendToHtml($query);
+         sendToHtml($reflectVaccineQuery);
         ?>
         </select>
         </div>

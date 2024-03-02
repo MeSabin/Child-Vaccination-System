@@ -28,21 +28,21 @@ include "Dashboard.php";
                <?php
                  include "../BackendFiles/Config.php"; 
             
-                 $selectQuery ="SELECT * from addvaccine";
-                 $reflectQuery =$conn->query($selectQuery);
+                 $selectAllVaccQur ="SELECT * from addvaccine";
+                 $refSelAllVaccQur =$conn->query($selectAllVaccQur);
                
-                 while($result = $reflectQuery->fetch_assoc()){
+                 while($fetchAllVaccData = $refSelAllVaccQur->fetch_assoc()){
                  
                 ?> 
                <tr>
-                  <td><?php echo $result['Id']; ?> </td>
-                  <td><?php echo $result['Name']; ?> </td>
-                  <td><?php echo $result['Dose']; ?> </td>
-                  <td><?php echo $result['Age']; ?> </td>
+                  <td><?php echo $fetchAllVaccData['Id']; ?> </td>
+                  <td><?php echo $fetchAllVaccData['Name']; ?> </td>
+                  <td><?php echo $fetchAllVaccData['Dose']; ?> </td>
+                  <td><?php echo $fetchAllVaccData['Age']; ?> </td>
                   <td class="action-column">
-                     <a class="edit" name="updateVaccine" href="VaccineUpdate.php?id=<?php echo $result['Id']; ?>">Edit</a>
+                     <a class="edit" name="updateVaccine" href="VaccineUpdate.php?id=<?php echo $fetchAllVaccData['Id']; ?>">Edit</a>
                      <!-- Pass $id variable to JavaScript function -->
-                     <a class="delete" href="#" onclick="openDelPop(<?php echo $result['Id']; ?>)" name="deleteVaccine">Delete</a>
+                     <a class="delete" href="#" onclick="openDelPop(<?php echo $fetchAllVaccData['Id']; ?>)" name="deleteVaccine">Delete</a>
                   </td>
                </tr>
             <?php    

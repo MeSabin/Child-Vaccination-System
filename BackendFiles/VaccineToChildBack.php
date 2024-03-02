@@ -1,7 +1,7 @@
 <?php
 // session_start();
 include ("Config.php");
-$ids = $_GET['id'];
+$addVaccineToChildId = $_GET['id'];
 if(isset($_POST['saveChildVaccInfo'])){
     //mysqli_real_escape_string stores special characters in the database
     $registerId= mysqli_real_escape_string($conn, $_POST['registerId']);

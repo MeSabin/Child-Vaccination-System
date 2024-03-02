@@ -8,10 +8,10 @@ if(isset($_POST['AddVaccine'])){
     $dozeNumber= mysqli_real_escape_string($conn, $_POST['Dose']);
     $ageRecommended= mysqli_real_escape_string($conn, $_POST['Recommended']);
 
-    $query = "INSERT INTO addvaccine (Name, Dose, Age) VALUES ('$vaccineName', '$dozeNumber', '$ageRecommended')";
+    $addVaccineQuery = "INSERT INTO addvaccine (Name, Dose, Age) VALUES ('$vaccineName', '$dozeNumber', '$ageRecommended')";
 
-    $result= $conn->query($query); //it reflects the actual query from $query into the database
-    if($result){
+    $reflectAddVaccQur= $conn->query($addVaccineQuery); //it reflects the actual query from $query into the database
+    if($reflectAddVaccQur){
         $_SESSION['successMessage'] = "Vaccine added succssfully !";
         echo '<script>
         setTimeout(function() {
