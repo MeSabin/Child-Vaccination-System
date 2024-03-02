@@ -93,8 +93,9 @@ body {
 }
 .adjust{
     padding: 4px;
+    font-size: 14px;
 }
 .adjust1{
     padding: 4px;
-    font-weight: 500;
+    font-size: 13px;
 }

@@ -57,7 +57,7 @@ function redirectAfterDelay() {
 </script>';
 }
 function showErrorMsg(){
-    $_SESSION['error_message'] = "Invalid Email/Username or Password";
+    $_SESSION['error_message'] = "Invalid credentials provided";
         header("Location: Login.php");
         exit();
 }

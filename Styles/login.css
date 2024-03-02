@@ -18,8 +18,11 @@ body {
     background-position: center;
 }
 .login-container{ 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     border-radius: 12px;
-    /* background: linear-gradient(45deg, #ffffff, rgb(20, 139, 249)); */
     padding: 20px 2px;
     text-align: center;
     box-shadow:  0 0 9px rgba(0, 0, 0, 0.7);
@@ -114,12 +117,13 @@ body {
     /* this makes error message appear always */
     /* padding: 10px 30px 10px 30px; */
     color: rgb(255, 255, 255);
-    border-radius: 5px;
+    border-radius: 4px;
+    width: 75%;
     background-color: rgb(254, 74, 74);
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.6); /*Increase the spread and blur radius */
 }   
 .error-show i{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding-left: 3px;
     
    
@@ -127,7 +131,7 @@ body {
 
 .error-show p{
     font-size: 13px;
-    padding: 10px 7px 10px 3px;
+    padding: 5px ;
     margin-bottom: 0;
     
 }
