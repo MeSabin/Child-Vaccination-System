@@ -37,7 +37,7 @@ if (isset($_POST['clickRegister'])) {
       echo '<script>
       setTimeout(function() {
           window.location.href = "childTable.php";
-      }, 1200);
+      }, 2000);
   </script>';
    }
    else{

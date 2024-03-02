@@ -12,6 +12,9 @@ body{
     padding-left: 190px !important;
     padding-top: 40px !important;
 }
+:root {
+    --button-bg-color: #5d44ff; /* Default button background color */
+ }
 .side-navbar{
     background-color: rgb(255, 255, 255);
     height: 100vh;
@@ -145,7 +148,8 @@ body{
     background-color: rgb(177, 177, 177);
 }
 .confirmbutton{
-    background-color: rgb(63, 129, 252);
+    background-color: var(--button-bg-color);
+    transition: background-color 0.5s ease;
     padding: 5px;
     color: white;
     border: none;

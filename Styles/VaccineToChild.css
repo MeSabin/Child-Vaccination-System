@@ -13,7 +13,11 @@ body {
    justify-content: center;
    align-items: center;
    height: 100vh;
+
 }
+:root {
+   --button-bg-color: #5d44ff; /* Default button background color */
+ }
 .container {
    background-color: #fff;
    width: 27%;
@@ -47,7 +51,8 @@ input,select {
 button {
    padding: 5px 20px;
    width: 100%;
-   background-color: #5d44ff;
+   background-color: var(--button-bg-color);
+   transition: background-color 0.5s ease;
    border: none;
    color: #fff;
    border-radius: 6px;

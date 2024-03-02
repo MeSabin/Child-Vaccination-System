@@ -15,12 +15,12 @@ body {
     background-color: rgb(236, 236, 236) !important;
     min-height: 100vh;
 }
-
+:root {
+   --button-bg-color: #5d44ff; /* Default button background color */
+}
 .main-container{
    width: 90%;
-   position: relative;
-   
-   
+   position: relative; 
 }
 .table-container {
 
@@ -90,7 +90,8 @@ td, th {
    font-weight: 500;
    font-size: 14px;
    /* background-color: #4CAF50; */
-   background-color: #464cf5;
+   background-color: var(--button-bg-color);
+   transition: background-color 0.5s ease;
    color: white;
    border: none;
    position: absolute;
@@ -111,15 +112,18 @@ td, th {
    background-color: #4CAF50;
    padding: 1px 5px;
 }
-.action-column .viewDetails, .crtAcc {
+.action-column .viewDetails {
    text-decoration: none;
    color: white;
    font-weight: 500;
    font-size: 13px;
    margin-right: 10px;
    border-radius: 7px;
-   background-color: #324eed;
+   background-color: var(--button-bg-color);
    padding: 1px 5px;
+}
+.viewDetails:hover {
+   background-color: rgb(84, 110, 255);
 }
 .crtAcc{
    margin-right: 0;
@@ -128,7 +132,6 @@ td, th {
    background-color: #74b977;
 }
 .action-column .delete {
-   color: rgb(246, 82, 82);
    padding: 1px 4px ;
    text-decoration: none;
    color: white;

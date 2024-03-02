@@ -37,7 +37,7 @@ include "../BackendFiles/LoginbackFunct.php";
     </div>
 </div>
     <div class="form-container">
-        <form name="form" class="form-container1" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST" onsubmit="showSpinner()">
+        <form name="form" class="form-container1" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
 
             <div class="input-box">
                 <p class="name1">Username/Email:</p> 
@@ -57,7 +57,9 @@ include "../BackendFiles/LoginbackFunct.php";
             </div>
             <p class="forgot"><a href="Send_Email.php" class="forgot-password">Forgot Password?</a></p>
         </div>
-            <button class="btn" name="submit" type="submit">Login</button>
+        <div class="buttnCont">
+        <button class="btn" name="submit" type="submit">Login</button>
+        </div>
         </form>
     </div>
 </div>

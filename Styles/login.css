@@ -17,6 +17,10 @@ body {
     background-size: contain;
     background-position: center;
 }
+:root {
+    --button-bg-color: #5d44ff; /* Default button background color */
+ }
+ 
 .login-container{ 
     display: flex;
     justify-content: center;
@@ -43,6 +47,7 @@ body {
     margin: 20px;
     background: none;
     border: none;
+    outline: none;
     border-bottom: 2px solid rgb(31, 22, 22);
     margin-left: 39px;
     margin-top: 5px;
@@ -74,14 +79,15 @@ body {
     padding: 4px 90px;
     color: white;
     border-radius: 20px;
-    background-color: rgb(69, 52, 253);
+    background-color: var(--button-bg-color);
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    box-shadow: 1px 2px 5px rgba(27, 18, 18, 0.85);
+    transition: background-color 0.5s ease;
+    box-shadow: 1px 2px 2px rgba(27, 18, 18, 0.85);
 }
 .btn:hover{
-    background-color: rgb(26, 26, 248);
+    background-color: rgb(47, 47, 241);
     color: white;
 }
 

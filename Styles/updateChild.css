@@ -5,22 +5,23 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-    
 }
 
 body {
    background-color: #f4f4f4;
  }
+ :root {
+  --button-bg-color: #5d44ff; /* Default button background color */
+}
  .formTitle {
    text-align: center;
    color: #5474ff;
    font-size: 18px;
  }
  .registerCont {
-   max-width: 550px;
-   margin: 0 auto;
+   max-width: 440px;
+   margin: 83px auto;
    margin-bottom: 10px;
-   margin-top: 25px;
    background-color: #fff;
    padding: 10px 20px 18px 20px;
    border-radius: 8px;
@@ -45,7 +46,8 @@ body {
    font-size: 13px;
  } 
  .registerButton{
-   background-color: #5d44ff;
+   background-color: var(--button-bg-color);
+   transition: background-color 0.5s ease;
    color: white;
    padding: 5px 20px;
    border: none;
@@ -92,12 +94,9 @@ body {
   margin-top:10px;
   border-color: rgb(228, 232, 255);
 }
-.childForm, .parentForm, .vaccineForm{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(2, 1fr); 
-  row-gap: 8px;
-  column-gap: 17px;
+.childForm{
+ 
+
 }
 .msg-show1{
   background-color: rgb(9 127 0);
@@ -115,15 +114,8 @@ body {
   text-align: center;
   border-radius: 5px;
 }
-.generateId{
-  background-color: #6783ff;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  padding: 2px 3px;
-  cursor: pointer;
-  position: fixed;
-  right: 686px;
-  top: 170px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+.alignChildIdNDOB, .parentsPhoneNAdd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px; 
 }
