@@ -2,11 +2,11 @@
 // session_start();
 include("Config.php");
 
-$ids = $_GET['id'];
+$updateChildId = $_GET['id'];
 // fetching data to display i.e to show prefilled data in the form in VaccineToChild.php file
-$showquery = "SELECT * from ChildList where  RegisterId ='$ids'";
-$showdata = $conn->query($showquery);
-$arrDatas = $showdata->fetch_assoc();
+$childDataPrefilled = "SELECT * from ChildList where  RegisterId ='$updateChildId'";
+$reflectChildDataPre = $conn->query($childDataPrefilled);
+$getchildData = $reflectChildDataPre->fetch_assoc();
 
 //future code for vaccine details
 // function fetchChildDetails($id) {
@@ -47,10 +47,10 @@ if (isset($_POST['updateChildBtn'])) {
     // $doctorName = mysqli_real_escape_string($conn, $_POST['doctorName']);
     
 
-    $updateQuery = "UPDATE ChildList set Name='$childName', DOB='$childDob', Gender='$childGender', FatherName='$fatherName', MotherName='$motherName', Phone='$phone', Address='$address' WHERE RegisterId=$ids";
+    $updateChildData = "UPDATE ChildList set Name='$childName', DOB='$childDob', Gender='$childGender', FatherName='$fatherName', MotherName='$motherName', Phone='$phone', Address='$address' WHERE RegisterId=$updateChildId";
 
-    $res = $conn->query($updateQuery); //it reflects the actual query from $query into the database
-    if ($res) {
+    $reflectUpdateChildData = $conn->query($updateChildData); //it reflects the actual query from $query into the database
+    if ($reflectUpdateChildData) {
         $_SESSION['ChildUpdMsg'] = "Child Data updated successfully !";
         echo '<script>
                     setTimeout(function() {
