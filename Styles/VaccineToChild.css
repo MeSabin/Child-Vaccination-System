@@ -53,6 +53,7 @@ button {
    border-radius: 6px;
    cursor: pointer;
    font-size: 16px;
+   font-weight: 500;
 }
 button:hover {
    background-color: #5237ff;

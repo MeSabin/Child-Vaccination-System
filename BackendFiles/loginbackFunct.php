@@ -7,11 +7,11 @@ if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
 }
 
 function loginUser($conn, $emailUsername, $password) {
-    $query = "SELECT * FROM admin WHERE (email ='$emailUsername' OR username ='$emailUsername')";
-    $result = $conn->query($query);
+    $loginSelectQuery = "SELECT * FROM admin WHERE (email ='$emailUsername' OR username ='$emailUsername')";
+    $relfectLoginSelectQuery = $conn->query($loginSelectQuery);
 
-    if ($result->num_rows == 1) {
-        $userData = $result->fetch_assoc();
+    if ($relfectLoginSelectQuery->num_rows == 1) {
+        $userData = $relfectLoginSelectQuery->fetch_assoc();
         $storedPassword = $userData['Password'];
 
         if (password_verify($password, $storedPassword) || $password === $storedPassword) {
@@ -29,11 +29,11 @@ function loginUser($conn, $emailUsername, $password) {
                 }
             }
             if(password_verify($password, $storedPassword) ){
-                $updateQuery = "UPDATE admin SET token = '$token' WHERE Email = '$emailUsername' OR username = '$emailUsername'";
-                $queryfire = $conn->query($updateQuery);
+                $updateTokenQuery = "UPDATE admin SET token = '$token' WHERE Email = '$emailUsername' OR username = '$emailUsername'";
+                $reflectUpdateTokenQuery = $conn->query($updateTokenQuery);
             }
            
-            if ($queryfire) {
+            if ($reflectUpdateTokenQuery) {
                 rememberMe($emailUsername, $password);
                 $_SESSION['success_message']= "Logging in.. Please wait";
                 redirectAfterDelay();

@@ -23,16 +23,16 @@ if (isset($_POST['clickRegister'])) {
    $registerId=mysqli_real_escape_string($conn, $_POST['registrationNum']);
    $childName=mysqli_real_escape_string($conn, $_POST['childName']);
    $childDob=mysqli_real_escape_string($conn, $_POST['dob']);
-   $childAge=mysqli_real_escape_string($conn, $_POST['childAge']);
+   // $childAge=mysqli_real_escape_string($conn, $_POST['childAge']);
    $childGender=mysqli_real_escape_string($conn, $_POST['gender']);
    $fatherName=mysqli_real_escape_string($conn, $_POST['fatherName']);
    $motherName=mysqli_real_escape_string($conn, $_POST['motherName']);
    $phone=mysqli_real_escape_string($conn, $_POST['contact']);
    $address=mysqli_real_escape_string($conn, $_POST['address']);
-   $vaccineType=mysqli_real_escape_string($conn, $_POST['vaccineType']);
-   $vaccineDose=mysqli_real_escape_string($conn, $_POST['vaccineDose']);
-   $vaccineDate=mysqli_real_escape_string($conn, $_POST['vaccineDate']);
-   $doctorName=mysqli_real_escape_string($conn, $_POST['doctorName']);
+   // $vaccineType=mysqli_real_escape_string($conn, $_POST['vaccineType']);
+   // $vaccineDose=mysqli_real_escape_string($conn, $_POST['vaccineDose']);
+   // $vaccineDate=mysqli_real_escape_string($conn, $_POST['vaccineDate']);
+   // $doctorName=mysqli_real_escape_string($conn, $_POST['doctorName']);
 
    $checkQuery = "SELECT RegisterId FROM ChildList WHERE RegisterId = '$registerId'";
    $checkResult = $conn->query($checkQuery);
@@ -43,7 +43,7 @@ if (isset($_POST['clickRegister'])) {
    }
    else{
 
-   $insertChildQuery= "INSERT INTO ChildList (RegisterId, Name, DOB, Age, Gender, FatherName, MotherName, Phone, Address, VaccineName, VaccineDose, VaccineDate, DoctorName) VALUES ('$registerId', '$childName', '$childDob', '$childAge', '$childGender', '$fatherName', '$motherName', '$phone', '$address', '$vaccineType', '$vaccineDose', '$vaccineDate', '$doctorName')";
+   $insertChildQuery= "INSERT INTO ChildList (RegisterId, Name, DOB, Gender, FatherName, MotherName, Phone, Address) VALUES ('$registerId', '$childName', '$childDob', '$childGender', '$fatherName', '$motherName', '$phone', '$address')";
    
    $reflectInsChlQur= $conn->query($insertChildQuery); 
 

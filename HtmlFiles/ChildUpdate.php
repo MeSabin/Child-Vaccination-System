@@ -42,7 +42,8 @@
     </div>
       <!-- <div class="alignAge">
         <label class="labelText">Child Age [In Weeks/Months]:</label>
-        <input type="text" class="childAge" name="childAge" placeholder="Child age in months" value="<?php echo $arrDatas['Age']; ?>" required>
+        <input type="text" class="childAge" name="childAge" placeholder="Child age in months" value="<?php 
+        // echo $arrDatas['Age']; ?>" required>
       </div> -->
    </div>
 

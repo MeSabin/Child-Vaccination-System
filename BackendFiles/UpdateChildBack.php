@@ -3,7 +3,7 @@
 include("Config.php");
 
 $ids = $_GET['id'];
-// fetching data to display i.e to show prefilled data in the form in update.php file
+// fetching data to display i.e to show prefilled data in the form in VaccineToChild.php file
 $showquery = "SELECT * from ChildList where  RegisterId ='$ids'";
 $showdata = $conn->query($showquery);
 $arrDatas = $showdata->fetch_assoc();
@@ -35,19 +35,19 @@ if (isset($_POST['updateChildBtn'])) {
     $registerId = mysqli_real_escape_string($conn, $_POST['registrationNum']);
     $childName = mysqli_real_escape_string($conn, $_POST['childName']);
     $childDob = mysqli_real_escape_string($conn, $_POST['dob']);
-    $childAge = mysqli_real_escape_string($conn, $_POST['childAge']);
+    // $childAge = mysqli_real_escape_string($conn, $_POST['childAge']);
     $childGender = mysqli_real_escape_string($conn, $_POST['gender']);
     $fatherName = mysqli_real_escape_string($conn, $_POST['fatherName']);
     $motherName = mysqli_real_escape_string($conn, $_POST['motherName']);
     $phone = mysqli_real_escape_string($conn, $_POST['contact']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
-    $vaccineType = mysqli_real_escape_string($conn, $_POST['vaccineType']);
-    $vaccineDose = mysqli_real_escape_string($conn, $_POST['vaccineDose']);
-    $vaccineDate = mysqli_real_escape_string($conn, $_POST['vaccineDate']);
-    $doctorName = mysqli_real_escape_string($conn, $_POST['doctorName']);
+    // $vaccineType = mysqli_real_escape_string($conn, $_POST['vaccineType']);
+    // $vaccineDose = mysqli_real_escape_string($conn, $_POST['vaccineDose']);
+    // $vaccineDate = mysqli_real_escape_string($conn, $_POST['vaccineDate']);
+    // $doctorName = mysqli_real_escape_string($conn, $_POST['doctorName']);
     
 
-    $updateQuery = "UPDATE ChildList set Name='$childName', DOB='$childDob', Age='$childAge', Gender='$childGender', FatherName='$fatherName', MotherName='$motherName', Phone='$phone', Address='$address', VaccineName='$vaccineType', VaccineDose='$vaccineDose', VaccineDate='$vaccineDate', DoctorName='$doctorName' WHERE RegisterId=$ids";
+    $updateQuery = "UPDATE ChildList set Name='$childName', DOB='$childDob', Gender='$childGender', FatherName='$fatherName', MotherName='$motherName', Phone='$phone', Address='$address' WHERE RegisterId=$ids";
 
     $res = $conn->query($updateQuery); //it reflects the actual query from $query into the database
     if ($res) {

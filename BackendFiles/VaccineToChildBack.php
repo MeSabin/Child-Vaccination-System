@@ -1,7 +1,7 @@
 <?php
 // session_start();
 include ("Config.php");
-
+$ids = $_GET['id'];
 if(isset($_POST['saveChildVaccInfo'])){
     //mysqli_real_escape_string stores special characters in the database
     $registerId= mysqli_real_escape_string($conn, $_POST['registerId']);
@@ -11,7 +11,7 @@ if(isset($_POST['saveChildVaccInfo'])){
     $vaccineDate= mysqli_real_escape_string($conn, $_POST['vaccineDate']);
     $adminsteredBy= mysqli_real_escape_string($conn, $_POST['doctorName']);
 
-    $query = "INSERT INTO onlyvaccines (ID, Age, Name, Dose, Date, Doctor) VALUES ('$registerId', '$age', '$vaccineName', '$vaccineDose', '$vaccineDate','$adminsteredBy')";
+    $query = "INSERT INTO childvaccine (ID, Age, Name, Dose, Date, Doctor) VALUES ('$registerId', '$age', '$vaccineName', '$vaccineDose', '$vaccineDate','$adminsteredBy')";
 
     $result= $conn->query($query); //it reflects the actual query from $query into the database
     if($result){

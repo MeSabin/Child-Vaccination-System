@@ -35,7 +35,7 @@ include "Dashboard.php";
                <?php
                  include "../BackendFiles/Config.php"; 
             
-                 $selectQuery ="SELECT * from ChildList";
+                 $selectQuery ="SELECT * from childlist";
                  $reflectQuery =$conn->query($selectQuery);
                
                  while($result = $reflectQuery->fetch_assoc()){ // remve

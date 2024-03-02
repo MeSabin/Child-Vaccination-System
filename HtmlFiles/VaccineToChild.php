@@ -35,7 +35,7 @@
         </div>
          <div class="form-group">
       <label for="vaccineDose">Vaccine Dose:</label>
-      <select id="vaccineDose" name="vaccineDose" required>
+      <select id="vaccineDose" name="vaccineDose" >
          <option value="">First Dose</option>
          <option value="1">Second Dose</option>
          <option value="2">Third Dose</option>

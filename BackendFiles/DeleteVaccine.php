@@ -4,8 +4,8 @@ include ("Config.php");
 
 $id=$_GET['id'];
 if(isset($_GET['id'])){
-   $deleteQuery="DELETE from addvaccine where Id=$id";
-   $reflectQuery=$conn->query($deleteQuery);
+   $deleteVaccQuery="DELETE from addvaccine where Id=$id";
+   $reflectDelVaccQuery=$conn->query($deleteVaccQuery);
    header("Location:../HtmlFiles/VaccineTable.php");
 }
 ?>
