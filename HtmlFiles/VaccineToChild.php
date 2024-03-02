@@ -17,7 +17,7 @@
 
 <div class="container">
     <h2>Vaccine Information Form</h2>
-    <div class="msg-show1">
+    <div class="vacc-add-msg">
          <?php 
             if(isset($_SESSION['vaccineDetails'])){
                 echo '<div class="adjust1">' . $_SESSION['vaccineDetails'] . '</div>';

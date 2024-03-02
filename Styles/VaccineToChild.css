@@ -58,3 +58,13 @@ button {
 button:hover {
    background-color: #5237ff;
 }
+.vacc-add-msg{
+   background-color: rgb(9 127 0);
+   color: white;
+   text-align: center;
+   border-radius: 5px;
+   margin-bottom: 7px;
+}
+.adjust1{
+   padding: 4px;
+}

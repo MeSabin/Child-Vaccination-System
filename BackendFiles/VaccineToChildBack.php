@@ -18,7 +18,7 @@ if(isset($_POST['saveChildVaccInfo'])){
         echo '<script>
         setTimeout(function() {
             window.location.href = "ChildTable.php";
-        }, 10000);
+        }, 1200);
     </script>';
     }
     else{
