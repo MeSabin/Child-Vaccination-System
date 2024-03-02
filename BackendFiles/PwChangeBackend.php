@@ -11,11 +11,10 @@
 
                    if($NewPassword ===$Cpassword) {
                        $hashed_password = password_hash($NewPassword, PASSWORD_BCRYPT);
-                       $updatequery= "UPDATE admin set password='$hashed_password' where token='$token'";
-                    
-                       $iquery= $conn->query($updatequery);
+                       $passwordChangeQuery= "UPDATE admin set password='$hashed_password' where token='$token'";
+                       $reflectPasswordChangeQuery= $conn->query($passwordChangeQuery);
            
-                       if($iquery){
+                       if($reflectPasswordChangeQuery){
                            $_SESSION['passmsg']= "Your password has been updated";
                                echo '<script>
                            setTimeout(function() {

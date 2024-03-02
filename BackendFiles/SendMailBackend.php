@@ -5,14 +5,14 @@
  if(isset($_POST['submit'])){
     $email = mysqli_real_escape_string($conn, $_POST['email']);
 
-    $emailquery= "select *from admin where email= '$email' ";
-    $query= $conn->query($emailquery);
+    $emailQuery= "select *from admin where email= '$email' ";
+    $reflectEmailQuery= $conn->query($emailQuery);
 
     // number of rows returned by the sql query
-    $emailcount= mysqli_num_rows($query);
+    $emailcount= mysqli_num_rows($reflectEmailQuery);
     
       if ($emailcount) {
-        $userdata= $query->fetch_assoc();
+        $userdata= $reflectEmailQuery->fetch_assoc();
         $token= $userdata['token'];
 
           $subject ="Password Reset";
