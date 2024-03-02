@@ -1,7 +1,8 @@
 <?php
    include "Dashboard.php";
-   include "../BackendFiles/RegisterChild.php";
-   include "../BackendFiles/UpdateChildBack.php";
+   include "../BackendFiles/DynamicVaccName.php";
+   include "../BackendFiles/ChildIDForVacc.php";
+   include "../BackendFiles/VaccineToChildBack.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,14 +17,22 @@
 
 <div class="container">
     <h2>Vaccine Information Form</h2>
-    <form id="vaccineForm">
+    <div class="msg-show1">
+         <?php 
+            if(isset($_SESSION['vaccineDetails'])){
+                echo '<div class="adjust1">' . $_SESSION['vaccineDetails'] . '</div>';
+                unset($_SESSION['vaccineDetails']);
+            }
+            ?> </div>
+    <form action="VaccineToChild.php?id=<?php  echo $childIDForVacc; ?>" method="POST">
         <div class="form-group">
             <label for="age">Registration ID:</label>
-            <input type="number" id="age" name="registerId" value="<?php  echo $getchildData['RegisterId']; ?>" readonly>
+            <input type="text" id="age" name="registerId" value="<?php echo isset($fetChildRegId['RegisterId']) ? $fetChildRegId['RegisterId'] : ''; ?>" >
+
         </div>
         <div class="form-group">
             <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
+            <input type="text" id="age" name="age" required>
         </div>
         <div class="form-group">
             <label for="vaccineName">Vaccine Name:</label>
@@ -36,9 +45,9 @@
          <div class="form-group">
       <label for="vaccineDose">Vaccine Dose:</label>
       <select id="vaccineDose" name="vaccineDose" >
-         <option value="">First Dose</option>
-         <option value="1">Second Dose</option>
-         <option value="2">Third Dose</option>
+         <option value="First Dose">First Dose</option>
+         <option value="Second Dose">Second Dose</option>
+         <option value="Third Dose">Third Dose</option>
       </select>
    </div>
 

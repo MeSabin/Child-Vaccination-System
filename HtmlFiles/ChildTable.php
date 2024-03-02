@@ -35,26 +35,26 @@ include "Dashboard.php";
                <?php
                  include "../BackendFiles/Config.php"; 
             
-                 $selectQuery ="SELECT * from childlist";
-                 $reflectQuery =$conn->query($selectQuery);
+                 $selAllChildQur ="SELECT * from childlist";
+                 $refSelAllChildQur =$conn->query($selAllChildQur);
                
-                 while($result = $reflectQuery->fetch_assoc()){ // remve
+                 while($fetchAllChildData = $refSelAllChildQur->fetch_assoc()){ // remve
                  
                 ?> 
                <tr>
-                  <td><?php echo $result['RegisterId']; ?> </td>
-                  <td><?php echo $result['Name']; ?> </td>
-                  <td><?php echo $result['FatherName']; ?> </td>
-                  <td><?php echo $result['MotherName']; ?> </td>
-                  <td><?php echo $result['Phone']; ?> </td>
+                  <td><?php echo $fetchAllChildData['RegisterId']; ?> </td>
+                  <td><?php echo $fetchAllChildData['Name']; ?> </td>
+                  <td><?php echo $fetchAllChildData['FatherName']; ?> </td>
+                  <td><?php echo $fetchAllChildData['MotherName']; ?> </td>
+                  <td><?php echo $fetchAllChildData['Phone']; ?> </td>
 
                   <td class="action-column">
-                     <a class="edit" name="updateVaccine" href="ChildUpdate.php?id=<?php echo $result['RegisterId']; ?>">Edit</a>
+                     <a class="edit" name="updateVaccine" href="ChildUpdate.php?id=<?php echo $fetchAllChildData['RegisterId']; ?>">Edit</a>
                      <!-- Pass $id variable to JavaScript function -->
-                     <a class="delete" href="#" onclick="openDelPop(<?php echo $result['RegisterId']; ?>)" name="deleteVaccine">Delete</a>
+                     <a class="delete" href="#" onclick="openDelPop(<?php echo $fetchAllChildData['RegisterId']; ?>)" name="deleteVaccine">Delete</a>
 
                      <a class="viewDetails" href="#" onclick="" name="viewDetail">Details</a>
-                     <a class="viewDetails" href="VaccineToChild.php?id=<?php echo $result['RegisterId']; ?>" onclick="" name="addNewVacc">Vaccine</a>
+                     <a class="viewDetails" href="VaccineToChild.php?id=<?php echo $fetchAllChildData['RegisterId']; ?>" onclick="" name="addNewVacc">Vaccine</a>
                      <a class="crtAcc" href="#" onclick="" name="createAcc">Account</a>
                   </td>
                </tr>

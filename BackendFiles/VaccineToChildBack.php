@@ -1,7 +1,6 @@
 <?php
 // session_start();
 include ("Config.php");
-$addVaccineToChildId = $_GET['id'];
 if(isset($_POST['saveChildVaccInfo'])){
     //mysqli_real_escape_string stores special characters in the database
     $registerId= mysqli_real_escape_string($conn, $_POST['registerId']);
@@ -11,15 +10,15 @@ if(isset($_POST['saveChildVaccInfo'])){
     $vaccineDate= mysqli_real_escape_string($conn, $_POST['vaccineDate']);
     $adminsteredBy= mysqli_real_escape_string($conn, $_POST['doctorName']);
 
-    $query = "INSERT INTO childvaccine (ID, Age, Name, Dose, Date, Doctor) VALUES ('$registerId', '$age', '$vaccineName', '$vaccineDose', '$vaccineDate','$adminsteredBy')";
+    $insertChildVaccQur = "INSERT INTO childvaccine (ID, Age, Name, Dose, Date, Doctor) VALUES ('$registerId', '$age', '$vaccineName', '$vaccineDose', '$vaccineDate','$adminsteredBy')";
 
-    $result= $conn->query($query); //it reflects the actual query from $query into the database
-    if($result){
-        $_SESSION['successMessage'] = "Vaccine added succssfully !";
+    $refInsChildVaccQur= $conn->query($insertChildVaccQur); //it reflects the actual query from $query into the database
+    if($refInsChildVaccQur){
+        $_SESSION['vaccineDetails'] = "Data has been added Successfully !";
         echo '<script>
         setTimeout(function() {
             window.location.href = "ChildTable.php";
-        }, 1000);
+        }, 10000);
     </script>';
     }
     else{
