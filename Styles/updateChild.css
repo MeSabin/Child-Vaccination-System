@@ -11,7 +11,8 @@ body {
    background-color: #f4f4f4;
  }
  :root {
-  --button-bg-color: #5d44ff; /* Default button background color */
+  --btn-color: #5d44ff; 
+  --btn-hover-color: #462aff; 
 }
  .formTitle {
    text-align: center;
@@ -46,7 +47,7 @@ body {
    font-size: 13px;
  } 
  .registerButton{
-   background-color: var(--button-bg-color);
+   background-color: var(--btn-color);
    transition: background-color 0.5s ease;
    color: white;
    padding: 5px 20px;
@@ -59,7 +60,7 @@ body {
    width: 100%;
  }
  .registerButton:hover{
-   background-color: #5237ff;
+   background-color: var(--btn-hover-color);
  }
  .alignDob input{
   font-size: 12px;
@@ -93,10 +94,6 @@ body {
 .firstHr{
   margin-top:10px;
   border-color: rgb(228, 232, 255);
-}
-.childForm{
- 
-
 }
 .msg-show1{
   background-color: rgb(9 127 0);

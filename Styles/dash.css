@@ -13,8 +13,9 @@ body{
     padding-top: 40px !important;
 }
 :root {
-    --button-bg-color: #5d44ff; /* Default button background color */
- }
+    --btn-color: #5d44ff; 
+    --btn-hover-color: #462aff; 
+  }
 .side-navbar{
     background-color: rgb(255, 255, 255);
     height: 100vh;
@@ -148,7 +149,7 @@ body{
     background-color: rgb(177, 177, 177);
 }
 .confirmbutton{
-    background-color: var(--button-bg-color);
+    background-color: var(--btn-color);
     transition: background-color 0.5s ease;
     padding: 5px;
     color: white;
@@ -160,7 +161,7 @@ body{
     cursor: pointer;
 }
 .confirmbutton:hover{
-    background-color: rgb(12, 98, 246);
+    background-color: var(--btn-hover-color);
 }
 .line{
     background-color: rgb(54, 54, 54);

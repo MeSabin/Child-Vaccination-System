@@ -16,8 +16,9 @@ body {
 
 }
 :root {
-   --button-bg-color: #5d44ff; /* Default button background color */
- }
+   --btn-color: #5d44ff; 
+   --btn-hover-color: #462aff; 
+}
 .container {
    background-color: #fff;
    width: 27%;
@@ -51,7 +52,7 @@ input,select {
 button {
    padding: 5px 20px;
    width: 100%;
-   background-color: var(--button-bg-color);
+   background-color: var(--btn-color);
    transition: background-color 0.5s ease;
    border: none;
    color: #fff;
@@ -61,7 +62,7 @@ button {
    font-weight: 500;
 }
 button:hover {
-   background-color: #5237ff;
+   background-color: var(--btn-hover-color);
 }
 .vacc-add-msg{
    background-color: rgb(9 127 0);

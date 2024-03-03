@@ -18,8 +18,9 @@ body {
     
 }
 :root {
-    --button-bg-color: #5d44ff; /* Default button background color */
- }
+    --btn-color: #5d44ff; 
+    --btn-hover-color: #462aff; 
+  }
 .mail-container {
     background-color: rgb(255, 255, 255);
     padding: 20px;
@@ -47,7 +48,7 @@ body {
     padding: 5px;
     width: 100%;
     border-radius: 6px;
-    background-color: var(--button-bg-color);
+    background-color: var(--btn-color);
     transition: background-color 0.5s ease;
     color: white;
     border: none;
@@ -55,7 +56,7 @@ body {
     cursor: pointer;   
 }
 .btn:hover{
-    background-color: rgb(50, 80, 248);
+    background-color: var(--btn-hover-color);
 }
 .heading h2{
     font-size: 1.3rem;

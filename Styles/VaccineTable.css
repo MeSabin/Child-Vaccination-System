@@ -15,8 +15,9 @@ body {
     min-height: 100vh;
 }
 :root {
-   --button-bg-color: #5d44ff; /* Default button background color */
- }
+   --btn-color: #5d44ff; 
+   --btn-hover-color: #462aff; 
+}
 .main-container{
    width: 90%;
    position: relative;
@@ -89,7 +90,7 @@ td, th {
    border-radius: 7px;
    font-weight: 500;
    font-size: 14px;
-   background-color: var(--button-bg-color);
+   background-color: var(--btn-color);
    transition: background-color 0.5s ease;
    color: white;
    border: none;
@@ -98,7 +99,7 @@ td, th {
    cursor: pointer;
 }
 .VaccineAdd:hover{
-   background-color: rgb(96, 85, 247);
+   background-color: var(--btn-hover-color);
 }
 
 .action-column .edit {
