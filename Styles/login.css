@@ -178,6 +178,7 @@ body {
 .eye{
     position: relative;
     right: 39px;
+    top: 4px;
     width: 15px;
     cursor: pointer;
 }
