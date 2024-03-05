@@ -77,7 +77,14 @@
       <div class="parentsPhoneNAdd">
           <div class="parentContact">
             <label class="labelText">Contact Number:</label>
-            <input type="text" class="contact" name="contact" placeholder="Enter parents contact no." required>
+            <input
+              type="text"
+              class="contact"
+              name="contact"
+              pattern="[0-9]{10}"
+              placeholder="Enter phone number"
+              required
+            />
           </div>
           <div class="parentAddress">
             <label class="labelText">Address:</label>

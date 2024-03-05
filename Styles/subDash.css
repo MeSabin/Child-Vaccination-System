@@ -10,12 +10,24 @@
 
 .chart-container {
    display: flex;
-   justify-content: space-evenly;
+   justify-content: space-between;
    margin-top: 100px;
  }
  #barChart {
-   margin-left: 100px;
+   margin-left: 40px;
+   width: 700px !important;
+   background-color: white;
+   border-radius: 5px;
+   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  }
+  #doughnutChart{
+    margin-right: 40px;
+    width: 500px !important;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
  }
+ 
  .DashBoxes{
    display: flex;
    justify-content: space-between;
@@ -52,12 +64,4 @@
     height: 100px;
     width: 250px; 
     margin-right: 25px;
- }
- .barCont{
-  background-color: white;
-  border-radius: 5px;
- }
- .donutCont{
-  background-color: white;
-  border-radius: 5px;
  }

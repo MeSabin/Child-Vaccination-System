@@ -18,10 +18,10 @@ include "Dashboard.php";
     </div>
     <div class="chart-container">
       <div class="barCont">
-        <canvas id="barChart" style="width: 100%; max-width: 600px"></canvas>
+        <canvas id="barChart"></canvas>
       </div>
       <div class="donutCont">
-        <canvas id="doughnutChart" style="width: 100%; max-width: 600px"></canvas>
+        <canvas id="doughnutChart"></canvas>
       </div>
     </div>
 

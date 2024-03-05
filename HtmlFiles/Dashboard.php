@@ -37,7 +37,7 @@ if(!isset($_SESSION['back'])){
          </div>
          <div class="list-container">
          <ul>
-          <a href="Dashboard.php"><li><img src="../images/dashboard.png" alt="Not found"><p>Dashboard</p></li></a>
+          <a href="chartjs.php"><li><img src="../images/dashboard.png" alt="Not found"><p>Dashboard</p></li></a>
           <li><img src="../images/history.png" alt="Not found"><p>Vaccination History</p></li>
           <a href="ChildTable.php"><li><img src="../images/child.png" alt="Not found"><p>Child List</p></li></a>
           <a href="VaccineTable.php"><li><img src="../images/vaccine.png" alt="Not found"><p>Vaccines List</p></li></a>

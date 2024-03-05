@@ -40,14 +40,16 @@ body {
 }
 
 .table-div {
+   /* prevents overflow of table from its container */
    overflow-x: auto;
 }
 
 table {
    width: 100%;
+   /* collapse the border of table */
    border-collapse: collapse;
    margin-top: 10px;
-   /* border: 1px solid black; */
+   border: 1px solid black;
 }
 
 thead th, tbody td {
@@ -74,13 +76,9 @@ tbody tr:nth-child(even) {
    background-color: #f3f3ff;
 }
 
-
-td:last-child, th:last-child {
-   text-align: center;
-}
-
 td, th {
-   white-space: nowrap;
+   /* prevents contents wrapping when screen in minimized */
+   white-space: nowrap; 
 }
 .addComponent{
    display: block;
@@ -190,3 +188,37 @@ td, th {
 .cancelDelete:hover{
    background-color: rgb(176, 176, 176);
 }
+
+.pagination {
+   margin-top: 20px;
+   text-align: center;
+ }
+ 
+ .pagination ul {
+   display: inline-block;
+   padding-left: 0;
+   margin: 0;
+ }
+ 
+ .pagination li {
+   display: inline;
+ }
+ 
+ .pagination li a {
+   padding: 6px 12px;
+   text-decoration: none;
+   border: 1px solid #ccc;
+   background-color: #f9f9f9;
+   color: #333;
+   border-radius: 4px;
+ }
+ 
+ .pagination li.active a {
+   background-color: #007bff;
+   color: #fff;
+ }
+ 
+ .pagination li a:hover {
+   background-color: #e9e9e9;
+ }
+ 

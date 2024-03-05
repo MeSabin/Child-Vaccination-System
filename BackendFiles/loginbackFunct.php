@@ -3,7 +3,7 @@ session_start();
 include("Config.php");
 
 if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn']) {
-    header("Location: Dashboard.php");
+    header("Location: chartjs.php");
 }
 
 function loginUser($conn, $emailUsername, $password) {
@@ -52,7 +52,7 @@ function loginUser($conn, $emailUsername, $password) {
 function redirectAfterDelay() {
     echo '<script>
     setTimeout(function() {
-        window.location.href = "Dashboard.php";
+        window.location.href = "chartjs.php";
     }, 1400);
 </script>';
 }
