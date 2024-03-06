@@ -2,13 +2,14 @@
 include "Dashboard.php";
 include "../BackendFiles/Config.php"; 
 
-$limit = 5;
-$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
-$offset = ($page - 1) * $limit;
+$limit = 2;  // rows to show per page
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$offset = ($page - 1) * $limit;  //starting index of rows/records
 
 $selAllChildQur = "SELECT * FROM childlist LIMIT $offset, $limit";
 $refSelAllChildQur = $conn->query($selAllChildQur);
 
+// getting total rows from the table
 $totalRecordsQuery = "SELECT COUNT(*) AS total FROM childlist";
 $totalRecordsResult = $conn->query($totalRecordsQuery);
 $totalRecords = $totalRecordsResult->fetch_assoc()['total'];
@@ -68,20 +69,31 @@ $totalPages = ceil($totalRecords / $limit);
             </table>
          </div>
       </div>
-
       <ul class="pagination">
-         <?php if ($page > 1): ?>
-            <li><a href="?page=<?php echo ($page - 1); ?>">&lsaquo; Prev</a></li>
-         <?php endif; ?>
-         
-         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <li <?php if ($i == $page) echo 'class="active"'; ?>><a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-         <?php endfor; ?>
 
-         <?php if ($page < $totalPages): ?>
-            <li><a href="?page=<?php echo ($page + 1); ?>">Next &rsaquo;</a></li>
-         <?php endif; ?>
-      </ul>
+      
+    <!-- <span>Showing <?php 
+   //  echo ($offset + 1) . ' to ' . min(($offset + $limit), $totalRecords); ?> of <?php 
+   // echo $totalRecords; ?> entries</span> -->
+       
+    <?php 
+    if ($page > 1) {
+        echo '<li><a href="?page=' . ($page - 1) . '">&lsaquo; Prev</a></li>';
+    }
+    
+    for ($i = 1; $i <= $totalPages; $i++) {
+      if ($i == $page) {
+          echo '<li class="active"><a href="?page=' . $i . '">' . $i . '</a></li>';
+      } else {
+          echo '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
+      }
+  }
+
+    if ($page < $totalPages) {
+        echo '<li><a href="?page=' . ($page + 1) . '">Next &rsaquo;</a></li>';
+    }
+    ?>
+</ul>
 
       <div class="addComponent">
          <a href="registerChild.php"><button class="VaccineAdd" name="VaccineAdd">Register Child</button></a>

@@ -5,14 +5,14 @@ include "Dashboard.php";
 include "../BackendFiles/Config.php";
 
 // Pagination variables
-$records_per_page = 4;
-$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+$limit = 4;
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // Calculate the offset for the query
-$offset = ($page - 1) * $records_per_page;
+$offset = ($page - 1) * $limit;
 
 // Fetch data from the database with pagination
-$selectAllVaccQur = "SELECT * FROM addvaccine LIMIT $offset, $records_per_page";
+$selectAllVaccQur = "SELECT * FROM addvaccine LIMIT $offset, $limit";
 $refSelAllVaccQur = $conn->query($selectAllVaccQur);
 
 // Count total number of records
@@ -21,7 +21,7 @@ $total_records_result = $conn->query($total_records_query);
 $total_records = $total_records_result->fetch_assoc()['total'];
 
 // Calculate total number of pages
-$total_pages = ceil($total_records / $records_per_page);
+$total_pages = ceil($total_records / $limit);
 ?>
 
 <!DOCTYPE html>
@@ -70,21 +70,25 @@ $total_pages = ceil($total_records / $records_per_page);
       </div>
    </div>
    
-   <div class="pagination">
-   <ul>
-      <?php if ($page > 1): ?>
-         <li><a href="?page=<?php echo ($page - 1); ?>">&lsaquo; Previous</a></li>
-      <?php endif; ?>
-      
-      <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-         <li <?php if ($i == $page) echo 'class="active"'; ?>><a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-      <?php endfor; ?>
+   <ul class="pagination">
+    <?php 
+    if ($page > 1) {
+        echo '<li><a href="?page=' . ($page - 1) . '">&lsaquo; Prev</a></li>';
+    }
+    
+    for ($i = 1; $i <= $total_pages; $i++) {
+      if ($i == $page) {
+          echo '<li class="active"><a href="?page=' . $i . '">' . $i . '</a></li>';
+      } else {
+          echo '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
+      }
+  }
 
-      <?php if ($page < $total_pages): ?>
-         <li><a href="?page=<?php echo ($page + 1); ?>">Next &rsaquo;</a></li>
-      <?php endif; ?>
-   </ul>
-</div>
+    if ($page < $total_pages) {
+        echo '<li><a href="?page=' . ($page + 1) . '">Next &rsaquo;</a></li>';
+    }
+    ?>
+</ul>
 
 
    <div class="addComponent">
