@@ -217,7 +217,6 @@ td, th {
 .searchContents img{
    width: 29px;
    height: 28px;
-   background-color: rgb(155, 155, 155);
    padding: 4px;
    border-radius: 5px;
 }
@@ -229,6 +228,10 @@ td, th {
    position: absolute;
    right: 67px;
    top: 165px;
+}
+.searchContents button{
+   border: none;
+   background-color: red;
 }
 .delInfo{
    font-size: 13px;
@@ -249,7 +252,10 @@ td, th {
 .pagination li {
    display: inline;
 }
-
+.pagination{
+   display: flex;
+   justify-content: space-between;
+}
 .pagination li a {
    padding: 4px 11px;
    text-decoration: none;

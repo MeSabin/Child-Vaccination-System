@@ -6,11 +6,20 @@ $limit = 2;  // rows to show per page
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $limit;  //starting index of rows/records
 
-$selAllChildQur = "SELECT * FROM childlist LIMIT $offset, $limit";
+$searchChildQur = isset($_GET['search']) ? $_GET['search'] : '';
+$selAllChildQur = "SELECT * FROM childlist";
+if (!empty($searchChildQur)) {
+   $selAllChildQur .= " WHERE Name LIKE '%$searchChildQur%' OR FatherName LIKE '%$searchChildQur%' OR MotherName LIKE '%$searchChildQur%'";
+}
+$selAllChildQur .= " LIMIT $offset, $limit";
 $refSelAllChildQur = $conn->query($selAllChildQur);
 
 // getting total rows from the table
 $totalRecordsQuery = "SELECT COUNT(*) AS total FROM childlist";
+if (!empty($searchChildQur)) {
+   $totalRecordsQuery .= " WHERE Name LIKE '%$searchChildQur%' OR FatherName LIKE '%$searchChildQur%' OR MotherName LIKE '%$searchChildQur%'";
+}
+
 $totalRecordsResult = $conn->query($totalRecordsQuery);
 $totalRecords = $totalRecordsResult->fetch_assoc()['total'];
 $totalPages = ceil($totalRecords / $limit);
@@ -27,8 +36,10 @@ $totalPages = ceil($totalRecords / $limit);
 <body>
 
    <div class="searchContents">
-      <input type="text" class="childDataSearch searchInput" placeholder="Search...">
-      <img src="../images/SearchChild.png" alt="Image not found...">
+   <form action="" method="GET">
+         <input type="text" name="search" class="childDataSearch searchInput" placeholder="Search...">
+         <button><img src="../images/SearchChild.png" alt="Image not found..."></button>
+   </form>
    </div>
 
    <div class="main-container">
@@ -69,13 +80,13 @@ $totalPages = ceil($totalRecords / $limit);
             </table>
          </div>
       </div>
-      <ul class="pagination">
 
-      
-    <!-- <span>Showing <?php 
-   //  echo ($offset + 1) . ' to ' . min(($offset + $limit), $totalRecords); ?> of <?php 
-   // echo $totalRecords; ?> entries</span> -->
-       
+      <ul class="pagination">
+      <div class="paginInfo">
+         <span>Showing <?php   echo ($offset + 1) . ' to ' . min(($offset + $limit), $totalRecords); ?> of <?php echo $totalRecords; ?> entries</span>
+      </div>
+       <div class="paginationNums">
+ 
     <?php 
     if ($page > 1) {
         echo '<li><a href="?page=' . ($page - 1) . '">&lsaquo; Prev</a></li>';
@@ -93,10 +104,12 @@ $totalPages = ceil($totalRecords / $limit);
         echo '<li><a href="?page=' . ($page + 1) . '">Next &rsaquo;</a></li>';
     }
     ?>
+            
+            </div>
 </ul>
 
       <div class="addComponent">
-         <a href="registerChild.php"><button class="VaccineAdd" name="VaccineAdd">Register Child</button></a>
+         <a href="registerChild.php"><button class="VaccineAdd" name="VaccineAdd">+ Register Child</button></a>
       </div>
    </div>   
 

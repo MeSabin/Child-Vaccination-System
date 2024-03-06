@@ -81,7 +81,7 @@
               type="text"
               class="contact"
               name="contact"
-              pattern="[0-9]{10}"
+              pattern="[0-9]{10}( *)"
               placeholder="Enter phone number"
               required
             />
