@@ -1,5 +1,6 @@
 <?php
  include "Dashboard.php";
+ include "../BackendFiles/parentsSignup.php";
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +13,13 @@
   </head>
   <body>
     <div class="container">
+    <div class="msg-show1">
+         <?php 
+            if(isset($_SESSION['parentsRegisterMsg'])){
+                echo '<div class="adjust1">' . $_SESSION['parentsRegisterMsg'] . '</div>';
+                unset($_SESSION['parentsRegisterMsg']);
+            }
+            ?> </div>
       <h2>Parents Signup</h2>
       <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
         <label for="fullname">Full Name:</label>
@@ -25,13 +33,13 @@
           type="text"
           class="phone"
           name="phone"
-          pattern="[0-9]{10}"
+          pattern="[0-9]{10}( *)"
           placeholder="Enter phone number"
           required
         />
         <label for="password">Password:</label>
         <input type="password" class="password" name="password" placeholder="Create a password" />
-        <button class="ParentsSignupBtn">Sign Up</button>
+        <button name="ParentsSignupBtn" class="ParentsSignupBtn">Sign Up</button>
       </form>
 
     </div>

@@ -56,4 +56,14 @@ input {
 .ParentsSignupBtn:hover {
    background-color: var(--btn-hover-color);
 }
+.msg-show1{
+   background-color: rgb(9 127 0);
+   color: white;
+   text-align: center;
+   border-radius: 5px;
+ }
+ .adjust1{
+   padding: 4px;
+   font-size: 14px;
+ }
 

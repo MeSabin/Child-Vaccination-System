@@ -68,7 +68,7 @@ $totalPages = ceil($totalRecords / $limit);
                         <td class="action-column">
                            <a class="edit" name="updateVaccine" href="ChildUpdate.php?id=<?php echo $fetchAllChildData['RegisterId']; ?>">Edit</a>
                            <a class="delete" href="#" onclick="openDelPop(<?php echo $fetchAllChildData['RegisterId']; ?>)" name="deleteVaccine">Delete</a>
-                           <a class="viewDetails" href="#" onclick="" name="viewDetail">Details</a>
+                           <a class="viewDetails" href="ChildDetails.php" onclick="" name="viewDetail">Details</a>
                            <a class="viewDetails" href="VaccineToChild.php?id=<?php echo $fetchAllChildData['RegisterId']; ?>" onclick="" name="addNewVacc">Vaccine</a>
                            <a class="crtAcc" href="ParentsSignup.php" onclick="" name="createAcc">Account</a>
                         </td>

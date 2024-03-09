@@ -1,6 +1,5 @@
 <?php
 // session_start();
-
 include "Config.php";
 
 if (isset($_POST['clickRegister'])) {
@@ -8,16 +7,11 @@ if (isset($_POST['clickRegister'])) {
    $registerId=mysqli_real_escape_string($conn, $_POST['registrationNum']);
    $childName=mysqli_real_escape_string($conn, $_POST['childName']);
    $childDob=mysqli_real_escape_string($conn, $_POST['dob']);
-   // $childAge=mysqli_real_escape_string($conn, $_POST['childAge']);
    $childGender=mysqli_real_escape_string($conn, $_POST['gender']);
    $fatherName=mysqli_real_escape_string($conn, $_POST['fatherName']);
    $motherName=mysqli_real_escape_string($conn, $_POST['motherName']);
    $phone=mysqli_real_escape_string($conn, $_POST['contact']);
    $address=mysqli_real_escape_string($conn, $_POST['address']);
-   // $vaccineType=mysqli_real_escape_string($conn, $_POST['vaccineType']);
-   // $vaccineDose=mysqli_real_escape_string($conn, $_POST['vaccineDose']);
-   // $vaccineDate=mysqli_real_escape_string($conn, $_POST['vaccineDate']);
-   // $doctorName=mysqli_real_escape_string($conn, $_POST['doctorName']);
 
    $checkIdQuery = "SELECT RegisterId FROM ChildList WHERE RegisterId = '$registerId'";
    $reflectCheckIdQuery = $conn->query($checkIdQuery);
