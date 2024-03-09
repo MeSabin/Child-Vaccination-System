@@ -1,12 +1,15 @@
 <?php
 include "Dashboard.php";
-include "Config.php"; 
+include "../BackendFiles/Config.php"; 
 
-$sql = "SELECT child_details.child_id, child_details.name AS child_name, child_details.parent_id, child_details.vaccine_date, child_details.administered_by, parents.name AS parent_name, parents.phone, parents.address, child_details.vaccine_dose 
-        FROM child_details 
-        JOIN parents ON child_details.parent_id = parents.id";
+$sql = "SELECT childlist.RegisterId, childlist.Name AS childName, childlist.Gender, childlist.FatherName, childlist.MotherName, childlist.Phone, childlist.Address,
+        childvaccine.Age, childvaccine.Name, childvaccine.Dose, childvaccine.Date, childvaccine.Doctor
+        FROM childlist 
+        JOIN childvaccine ON childlist.RegisterId = childvaccine.ID"; // Assuming registration_id corresponds to childvaccine.id
 $result = $conn->query($sql);
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,25 +29,27 @@ $result = $conn->query($sql);
 
    <div class="childDetailsCont">
       <?php
-      if ($result->num_rows > 0) {
-         // Output data of each row
-         while($row = $result->fetch_assoc()) {
-            echo "<div class='childDetails'>";
-            echo "<p>Child ID: " . $row["child_id"]. "</p>";
-            echo "<p>Name: " . $row["name"]. "</p>";
-            echo "<p>Parent's Name: " . $row["parent_name"]. "</p>";
-            echo "<p>Vaccine Date: " . $row["vaccine_date"]. "</p>";
-            echo "<p>Administered By: " . $row["administered_by"]. "</p>";
-            echo "<p>Phone: " . $row["phone"]. "</p>";
-            echo "<p>Address: " . $row["address"]. "</p>";
-            echo "<p>Vaccine Dose: " . $row["vaccine_dose"]. "</p>";
-            echo "</div>";
-         }
-      } else {
-         echo "0 results";
+     if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+          echo "<div class='childDetails'>";
+          echo "<p>Registration ID: " . $row["RegisterId"]. "</p>";
+          echo "<p>Name: " . $row["childName"]. "</p>";
+          echo "<p>Father's Name: " . $row["FatherName"]. "</p>";
+          echo "<p>Mother's Name: " . $row["MotherName"]. "</p>";
+          echo "<p>Phone: " . $row["Phone"]. "</p>";
+          echo "<p>Address: " . $row["Address"]. "</p>";
+          echo "<p>Vaccine Name: " . $row["Name"]. "</p>";
+          echo "<p>Vaccine Dose: " . $row["Dose"]. "</p>";
+          echo "<p>Vaccine Date: " . $row["Date"]. "</p>";
+          echo "<p>Doctor's Name: " . $row["Doctor"]. "</p>";
+          echo "<hr/>";
+          echo "</div>";
       }
-      $conn->close();
-      ?>
+  } else {
+      echo "0 results";
+  }
+  $conn->close();
+  ?>
    </div>
 </body>
 </html>
