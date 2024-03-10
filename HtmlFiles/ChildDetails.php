@@ -21,11 +21,13 @@ $result = $conn->query($sql);
    <title>Document</title>
 </head>
 <body>
+
+<div class="mainVaccDetCont">
    <div class="mainTitleCont">
-   <div class="titleCont">
-      <img src="../images/VaccineDet_Icon.png" alt="Image not found..">
-      <h2 class="title">Child Vaccination Details</h2>
-   </div>
+      <div class="titleCont">
+         <img src="../images/VaccineDet_Icon.png" alt="Image not found..">
+         <h2 class="title">Child Vaccination Details</h2>
+      </div>
    <hr>
    </div>
 
@@ -39,8 +41,8 @@ $result = $conn->query($sql);
           // Print registration details only once
           if (!$printedRegistrationDetails) {
               echo "<div class='childDetails'>";
+              echo "<p class='childName'>Name: " . $row["childName"]. "</p>";
               echo "<p>Registration ID: " . $row["RegisterId"]. "</p>";
-              echo "<p>Name: " . $row["childName"]. "</p>";
               echo "<p>Father's Name: " . $row["FatherName"]. "</p>";
               echo "<p>Mother's Name: " . $row["MotherName"]. "</p>";
               echo "<p>Phone: " . $row["Phone"]. "</p>";
@@ -65,18 +67,20 @@ $result = $conn->query($sql);
       // Print vaccine details for each unique vaccine name
       foreach ($vaccineDetails as $vaccineName => $details) {
           echo "<div class='vaccineDetails'>";
-          echo "<p>Vaccine Name: " . $vaccineName. "</p>";
+          echo "<p class=vaccineName>Vaccine: " . $vaccineName. "</p>";
           foreach ($details as $detail) {
-              echo "<p>Vaccine Dose: " . $detail["Dose"]. "</p>";
-              echo "<p>Vaccine Date: " . $detail["Date"]. "</p>";
+              echo "<p class='vaccDose'>Dose: " . $detail["Dose"]. "</p>";
+              echo "<p>Date given: " . $detail["Date"]. "</p>";
               echo "<p>Doctor's Name: " . $detail["Doctor"]. "</p>";
           }
+          
           echo "</div>";
       }
   } else {
-      echo "No details available !";
+      echo "<p class='elseMsg'>No details available !</p>";
   }
   $conn->close();  ?>
    </div>
+</div>
 </body>
 </html>
