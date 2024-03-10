@@ -39,3 +39,17 @@ hr{
    width: 27%;
    margin-top: 5px;
 }
+.childDetailsCont{
+   text-align: center;
+   border: 1px solid red;
+   margin: 15px 30px 30px 30px;
+   padding: 20px;
+}
+.childDetailsCont p{
+   display: inline-block;
+   margin-right: 20px;
+   margin-top: 15px;
+}
+.childDetails, .vaccineDetails{
+   display: inline-block;
+}
