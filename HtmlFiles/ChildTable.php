@@ -2,7 +2,7 @@
 include "Dashboard.php";
 include "../BackendFiles/Config.php"; 
 
-$limit = 2;  // rows to show per page
+$limit = 3;  // rows to show per page
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $limit;  //starting index of rows/records
 
@@ -35,15 +35,19 @@ $totalPages = ceil($totalRecords / $limit);
 </head>
 <body>
 
-   <div class="searchContents">
-   <form action="" method="GET">
-         <input type="text" name="search" class="childDataSearch searchInput" placeholder="Search...">
-         <button><img src="../images/SearchChild.png" alt="Image not found..."></button>
-   </form>
-   </div>
-
    <div class="main-container">
-      <div class="table-container">
+      <div class="searchnAdd">
+      <div class="searchContents">
+      <form action="" method="GET">
+            <input type="text" name="search" class="childDataSearch searchInput" placeholder="Search child..">
+            <button>Search</button>
+      </form>
+      </div>
+      <div class="addComponent">
+         <a href="registerChild.php"><button class="VaccineAdd" name="VaccineAdd">+ Register Child</button></a>
+      </div>
+      </div>
+       <div class="table-container">
          <p class="TableInfo">List of Vaccinated Child</p>
          <div class="table-div">
             <table>
@@ -107,10 +111,6 @@ $totalPages = ceil($totalRecords / $limit);
             
             </div>
 </ul>
-
-      <div class="addComponent">
-         <a href="registerChild.php"><button class="VaccineAdd" name="VaccineAdd">+ Register Child</button></a>
-      </div>
    </div>   
 
    <div class="deleteModal">

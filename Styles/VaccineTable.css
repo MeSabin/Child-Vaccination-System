@@ -19,10 +19,7 @@ body {
    --btn-hover-color: #462aff; 
 }
 .main-container{
-   width: 90%;
-   position: relative;
-   
-   
+   width: 80%;  
 }
 .table-container {
 
@@ -92,9 +89,7 @@ td, th {
    transition: background-color 0.5s ease;
    color: white;
    border: none;
-   position: absolute;
-   right: 0;
-   cursor: pointer;
+   margin-bottom: 30px;
 }
 .VaccineAdd:hover{
    background-color: var(--btn-hover-color);
@@ -191,6 +186,8 @@ td, th {
 
 .pagination {
    margin-top: 20px;
+   display: flex;
+   justify-content: flex-end;
  }
  
  .pagination ul {

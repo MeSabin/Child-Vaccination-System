@@ -20,8 +20,7 @@ body {
    --btn-hover-color: #462aff; 
  }
 .main-container{
-   width: 90%;
-   position: relative; 
+   width: 80%;
 }
 .table-container {
 
@@ -90,14 +89,10 @@ td, th {
    border-radius: 7px;
    font-weight: 500;
    font-size: 14px;
-   /* background-color: #4CAF50; */
    background-color: var(--btn-color);
    transition: background-color 0.5s ease;
    color: white;
    border: none;
-   position: absolute;
-   right: 0;
-   cursor: pointer;
 }
 .VaccineAdd:hover{
    background-color: var(--btn-hover-color);
@@ -210,8 +205,7 @@ td, th {
 .childDataSearch{
    border: 1px solid gray;
    border-radius: 5px;
-   padding: 3px 10px;
-   margin-right: 7px;
+   padding: 7px 10px;
    
 }
 .searchContents img{
@@ -221,17 +215,16 @@ td, th {
    border-radius: 5px;
 }
 .searchContents{
-   display: flex;
-   align-items: center;
-   justify-content: end;
-   margin-bottom: 15px;
-   position: absolute;
-   right: 67px;
-   top: 165px;
+   display: inline;
 }
 .searchContents button{
    border: none;
-   background-color: red;
+   background-color: rgb(122, 122, 122);
+   border-radius: 7px;
+   padding: 7px;
+   font-size: 14px;
+   color: rgb(240, 240, 240);
+   font-weight: 500;
 }
 .delInfo{
    font-size: 13px;
@@ -269,5 +262,11 @@ td, th {
    background-color: #005eff;
    border-radius: 50%;
    color: white;
+}
+.searchnAdd{
+   display: flex;
+   align-items: center;
+   gap: 25px;
+   margin-bottom: 30px;
 }
 

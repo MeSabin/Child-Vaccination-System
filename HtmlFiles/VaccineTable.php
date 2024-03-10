@@ -5,7 +5,7 @@ include "Dashboard.php";
 include "../BackendFiles/Config.php";
 
 // Pagination variables
-$limit = 4;
+$limit = 5;
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // Calculate the offset for the query
@@ -35,6 +35,9 @@ $total_pages = ceil($total_records / $limit);
 <body>
 
    <div class="main-container">
+   <div class="addComponent">
+      <a href="VaccineForm.php"><button class="VaccineAdd" name="VaccineAdd">+ Add Vaccine</button></a>
+   </div>
    <div class="table-container">
       <p class="TableInfo">List of Child Vaccines</p>
       <div class="table-div">
@@ -90,10 +93,6 @@ $total_pages = ceil($total_records / $limit);
     ?>
 </ul>
 
-
-   <div class="addComponent">
-      <a href="VaccineForm.php"><button class="VaccineAdd" name="VaccineAdd">Add Vaccine</button></a>
-   </div>
 </div>   
 
 <div class="deleteModal">
