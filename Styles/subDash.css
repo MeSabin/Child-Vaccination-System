@@ -60,7 +60,9 @@
 }
 .DashBoxes img {
   width: 40px;
-  filter: invert(50%);
+}
+.icon4{
+  width: 50px !important;
 }
 .boxName{
   color: rgb(114, 119, 159);

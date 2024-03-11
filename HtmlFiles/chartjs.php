@@ -16,28 +16,28 @@ include "Dashboard.php";
           <p class="boxName">Total Child</p>
           <p class="boxValue">10</p>
         </div>
-        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+        <img class="icon" src="../images/totalChildIcon.png" alt="Image not found..">
       </div>
       <div class="Second-box">
       <div class="boxData">
           <p class="boxName">Today Vaccinated</p>
           <p class="boxValue">7</p>
         </div>
-        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+        <img class="icon2" src="../images/babyVaccine.png" alt="Image not found..">
       </div>
       <div class="Third-box">
       <div class="boxData">
-          <p class="boxName">Most Doses</p>
+          <p class="boxName">Most Doses Given</p>
           <p class="boxValue">First Dose</p>
         </div>
-        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+        <img class="icon" src="../images/vaccineDose.png" alt="Image not found..">
       </div>
       <div class="Fourth-box">
       <div class="boxData">
           <p class="boxName">Total Vaccine Given</p>
           <p class="boxValue">10</p>
         </div>
-        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+        <img class="icon4" src="../images/vaccineGiven.png" alt="Image not found..">
       </div>
     </div>
     <div class="chart-container">
