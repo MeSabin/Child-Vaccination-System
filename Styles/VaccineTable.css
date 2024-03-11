@@ -90,6 +90,7 @@ td, th {
    color: white;
    border: none;
    margin-bottom: 30px;
+   cursor: pointer;
 }
 .VaccineAdd:hover{
    background-color: var(--btn-hover-color);

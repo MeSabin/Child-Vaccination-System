@@ -34,7 +34,7 @@ $result = $conn->query($sql);
    <div class="childDetailsCont">
       <?php
    if ($result->num_rows > 0) {
-      $printedRegistrationDetails = false; // Flag to track whether registration details have been printed
+      $printedRegistrationDetails = false; 
       $vaccineDetails = array(); // Array to store vaccine details grouped by vaccine name
   
       while($row = $result->fetch_assoc()) {
@@ -49,7 +49,7 @@ $result = $conn->query($sql);
               echo "<p>Address: " . $row["Address"]. "</p>";
               echo "</div>";
               
-              $printedRegistrationDetails = true; // Set the flag to true after printing registration details
+              $printedRegistrationDetails = true; 
           }
   
           // Group vaccine details by vaccine name
@@ -73,7 +73,6 @@ $result = $conn->query($sql);
               echo "<p>Date given: " . $detail["Date"]. "</p>";
               echo "<p>Doctor's Name: " . $detail["Doctor"]. "</p>";
           }
-          
           echo "</div>";
       }
   } else {

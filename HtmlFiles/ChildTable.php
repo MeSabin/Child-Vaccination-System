@@ -95,7 +95,6 @@ $totalPages = ceil($totalRecords / $limit);
     if ($page > 1) {
         echo '<li><a href="?page=' . ($page - 1) . '">&lsaquo; Prev</a></li>';
     }
-    
     for ($i = 1; $i <= $totalPages; $i++) {
       if ($i == $page) {
           echo '<li class="active"><a href="?page=' . $i . '">' . $i . '</a></li>';
@@ -103,7 +102,6 @@ $totalPages = ceil($totalRecords / $limit);
           echo '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
       }
   }
-
     if ($page < $totalPages) {
         echo '<li><a href="?page=' . ($page + 1) . '">Next &rsaquo;</a></li>';
     }

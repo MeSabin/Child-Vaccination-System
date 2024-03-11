@@ -93,6 +93,7 @@ td, th {
    transition: background-color 0.5s ease;
    color: white;
    border: none;
+   cursor: pointer;
 }
 .VaccineAdd:hover{
    background-color: var(--btn-hover-color);
@@ -225,6 +226,7 @@ td, th {
    font-size: 14px;
    color: rgb(240, 240, 240);
    font-weight: 500;
+   cursor: pointer;
 }
 .delInfo{
    font-size: 13px;
