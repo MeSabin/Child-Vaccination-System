@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(236, 236, 236) !important;
+    background-color: #f9fdff !important;
     min-height: 100vh;
 }
 :root {

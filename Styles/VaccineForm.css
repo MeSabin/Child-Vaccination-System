@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f5f5f5;
+    background-color: #f9fdff !important;
 }
 :root {
     --btn-color: #5d44ff; 

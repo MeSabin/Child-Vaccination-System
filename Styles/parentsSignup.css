@@ -8,7 +8,7 @@
 }
 
 body {
-   background-color: #efefef;
+   background-color: #f9fdff !important;
  }
  :root {
   --btn-color: #5d44ff; 
