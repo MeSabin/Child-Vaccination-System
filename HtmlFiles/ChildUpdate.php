@@ -60,12 +60,14 @@
 <div class="parentForm">
       <div class="fatherName">
         <label class="labelText">Father's Name:</label>
-        <input type="text" class="parentName" name="fatherName" placeholder="Enter name of father"value="<?php echo $getchildData['FatherName']; ?> " required>
+        <input type="text" class="parentName" name="fatherName" placeholder="Enter name of father" value="<?php echo $getchildData['FatherName']; ?> " required>
       </div>
       <div class="motherName">
         <label class="labelText">Mother's Name:</label>
-        <input type="text" class="parentName" name="motherName" placeholder="Enter name of mother"value="<?php echo $getchildData['MotherName']; ?> " required>
+        <input type="text" class="parentName" name="motherName" placeholder="Enter name of mother" value="<?php echo $getchildData['MotherName']; ?> " required>
       </div>
+      <label class="labelText">Citizenship No.</label>
+        <input type="text" class="citizenNo" name="citizenNo" placeholder="Enter mothers citizenship number" value="<?php echo $getchildData['CitizenshipNo']; ?> " required>
       <div class="parentsPhoneNAdd">
       <div class="parentContact">
         <label class="labelText">Contact Number:</label>

@@ -70,7 +70,7 @@
       </div>
 
       <label class="labelText">Citizenship No.</label>
-        <input type="number" class="citizenNo" name="citizenNo" placeholder="Enter mothers citizenship number" required>
+        <input type="text" class="citizenNo" name="citizenNo" placeholder="Enter mothers citizenship number" required>
 
       <div class="parentsPhoneNAdd">
           <div class="parentContact">

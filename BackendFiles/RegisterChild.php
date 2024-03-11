@@ -3,7 +3,7 @@
 include "Config.php";
 
 if (isset($_POST['clickRegister'])) {
-
+   $citizenshipNo=mysqli_real_escape_string($conn, $_POST['citizenNo']);
    $registerId=mysqli_real_escape_string($conn, $_POST['registrationNum']);
    $childName=mysqli_real_escape_string($conn, $_POST['childName']);
    $childDob=mysqli_real_escape_string($conn, $_POST['dob']);
@@ -14,7 +14,7 @@ if (isset($_POST['clickRegister'])) {
    $address=mysqli_real_escape_string($conn, $_POST['address']);
 
 
-   $insertChildQuery= "INSERT INTO ChildList (RegisterId, Name, DOB, Gender, FatherName, MotherName, Phone, Address) VALUES ('$registerId', '$childName', '$childDob', '$childGender', '$fatherName', '$motherName', '$phone', '$address')";
+   $insertChildQuery= "INSERT INTO ChildList (CitizenshipNo, RegisterId, Name, DOB, Gender, FatherName, MotherName, Phone, Address) VALUES ('$citizenshipNo','$registerId', '$childName', '$childDob', '$childGender', '$fatherName', '$motherName', '$phone', '$address')";
    $userName=mysqli_real_escape_string($conn, $_POST['username']);
    $password=mysqli_real_escape_string($conn, $_POST['password']);
    $insertParentsAccQur="INSERT INTO parents (Name, UserName, Phone, Password) VALUES ('$motherName','$userName', '$phone', '$password')";
