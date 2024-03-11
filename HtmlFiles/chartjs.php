@@ -11,10 +11,34 @@ include "Dashboard.php";
   <body>
 
     <div class="DashBoxes">
-      <div class="First-box">Total Child</div>
-      <div class="Second-box">Today Vaccinated</div>
-      <div class="Third-box">Most Doses</div>
-      <div class="Fourth-box">Total Vaccine Given</div>
+      <div class="First-box">
+        <div class="boxData">
+          <p class="boxName">Total Child</p>
+          <p class="boxValue">10</p>
+        </div>
+        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+      </div>
+      <div class="Second-box">
+      <div class="boxData">
+          <p class="boxName">Today Vaccinated</p>
+          <p class="boxValue">7</p>
+        </div>
+        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+      </div>
+      <div class="Third-box">
+      <div class="boxData">
+          <p class="boxName">Most Doses</p>
+          <p class="boxValue">First Dose</p>
+        </div>
+        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+      </div>
+      <div class="Fourth-box">
+      <div class="boxData">
+          <p class="boxName">Total Vaccine Given</p>
+          <p class="boxValue">10</p>
+        </div>
+        <img class="icon" src="../images/totalChildIcon.svg" alt="Image not found..">
+      </div>
     </div>
     <div class="chart-container">
       <div class="barCont">

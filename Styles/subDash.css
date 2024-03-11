@@ -35,33 +35,36 @@
    height: 120px;
    margin: 15px;
  }
- .First-box{
-   background-color: rgb(255, 124, 124);
-   box-shadow: 0 0 5px rgba(0,0,0,0.5);
+ .First-box, .Second-box, .Third-box, .Fourth-box{
+   background-color: rgb(255, 255, 255);
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
    border-radius: 5px;
    height: 100px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
    width: 250px;
+   font-weight: 500;
    margin-left: 25px;
 }
-.Second-box{
-   background-color: rgb(106, 156, 255);
-   box-shadow: 0 0 5px rgba(0,0,0,0.5);
-   border-radius: 5px;
-   height: 100px;
-   width: 250px;
+.Fourth-box{
+  margin-right: 25px;
 }
-.Third-box{
-   background-color: rgb(100, 206, 89);
-   box-shadow: 0 0 5px rgba(0,0,0,0.5);
-   border-radius: 5px;
-   height: 100px;
-   width: 250px;
-  }
-  .Fourth-box{
-    background-color: rgb(208, 174, 81);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
-    border-radius: 5px;
-    height: 100px;
-    width: 250px; 
-    margin-right: 25px;
- }
+.DashBoxes p{
+  margin-left: 10px;
+  line-height: 33px;
+}
+.boxValue{
+  font-size: 20px;
+  color: rgb(255, 110, 110);
+}
+.DashBoxes img {
+  width: 40px;
+  filter: invert(50%);
+}
+.boxName{
+  color: rgb(114, 119, 159);
+}
+
+
+
