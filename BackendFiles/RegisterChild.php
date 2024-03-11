@@ -13,21 +13,16 @@ if (isset($_POST['clickRegister'])) {
    $phone=mysqli_real_escape_string($conn, $_POST['contact']);
    $address=mysqli_real_escape_string($conn, $_POST['address']);
 
-   $checkIdQuery = "SELECT RegisterId FROM ChildList WHERE RegisterId = '$registerId'";
-   $reflectCheckIdQuery = $conn->query($checkIdQuery);
-   if ($reflectCheckIdQuery->num_rows > 0) {
-       $_SESSION['showIdWarning'] = "Register Id is already registered.";
-       header("Location:registerChild.php");
-       exit();
-   }
-   else{
 
    $insertChildQuery= "INSERT INTO ChildList (RegisterId, Name, DOB, Gender, FatherName, MotherName, Phone, Address) VALUES ('$registerId', '$childName', '$childDob', '$childGender', '$fatherName', '$motherName', '$phone', '$address')";
-   
+   $userName=mysqli_real_escape_string($conn, $_POST['username']);
+   $password=mysqli_real_escape_string($conn, $_POST['password']);
+   $insertParentsAccQur="INSERT INTO parents (Name, UserName, Phone, Password) VALUES ('$motherName','$userName', '$phone', '$password')";
+   $refParentsAccQur=$conn->query($insertParentsAccQur);
    $reflectInsChlQur= $conn->query($insertChildQuery); 
 
-   if($reflectInsChlQur){
-      $_SESSION['ChildRegsMsg'] = "Child registered successfully !";
+   if($reflectInsChlQur && $refParentsAccQur){
+      $_SESSION['ChildRegsMsg'] = "Child and Parent data entry successful !";
       echo '<script>
       setTimeout(function() {
           window.location.href = "childTable.php";
@@ -35,10 +30,9 @@ if (isset($_POST['clickRegister'])) {
   </script>';
    }
    else{
-      echo "Child not registered";
+      echo "Data entry not successful";
    }
    
-}
 }
 $conn->close();
 ?>

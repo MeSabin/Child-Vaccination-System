@@ -105,14 +105,13 @@ body {
   padding: 4px;
   font-size: 14px;
 }
-.msg-show2{
-  background-color: rgb(255, 108, 95);
-  color: white;
-  text-align: center;
-  border-radius: 5px;
-}
 .alignChildIdNDOB, .parentsPhoneNAdd {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 15px; 
+}
+.parentsAccInfo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 15px;
 }

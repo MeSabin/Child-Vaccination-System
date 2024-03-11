@@ -25,13 +25,7 @@
                 unset($_SESSION['ChildRegsMsg']);
             }
             ?> </div>
-   <div class="msg-show2">
-         <?php 
-            if(isset($_SESSION['showIdWarning'])){
-                echo '<div class="adjust1">' . $_SESSION['showIdWarning'] . '</div>';
-                unset($_SESSION['showIdWarning']);
-            }
-            ?> </div>
+
   <h3 class="childInfo">Child Information</h3>
 
 <div class="childForm">
@@ -74,9 +68,13 @@
         <label class="labelText">Mother's Name:</label>
         <input type="text" class="parentName" name="motherName" placeholder="Enter name of mother" required>
       </div>
+
+      <label class="labelText">Citizenship No.</label>
+        <input type="number" class="citizenNo" name="citizenNo" placeholder="Enter mothers citizenship number" required>
+
       <div class="parentsPhoneNAdd">
           <div class="parentContact">
-            <label class="labelText">Contact Number:</label>
+            <label class="labelText">Phone:</label>
             <input
               type="text"
               class="contact"
@@ -92,7 +90,17 @@
           </div>
       </div>
       </div>
-      
+        <div class="parentsAccInfo">
+          <div class="parentsUserName">
+            <label for="username">Username:</label>
+            <input type="text" class="username" name="username" placeholder="Give a username" />
+          </div>
+          <div class="parentsPassword">
+          <label for="password">Password:</label>
+        <input type="password" class="password" name="password" placeholder="Create a password" />
+          </div>
+        </div>
+
   <button class="registerButton" name="clickRegister" onclick="generateNumericId()">Register</button>
 
 </form>
