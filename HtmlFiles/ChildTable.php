@@ -23,6 +23,12 @@ if (!empty($searchChildQur)) {
 $totalRecordsResult = $conn->query($totalRecordsQuery);
 $totalRecords = $totalRecordsResult->fetch_assoc()['total'];
 $totalPages = ceil($totalRecords / $limit);
+
+if ($page > $totalPages) {
+   include "404NotFound.php"; 
+   exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +75,7 @@ $totalPages = ceil($totalRecords / $limit);
                         <td><?php echo $fetchAllChildData['FatherName']; ?> </td>
                         <td><?php echo $fetchAllChildData['MotherName']; ?> </td>
                         <td><?php echo $fetchAllChildData['Phone']; ?> </td>
+                        
                         <td class="action-column">
                            <a class="edit" name="updateVaccine" href="ChildUpdate.php?id=<?php echo $fetchAllChildData['RegisterId']; ?>">Edit</a>
                            <a class="delete" href="#" onclick="openDelPop(<?php echo $fetchAllChildData['RegisterId']; ?>)" name="deleteVaccine">Delete</a>
@@ -92,6 +99,7 @@ $totalPages = ceil($totalRecords / $limit);
        <div class="paginationNums">
  
     <?php 
+
     if ($page > 1) {
         echo '<li><a href="?page=' . ($page - 1) . '">&lsaquo; Prev</a></li>';
     }

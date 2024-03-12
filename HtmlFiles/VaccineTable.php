@@ -22,6 +22,12 @@ $total_records = $total_records_result->fetch_assoc()['total'];
 
 // Calculate total number of pages
 $total_pages = ceil($total_records / $limit);
+
+if ($page > $total_pages) {
+   include "404NotFound.php"; 
+   exit();
+}
+
 ?>
 
 <!DOCTYPE html>

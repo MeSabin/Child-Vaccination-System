@@ -1,9 +1,9 @@
 <?php
             // session_start();
             include ("Config.php");
-
             $vaccineUpdateId =$_GET['id'];
             // fetching data to display i.e to show prefilled data in the form in update.php file
+             
             $selectVaccUpdId ="SELECT * from addvaccine where  Id ='$vaccineUpdateId'";
             $reflectSelVaccUpdId= $conn->query($selectVaccUpdId);
             $fetchVaccUpdIdData= $reflectSelVaccUpdId->fetch_assoc();
