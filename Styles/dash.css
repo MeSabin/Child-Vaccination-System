@@ -29,23 +29,22 @@ body{
     display: flex;
     border-bottom: 1px solid rgb(58, 58, 58);
     cursor: pointer;
+    padding-top: 25px;
+    padding-bottom: 25px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5px;
     width: 190px;
 }
 .logo p{
-    margin-top: 40px;
     margin-left: 5px;
-    margin-bottom: 42px;
     font-weight: bold;
     font-size: 1.2rem;
-    color: rgb(23, 23, 23);
+    color: rgb(70, 70, 70);
 }
 .logo-img{
     width: 55px;
     height: 55px;
-    border-radius: 90%;
+    opacity: 63%;
 }
 .list-container{
     margin-top: 45px;
@@ -168,4 +167,5 @@ body{
     opacity: 1;
     margin-top: 6px;
 }
+
 
