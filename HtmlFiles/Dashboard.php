@@ -31,15 +31,15 @@ if(!isset($_SESSION['back'])){
  
            <div class="logo">
             <img src="../images/Logo.png" alt="Image not found.." class="logo-img">
-            <p>CVRMS</p>
+            <p>𝓒𝓥𝓡𝓜𝓢</p>
            </div>
 
          </div>
          <div class="list-container">
          <ul>
           <a href="chartjs.php"><li><img src="../images/dashboard.png" alt="Not found"><p>Dashboard</p></li></a>
-          <li><img src="../images/history.png" alt="Not found"><p>Vaccination History</p></li>
-          <a href="ChildTable.php"><li><img src="../images/child.png" alt="Not found"><p>Child List</p></li></a>
+          <li><img src="../images/vaccinationHistory.png" alt="Not found"><p>Vaccination History</p></li>
+          <a href="ChildTable.php"><li><img class="childList" src="../images/childList.png" alt="Not found"><p>Child List</p></li></a>
           <a href="VaccineTable.php"><li><img src="../images/vaccine.png" alt="Not found"><p>Vaccines List</p></li></a>
           <li><img src="../images/setting.png" alt="Not found"><p>Settings</p></li>
          </ul>
