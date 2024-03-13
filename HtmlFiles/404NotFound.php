@@ -22,7 +22,7 @@
 <body>
     <div class="notFoundMsg">
         <h1>404 Not Found</h1>
-        <p>The page you are looking for could not be found.</p>
+        <p>The page you requested could not be found.</p>
     </div>
 </body>
 </html>

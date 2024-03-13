@@ -1,12 +1,18 @@
 <?php
             // session_start();
             include ("Config.php");
+            include "FetchRegisterId.php";
             $vaccineUpdateId =$_GET['id'];
             // fetching data to display i.e to show prefilled data in the form in update.php file
              
             $selectVaccUpdId ="SELECT * from addvaccine where  Id ='$vaccineUpdateId'";
             $reflectSelVaccUpdId= $conn->query($selectVaccUpdId);
             $fetchVaccUpdIdData= $reflectSelVaccUpdId->fetch_assoc();
+
+            if (!$fetchVaccUpdIdData || $vaccineUpdateId > $fetchChildLastId) {
+                include "../HtmlFiles/404NotFound.php"; 
+                exit();
+            }
     
             if(isset($_POST['AddVaccine'])){
                 //mysqli_real_escape_string stores special characters in the database

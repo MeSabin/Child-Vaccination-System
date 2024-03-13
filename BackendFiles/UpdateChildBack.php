@@ -8,10 +8,10 @@ $childDataPrefilled = "SELECT * from ChildList where  RegisterId ='$updateChildI
 $reflectChildDataPre = $conn->query($childDataPrefilled);
 $getchildData = $reflectChildDataPre->fetch_assoc();
 
-if ($reflectLastRegId < $updateChildId) {
-    include "404NotFound.php"; 
+if (!$getchildData || $updateChildId > $fetchChildLastId) {
+    include "../HtmlFiles/404NotFound.php"; 
     exit();
- }
+}
 
 if (isset($_POST['updateChildBtn'])) {
     $registerId = mysqli_real_escape_string($conn, $_POST['registrationNum']);
