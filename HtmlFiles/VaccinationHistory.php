@@ -1,13 +1,16 @@
 <?php
 include "Dashboard.php";
-include "../BackendFiles/Config.php"; 
+include "../BackendFiles/Config.php";
 
-$idForChildDetail=$_GET['id'];
+// Get today's date
+$today = date("Y-m-d");
+
 $join2TablesQur = "SELECT childlist.RegisterId, childlist.Name AS childName, childlist.Gender, childlist.FatherName, childlist.MotherName, childlist.Phone, childlist.Address,
         childvaccine.Age, childvaccine.Name, childvaccine.Dose, childvaccine.Date, childvaccine.Doctor
         FROM childlist 
         JOIN childvaccine ON childlist.RegisterId = childvaccine.ID
-        WHERE childlist.RegisterId = $idForChildDetail";
+        WHERE childvaccine.Date = '$today'";
+
 $refJoin2Tables = $conn->query($join2TablesQur);
 ?>
 
@@ -26,7 +29,7 @@ $refJoin2Tables = $conn->query($join2TablesQur);
    <div class="mainTitleCont">
       <div class="titleCont">
          <img src="../images/VaccineDet_Icon.png" alt="Image not found..">
-         <h2 class="title">Child Vaccination Details</h2>
+         <h2 class="title">Today Vaccinated child</h2>
       </div>
    <hr>
    </div>
@@ -43,7 +46,6 @@ $refJoin2Tables = $conn->query($join2TablesQur);
               echo "<div class='childDetails'>";
               echo "<p class='childName'>Name: " . $row["childName"]. "</p>";
               echo "<p>Registration ID: " . $row["RegisterId"]. "</p>";
-              echo "<p>Gender: " . $row["Gender"]. "</p>";
               echo "<p>Father's Name: " . $row["FatherName"]. "</p>";
               echo "<p>Mother's Name: " . $row["MotherName"]. "</p>";
               echo "<p>Phone: " . $row["Phone"]. "</p>";
@@ -82,5 +84,5 @@ $refJoin2Tables = $conn->query($join2TablesQur);
   $conn->close();  ?>
    </div>
 </div>
-</body>
+</body> 
 </html>
