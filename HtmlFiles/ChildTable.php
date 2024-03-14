@@ -11,6 +11,8 @@ $searchChildQur = isset($_GET['search']) ? $_GET['search'] : '';
 $selAllChildQur = "SELECT * FROM childlist";
 if (!empty($searchChildQur)) {
    // .= concatenates/adds strings to the existing variable
+   //when  %$searchChildQur% used, if search ==sabin and row contains sabin kaphle. when % % not used, search ==sabin cannot find sabin kaphle.
+   //above commented condition is applicable only when button is clicked.
    $selAllChildQur .= " WHERE Name LIKE '%$searchChildQur%' OR FatherName LIKE '%$searchChildQur%' OR MotherName LIKE '%$searchChildQur%'";
 }
 $selAllChildQur .= " LIMIT $offset, $limit";
