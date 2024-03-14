@@ -2,32 +2,31 @@
 include "Dashboard.php";
 include "../BackendFiles/Config.php"; 
 
-$limit = 3;  // rows to show per page
+$limit = 10;  // rows to show per page
+//1 is set because when first time table is opened, no page(id) is passed
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * $limit;  //starting index of rows/records
 
 $searchChildQur = isset($_GET['search']) ? $_GET['search'] : '';
 $selAllChildQur = "SELECT * FROM childlist";
 if (!empty($searchChildQur)) {
+   // .= concatenates/adds strings to the existing variable
    $selAllChildQur .= " WHERE Name LIKE '%$searchChildQur%' OR FatherName LIKE '%$searchChildQur%' OR MotherName LIKE '%$searchChildQur%'";
 }
 $selAllChildQur .= " LIMIT $offset, $limit";
 $refSelAllChildQur = $conn->query($selAllChildQur);
 
-// getting total rows from the table
+// getting total number of rows from the table
 $totalRecordsQuery = "SELECT COUNT(*) AS total FROM childlist";
-if (!empty($searchChildQur)) {
-   $totalRecordsQuery .= " WHERE Name LIKE '%$searchChildQur%' OR FatherName LIKE '%$searchChildQur%' OR MotherName LIKE '%$searchChildQur%'";
-}
-
 $totalRecordsResult = $conn->query($totalRecordsQuery);
 $totalRecords = $totalRecordsResult->fetch_assoc()['total'];
 $totalPages = ceil($totalRecords / $limit);
 
+// shows 404 not found error message
 if ($page > $totalPages) {
    include "404NotFound.php"; 
    exit();
-}
+} 
 
 ?>
 
@@ -44,9 +43,10 @@ if ($page > $totalPages) {
    <div class="main-container">
       <div class="searchnAdd">
       <div class="searchContents">
+         <!-- form is used in search to pass url -->
       <form action="" method="GET">
             <input type="text" name="search" class="childDataSearch searchInput" placeholder="Search child..">
-            <button>Search</button>
+            <button >Search</button>
       </form>
       </div>
       <div class="addComponent">
@@ -104,9 +104,12 @@ if ($page > $totalPages) {
         echo '<li><a href="?page=' . ($page - 1) . '">&lsaquo; Prev</a></li>';
     }
     for ($i = 1; $i <= $totalPages; $i++) {
+      //if i==page, is used to apply css to current page
       if ($i == $page) {
           echo '<li class="active"><a href="?page=' . $i . '">' . $i . '</a></li>';
-      } else {
+      } 
+      // if i!=page, then active class is not applied 
+      else {
           echo '<li><a href="?page=' . $i . '">' . $i . '</a></li>';
       }
   }
