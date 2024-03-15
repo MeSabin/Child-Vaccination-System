@@ -94,6 +94,7 @@ td, th {
 }
 .VaccineAdd:hover{
    background-color: var(--btn-hover-color);
+   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .action-column .edit {

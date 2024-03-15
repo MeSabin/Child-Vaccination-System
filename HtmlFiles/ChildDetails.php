@@ -6,7 +6,9 @@ $idForChildDetail=$_GET['id'];
 $join2TablesQur = "SELECT childlist.RegisterId, childlist.Name AS childName, childlist.Gender, childlist.FatherName, childlist.MotherName, childlist.Phone, childlist.Address,
         childvaccine.Age, childvaccine.Name, childvaccine.Dose, childvaccine.Date, childvaccine.Doctor
         FROM childlist 
+        -- joins all the table rows
         JOIN childvaccine ON childlist.RegisterId = childvaccine.ID
+        -- condition to fetch only the data from id get from url
         WHERE childlist.RegisterId = $idForChildDetail";
 $refJoin2Tables = $conn->query($join2TablesQur);
 ?>
@@ -33,6 +35,7 @@ $refJoin2Tables = $conn->query($join2TablesQur);
 
    <div class="childDetailsCont">
       <?php
+    //here num_rows >0 applies for both table ie. id fetched from above should have data/row in both table
    if ($refJoin2Tables->num_rows > 0) {
       $printedRegistrationDetails = false; 
       $vaccineDetails = array(); // Array to store vaccine details grouped by vaccine name
