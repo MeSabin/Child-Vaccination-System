@@ -90,7 +90,8 @@ hr{
 .childNameTime{
    display: flex;
    justify-content: space-between;
-   margin-bottom: 10px;
+   margin-bottom: 5px;
+   margin-top: 25px;
 }
 .day{
    color: rgb(81, 89, 124);
