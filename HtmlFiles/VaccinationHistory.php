@@ -32,7 +32,7 @@ $refJoin2Tables = $conn->query($join2TablesQur);
    <div class="mainTitleCont">
       <div class="titleCont">
          <img src="../images/VaccineDet_Icon.png" alt="Image not found..">
-         <h2 class="title">Vaccinated children in the last 7 days</h2>
+         <h2 class="title">Vaccination history of past 7 days</h2>
       </div>
    <hr>
    </div>

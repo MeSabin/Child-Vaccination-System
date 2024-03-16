@@ -7,12 +7,26 @@
     box-sizing: border-box;
     
 }
+::-webkit-scrollbar {
+   width: 12px;
+ }
+ ::-webkit-scrollbar-track {
+   background: #e7e7e7;
+   border-radius: 10px;
+ }
+ ::-webkit-scrollbar-thumb {
+   background: #a0a0a0;
+   border-radius: 10px;
+ }
+ ::-webkit-scrollbar-thumb:hover {
+   background: #6e6e6e;
+ }
 body {
     background-color: #f9fdff !important;
     min-height: 100vh;
 }
 .titleCont{
-   margin-top: 60px;
+   margin-top: 30px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -42,8 +56,10 @@ hr{
 .childDetailsCont{
    padding: 20px;
    overflow: auto;
+   margin-bottom: 50px;
    margin-top: 10px;
    width: 60%;
+   height: 530px;
    border-radius: 10px;
    border: 1px solid rgb(154, 154, 154);
 }
@@ -112,5 +128,4 @@ hr{
 .time{
    display: flex;
    align-items: center;
-   margin-right: 40px;
 }
