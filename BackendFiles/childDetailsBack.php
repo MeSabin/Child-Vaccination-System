@@ -45,10 +45,9 @@
               "Doctor" => $row["Doctor"]
           );
       }
-      
-
       // Prints vaccine details for each unique vaccine name
       // outside of while loop, it only executes only once
+      // since multiple rows can have same vaccine name, first details are appended and at last after iterating all over the row
       foreach ($vaccineDetails as $vaccineName => $details) {
           echo "<div class='vaccineDetails'>";
           echo "<p class=vaccineName>Vaccine: " . $vaccineName. "</p>";

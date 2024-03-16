@@ -20,7 +20,7 @@ $refJoin2Tables = $conn->query($join2TablesQur);
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="../Styles/childDetails.css">
+   <link rel="stylesheet" href="../Styles/VaccHistory.css">
    <title>Document</title>
 </head>
 <body>
@@ -37,23 +37,31 @@ $refJoin2Tables = $conn->query($join2TablesQur);
    <div class="childDetailsCont">
       <?php
    if ($refJoin2Tables->num_rows > 0) {
-      $printedRegistrationDetails = false; 
+    //   $printedRegistrationDetails = false; 
       $vaccineDetails = array(); // Array to store vaccine details grouped by vaccine name
   
       while($row = $refJoin2Tables->fetch_assoc()) {
           // Print registration details only once
-          if (!$printedRegistrationDetails) {
+        
+            echo "<div class='childNameTime'>";
+                     echo "<p class='childName'>Name: " . $row["childName"]. "</p>";
+                     echo "<div class='time'>";
+                     echo "<img class='timeIcon' src='../images/timeIcon.png' alt='Image not found'>";
+                     echo "<p class='day'>Today</p>";
+                     echo "</div>";
+                 echo "</div>";
               echo "<div class='childDetails'>";
-              echo "<p class='childName'>Name: " . $row["childName"]. "</p>";
+                
+            //   echo "<div class='childInfo'>";
               echo "<p>Registration ID: " . $row["RegisterId"]. "</p>";
-              echo "<p>Father's Name: " . $row["FatherName"]. "</p>";
               echo "<p>Mother's Name: " . $row["MotherName"]. "</p>";
               echo "<p>Phone: " . $row["Phone"]. "</p>";
               echo "<p>Address: " . $row["Address"]. "</p>";
+                //  echo "</div>";
               echo "</div>";
               
               $printedRegistrationDetails = true; 
-          }
+          
   
           // Group vaccine details by vaccine name
           $vaccineName = $row["Name"];
@@ -73,7 +81,6 @@ $refJoin2Tables = $conn->query($join2TablesQur);
           echo "<p class=vaccineName>Vaccine: " . $vaccineName. "</p>";
           foreach ($details as $detail) {
               echo "<p class='vaccDose'>Dose: " . $detail["Dose"]. "</p>";
-              echo "<p>Date given: " . $detail["Date"]. "</p>";
               echo "<p>Doctor's Name: " . $detail["Doctor"]. "</p>";
           }
           echo "</div>";
