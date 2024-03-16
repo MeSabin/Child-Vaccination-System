@@ -37,12 +37,13 @@ $refJoin2Tables = $conn->query($join2TablesQur);
       <?php
     //here num_rows >0 applies for both table ie. id fetched from above should have data/row in both table
    if ($refJoin2Tables->num_rows > 0) {
-      $printedRegistrationDetails = false; 
+      $printedRegistrationDetails = true; 
+      // if vaccineDetails is initialized inside while loop, each iteration re-initialize the empty array
       $vaccineDetails = array(); // Array to store vaccine details grouped by vaccine name
-  
+
       while($row = $refJoin2Tables->fetch_assoc()) {
-          // Print registration details only once
-          if (!$printedRegistrationDetails) {
+          // Print registration details only once. if if(!$printedRegistrationDetails) not use, contents inside childDetails div will be printed the no. of times the id is present in the table
+          if ($printedRegistrationDetails) {
               echo "<div class='childDetails'>";
               echo "<p class='childName'>Name: " . $row["childName"]. "</p>";
               echo "<p>Registration ID: " . $row["RegisterId"]. "</p>";
@@ -52,22 +53,26 @@ $refJoin2Tables = $conn->query($join2TablesQur);
               echo "<p>Phone: " . $row["Phone"]. "</p>";
               echo "<p>Address: " . $row["Address"]. "</p>";
               echo "</div>";
+              echo "<hr>";
               
-              $printedRegistrationDetails = true; 
+              $printedRegistrationDetails = false; 
           }
-  
+
           // Group vaccine details by vaccine name
           $vaccineName = $row["Name"];
-          if (!isset($vaccineDetails[$vaccineName])) {
-              $vaccineDetails[$vaccineName] = array();
-          }
+
+        //vaccineDetails is associative array variable and vaccineName is variable to hold key
+        //when $vaccineName contains duplicates vaccine name, the vaccine details is stored in one vaccine name 
+        // responsible to handle and store duplicate vaccine name in one key i.e. $vaccineName
           $vaccineDetails[$vaccineName][] = array(
+            // this will be repeated for the same vaccine name
               "Dose" => $row["Dose"],
               "Date" => $row["Date"],
               "Doctor" => $row["Doctor"]
           );
       }
       
+
       // Print vaccine details for each unique vaccine name
       foreach ($vaccineDetails as $vaccineName => $details) {
           echo "<div class='vaccineDetails'>";
