@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+body {
+    background-color: #f9fdff !important;
+    min-height: 100vh;
+}
+.titleCont{
+   margin-top: 60px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.title{
+   text-align: center;
+   color: #6e6e6e;
+   font-weight: 600;
+   font-size: 20px;
+   display: inline-block;
+}
+.titleCont img{
+   text-align: center;
+   width: 35px;
+   margin-right: 5px;
+}
+.mainTitleCont{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+hr{
+   text-align: center;
+   width: 100%;
+   margin-top: 5px;
+}
+.childDetailsCont{
+   padding: 20px;
+   overflow: auto;
+   margin-top: 10px;
+   width: 60%;
+   border-radius: 10px;
+   border: 1px solid rgb(154, 154, 154);
+}
+.childDetailsCont p{
+   margin-right: 10px;
+   font-size: 13px;
+}
+.childDetailsCont p:last-child{
+   margin-right: 0;
+}
+.childDetails,.vaccineDetails{
+   display: flex;
+   align-items: center;
+}
+.vaccineName{
+   display: flex;
+   align-items: center;
+}
+.childDetails{
+   margin-bottom: 5px;
+}
+
+.childName, .vaccineName{
+   color: rgb(103, 103, 255);
+   font-weight: 600;
+   font-size: 18px;
+   width: 107px;
+   border-radius: 10px;
+}
+.mainVaccDetCont{
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+}
+.vaccDose{
+   color: rgb(183, 126, 21);
+}
+.elseMsg{
+   color: rgb(255, 77, 77);
+   font-weight: 500;
+   text-align: center;
+}
+.childNameTime{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 10px;
+}
+.day{
+   color: rgb(81, 89, 124);
+   font-weight: 500;
+   font-size: 15px;
+   margin-left: 5px;
+   text-align: right;
+}
+.childName{
+   flex: 1;
+   font-size: 18px !important;
+}
+.timeIcon{
+   width: 19px;
+   height: 19px;
+   filter: invert(40%);
+}
+.time{
+   display: flex;
+   align-items: center;
+   margin-right: 40px;
+}
