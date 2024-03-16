@@ -42,7 +42,10 @@ hr{
 .childDetailsCont{
    padding: 20px;
    overflow: auto;
+   margin-top: 10px;
    width: 60%;
+   border-radius: 10px;
+   border: 1px solid rgb(154, 154, 154);
 }
 .childDetailsCont p{
    margin-right: 10px;
