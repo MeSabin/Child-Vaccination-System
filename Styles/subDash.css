@@ -23,6 +23,7 @@
   #doughnutChart{
     margin-right: 40px;
     width: 500px !important;
+    height: 250px !important;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
@@ -39,11 +40,11 @@
    background-color: rgb(255, 255, 255);
    box-shadow: 0 0 15px rgba(0,0,0,0.15);
    border-radius: 5px;
-   height: 100px;
+   height: 125px;
    display: flex;
    justify-content: space-around;
    align-items: center;
-   width: 250px;
+   width: 290px;
    font-weight: 500;
    margin-left: 25px;
 }

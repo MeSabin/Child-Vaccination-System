@@ -13,8 +13,9 @@ include "Dashboard.php";
     <div class="DashBoxes">
       <div class="First-box">
         <div class="boxData">
-          <p class="boxName">Total Child</p>
+          <p class="boxName">Total Child</p>     
           <p class="boxValue">10</p>
+
         </div>
         <img class="icon" src="../images/totalChildIcon.png" alt="Image not found..">
       </div>
@@ -50,9 +51,15 @@ include "Dashboard.php";
     </div>
 
     <script>
-      const xValuesBar = ["Male", "Female", "Age", "Total Vaccines", "Dose"];
-      const yValuesBar = [55, 49, 44, 33, 45];
-      const barColorsBar = ["red", "green", "blue", "orange", "brown"];
+      const xValuesBar = ["Male", "Female", "Average Age", "Vaccines Consumed", "Dose"];
+      const yValuesBar = [52, 49, 44, 33, 45];
+      const barColorsBar = [
+        'rgba(255, 99, 132, 0.9)',
+        'rgba(255, 159, 64, 0.9)',
+        'rgba(75, 192, 192, 0.9)',
+        'rgba(54, 162, 235, 0.9)',
+        'rgba(153, 102, 255, 0.9)'
+      ];
 
       new Chart("barChart", {
         type: "bar",
@@ -62,6 +69,7 @@ include "Dashboard.php";
             {
               backgroundColor: barColorsBar,
               data: yValuesBar,
+              barThickness:35,
             },
           ],
         },
@@ -74,14 +82,15 @@ include "Dashboard.php";
         },
       });
 
-      const xValuesDoughnut = ["BCG", "Rota", "JE"];
-      const yValuesDoughnut = [55, 49, 44];
+      const xValuesDoughnut = ["BCG", "Rota", "JE", "Rota", "OPV", "FIPV"];
+      const yValuesDoughnut = [3, 5, 2, 4, 7, 6];
       const barColorsDoughnut = [
-        "#b91d47",
-        "#00aba9",
-        "#2b5797",
-        "#e8c3b9",
-        "#1e7145",
+              "rgb(255, 99, 132)",
+              "rgb(54, 162, 235)",
+              "rgb(255, 205, 86)",
+              "rgb(75, 192, 192)",
+              "rgb(153, 102, 255)",
+              "rgb(139, 255, 55)"
       ];
 
       new Chart("doughnutChart", {
@@ -98,7 +107,7 @@ include "Dashboard.php";
         options: {
           title: {
             display: true,
-            text: "Child Vaccination Graph",
+            text: "Individual consumed vaccines",
           },
         },
       });
