@@ -69,7 +69,7 @@ include "Dashboard.php";
             {
               backgroundColor: barColorsBar,
               data: yValuesBar,
-              barThickness:35,
+              barThickness:30,
             },
           ],
         },

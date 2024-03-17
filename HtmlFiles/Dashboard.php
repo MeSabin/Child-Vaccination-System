@@ -48,7 +48,6 @@ if(!isset($_SESSION['back'])){
       
           <!-- logout Modal -->
         <div class="modalcontainer">
-
         <div class="overlay"></div>
         <div class="confirmLogout">
           <p class="logoutmessage">Do you really want to logout?</p>
