@@ -61,16 +61,21 @@ include "../BackendFiles/graphsBackend.php";
     </div>
 
     <script>
-      const xValuesBar = ["Jan-Feb", "Mar-Apr", "May-June", "July-Aug", "Sep-Oct", "Nov-Dec"];
-      const yValuesBar = [52, 49, 44, 33, 66, 98];
+      const xValuesBar = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const yValuesBar = [52, 49, 44, 33, 66, 98, 12, 34, 45, 8, 31, 65];
       const barColorsBar = [
         'rgba(255, 99, 132, 0.9)',
         'rgba(255, 159, 64, 0.9)',
         'rgba(75, 192, 192, 0.9)',
         'rgba(74, 162, 235, 0.9)',
         'rgba(108, 98, 185, 0.9)',
-        'rgba(167, 28, 114, 0.9)'
-
+        'rgba(167, 28, 114, 0.9)',
+        'rgba(74, 162, 34, 0.9)',
+        'rgba(208, 18, 45, 0.9)',
+        'rgba(67, 28, 214, 0.9)',
+        'rgba(194, 62, 235, 0.9)',
+        'rgba(8, 198, 185, 0.9)',
+        'rgba(67, 108, 134, 0.9)'
       ];
 
       new Chart("barChart", {
@@ -81,7 +86,7 @@ include "../BackendFiles/graphsBackend.php";
             {
               backgroundColor: barColorsBar,
               data: yValuesBar,
-              barThickness:30,
+              barThickness:25,
             },
           ],
         },
