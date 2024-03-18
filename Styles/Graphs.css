@@ -11,7 +11,7 @@
 .chart-container {
    display: flex;
    justify-content: space-between;
-   margin-top: 100px;
+   margin-top: 70px;
  }
  #barChart {
    margin-left: 40px;
@@ -22,8 +22,10 @@
   }
   #doughnutChart{
     margin-right: 40px;
-    width: 500px !important;
-    height: 250px !important;
+    width: 520px !important;
+    height: 370px !important;
+    padding-top: 40px;
+    padding-bottom: 50px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
