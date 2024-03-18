@@ -50,7 +50,7 @@
       // since multiple rows can have same vaccine name, first details are appended and at last after iterating all over the row
       foreach ($vaccineDetails as $vaccineName => $details) {
           echo "<div class='vaccineDetails'>";
-          echo "<p class=vaccineName>Vaccine: " . $vaccineName. "</p>";
+          echo "<p class='vaccineName'>Vaccine: " . $vaccineName. "</p>";
           foreach ($details as $detail) {
               echo "<p class='vaccDose'>Dose: " . $detail["Dose"]. "</p>";
               echo "<p>Date given: " . $detail["Date"]. "</p>";

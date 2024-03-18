@@ -8,6 +8,7 @@ include "../BackendFiles/VaccineUpdateBack.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Vaccine Crud</title>
     <link rel="stylesheet" href="../Styles/VaccineForm.css">
 </head>
