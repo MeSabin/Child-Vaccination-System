@@ -68,6 +68,9 @@ if(!isset($_SESSION['back'])){
              <img src="../images/logout.png" alt="Image not found"><p class="logout">Logout</p> 
             </div>
            </div>
+            <footer>
+              <p>&copy; <?php echo date("Y"); ?> Child Vaccination Record Management System. All rights reserved.</p>
+            </footer>
         <script src="../JavaScript/logoutJs.js"></script>
         <script src="../JavaScript/profileModal.js"></script>
       </body>

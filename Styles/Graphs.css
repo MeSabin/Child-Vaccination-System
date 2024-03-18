@@ -11,14 +11,15 @@
 .chart-container {
    display: flex;
    justify-content: space-between;
-   margin-top: 70px;
+   margin-top:40px;
  }
  #barChart {
    margin-left: 40px;
    width: 700px !important;
    background-color: white;
    border-radius: 5px;
-   box-shadow: 0 0 5px rgba(0,0,0,0.2);
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+   padding: 10px;
   }
   #doughnutChart{
     margin-right: 40px;
@@ -28,7 +29,7 @@
     padding-bottom: 50px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
  }
  
  .DashBoxes{
@@ -40,7 +41,7 @@
  }
  .First-box, .Second-box, .Third-box, .Fourth-box{
    background-color: rgb(255, 255, 255);
-   box-shadow: 0 0 15px rgba(0,0,0,0.15);
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
    border-radius: 5px;
    height: 125px;
    display: flex;
