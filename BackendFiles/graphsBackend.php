@@ -57,4 +57,19 @@
    $runTtlVaccGiven= $conn->query($getTotalVaccGivenQur);
    $fetchTotalVaccines=$runTtlVaccGiven->fetch_assoc()['totalVacc'];
 
+
+   // Bar graph 
+
+   // Fetching total number of children vaccinated every 2 months
+   $getChildrenVaccinatedQur = "SELECT COUNT(*) AS total, MONTH(Date) AS month FROM childvaccine GROUP BY MONTH(Date) ORDER BY MONTH(Date) ASC";
+   $runGetChildrenVaccinatedQur = $conn->query($getChildrenVaccinatedQur);
+   $childrenVaccinatedData = array_fill(1, 12, 0); // Initialize an array to hold the data for each month
+
+   while ($row = $runGetChildrenVaccinatedQur->fetch_assoc()) {
+      $month = $row['month'];
+      $total = $row['total'];
+      $childrenVaccinatedData[$month] = $total;
+   }
+
+
 ?>
