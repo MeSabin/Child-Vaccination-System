@@ -99,8 +99,8 @@ include "../BackendFiles/graphsBackend.php";
         },
       });
 
-      const xValuesDoughnut = ["BCG", "DPT-HepB-HiB", "OPV", "PCV", "Rota", "FIPV", "MR", "JE"];
-      const yValuesDoughnut = [3, 5, 2, 4, 7, 6, 2, 5];
+      const xValuesDoughnut = <?php echo json_encode(array_keys($vaccineData)); ?>;
+      const yValuesDoughnut = <?php echo json_encode(array_values($vaccineData)); ?>;
       const barColorsDoughnut = [
               "rgb(255, 99, 132)",
               "rgb(54, 162, 235)",

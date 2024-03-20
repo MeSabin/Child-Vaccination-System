@@ -52,14 +52,11 @@
    // Format the average age to display only two digits after the decimal point
    $averageAgeFormatted = number_format($averageAgeInMonths, 2);
 
-
    $getTotalVaccGivenQur= "SELECT COUNT(*) as totalVacc FROM childvaccine";
    $runTtlVaccGiven= $conn->query($getTotalVaccGivenQur);
    $fetchTotalVaccines=$runTtlVaccGiven->fetch_assoc()['totalVacc'];
 
-
    // Bar graph 
-
    // Fetching total number of children vaccinated every 2 months
    $getChildrenVaccinatedQur = "SELECT COUNT(*) AS total, MONTH(Date) AS month FROM childvaccine GROUP BY MONTH(Date) ORDER BY MONTH(Date) ASC";
    $runGetChildrenVaccinatedQur = $conn->query($getChildrenVaccinatedQur);
@@ -71,5 +68,15 @@
       $childrenVaccinatedData[$month] = $total;
    }
 
+
+   // Donut chart
+   // Fetching total count of each vaccine
+   $getVaccineCountsQuery = "SELECT Name, COUNT(*) AS total FROM childvaccine GROUP BY Name";
+   $runVaccineCountsQuery = $conn->query($getVaccineCountsQuery);
+   $vaccineData = array();
+
+   while ($row = $runVaccineCountsQuery->fetch_assoc()) {
+      $vaccineData[$row['Name']] = $row['total'];
+   }
 
 ?>
