@@ -9,10 +9,9 @@
       width: 35px;
       height: 35px;
       border-radius: 50%;
-      border: 4px solid transparent;
-      border-top-color: rgb(140, 140, 140);
-      border-right-color: rgb(140, 140, 140);
-      border-bottom-color: rgb(140, 140, 140);
+      border: 3px solid lightgrey;
+      border-top-color: rgb(253, 253, 253);
+      border-top-color: rgb(253, 253, 253);
       animation: spin 0.6s linear ;
       position: absolute;
       top: 50%;
