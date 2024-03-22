@@ -35,7 +35,8 @@ function loginUser($conn, $emailUsername, $password) {
            
             if ($reflectUpdateTokenQuery) {
                 rememberMe($emailUsername, $password);
-                $_SESSION['success_message']= "Logging in.. Please wait";
+                // $_SESSION['success_message']= "Logging in.. Please wait";
+                include "spinner.php";
                 redirectAfterDelay();
             } else {
                 echo "Not inserted";
