@@ -19,18 +19,23 @@
    background-color: white;
    border-radius: 5px;
    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-   padding: 10px;
   }
   #doughnutChart{
     margin-right: 40px;
-    width: 520px !important;
+    width: 500px !important;
     height: 370px !important;
-    padding-top: 40px;
-    padding-bottom: 50px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
  }
+ /* CSS */
+#doughnutChart legend {
+  display: flex !important;
+  justify-content: space-evenly !important;
+  align-items: center !important;
+  width: 100%; 
+}
+
  
  .DashBoxes{
    display: flex;

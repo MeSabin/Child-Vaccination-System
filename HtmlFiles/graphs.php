@@ -95,6 +95,16 @@ include "../BackendFiles/graphsBackend.php";
           title: {
             display: true,
             text: "Chart showing the rate of child vaccinated by months",
+            fontSize:12,
+            fontFamily: "poppins",
+          },
+             layout:{
+            padding:{
+              top:20, 
+              right:25,
+              bottom:15, 
+              left:25,
+            },
           },
         },
       });
@@ -127,7 +137,31 @@ include "../BackendFiles/graphsBackend.php";
           title: {
             display: true,
             text: "Individual consumed vaccines",
+            fontSize:16,
+            fontFamily: "poppins",
+            position: "top",
+            lineHeight:3,
           },
+          layout:{
+              padding:{
+              right:10,
+              bottom:15, 
+              left:10,
+            },
+          },
+          cutoutPercentage: 60,  // adjusting thickess
+          aspectRatio: 1,
+          maintainAspectRatio: false, 
+          legend:{
+            display:true,
+            position: "bottom",
+            align: "start",
+            labels:{
+              fontSize:12,
+              boxWidth:12,
+            }
+
+          }
         },
       });
       

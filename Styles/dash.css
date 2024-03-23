@@ -68,19 +68,18 @@ body{
     align-items: center;
     cursor: pointer;
 }
-.side-navbar ul li.active{
-    background-color: rgb(12, 98, 246);
-}
+
 .list-container ul{
     padding-left: 0;
 }
 .side-navbar ul li:hover {
-    background-color: hsl(249, 100%, 92%);
+    background-color: rgb(205, 205, 255);
     color: white;
     margin-left: 3px;
     margin-right: 3px;
     border-radius: 6px;
 }
+
 .side-navbar ul li p{
     font-weight: 500;
     font-size: 0.9rem;

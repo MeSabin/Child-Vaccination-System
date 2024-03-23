@@ -71,7 +71,7 @@
 
    // Donut chart
    // Fetching total count of each vaccine
-   $getVaccineCountsQuery = "SELECT Name, COUNT(*) AS total FROM childvaccine GROUP BY Name";
+   $getVaccineCountsQuery = "SELECT COUNT(*) AS total, Name FROM childvaccine GROUP BY Name";
    $runVaccineCountsQuery = $conn->query($getVaccineCountsQuery);
    $vaccineData = array();
 
