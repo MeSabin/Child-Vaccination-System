@@ -38,19 +38,17 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   /* height: 120px; */
    margin: 40px 15px 15px 15px;
  }
  .First-box, .Second-box, .Third-box, .Fourth-box{
    background-color: rgb(255, 255, 255);
    box-shadow: 0 0 10px rgba(0,0,0,0.1);
    border-radius: 5px;
-   /* height: 125px; */
    padding: 17px 17px;
    display: flex;
+   white-space: nowrap;  /*prevents text overflow when screen size changed . It prevents text from wrapping*/
    justify-content: space-around;
    align-items: center;
-   /* width: 290px; */
    font-weight: 500;
    margin-left: 25px;
 }
