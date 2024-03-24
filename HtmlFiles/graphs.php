@@ -16,7 +16,7 @@ include "../BackendFiles/graphsBackend.php";
         <div class="boxData">
           <p class="boxName">Total Child</p>
           <?php     
-          echo "<p class='boxValue'>$fetchTotalChild</p>"; 
+          echo "<p class='boxValue1'>$fetchTotalChild</p>"; 
           echo "<p class='male'>Male: " .$fetchTotalMale."</p>"; 
           echo "<p class='female'>Female: ".$fetchTotalFemale."</p>"; 
           ?>
@@ -51,6 +51,7 @@ include "../BackendFiles/graphsBackend.php";
         <img class="icon4" src="../images/vaccineGiven.png" alt="Image not found..">
       </div>
     </div>
+
     <div class="chart-container">
       <div class="barCont">
         <canvas id="barChart"></canvas>

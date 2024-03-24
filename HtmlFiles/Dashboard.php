@@ -73,6 +73,7 @@ if(!isset($_SESSION['back'])){
             </footer>
         <script src="../JavaScript/logoutJs.js"></script>
         <script src="../JavaScript/profileModal.js"></script>
+        
       </body>
 </html>
 

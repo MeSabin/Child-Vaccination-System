@@ -28,7 +28,6 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
  }
- /* CSS */
 #doughnutChart legend {
   display: flex !important;
   justify-content: space-evenly !important;
@@ -42,17 +41,18 @@
    justify-content: space-between;
    align-items: center;
    height: 120px;
-   margin: 40px 15px 15px 15px;
+   margin: 35px 15px 15px 15px;
  }
  .First-box, .Second-box, .Third-box, .Fourth-box{
    background-color: rgb(255, 255, 255);
    box-shadow: 0 0 10px rgba(0,0,0,0.1);
    border-radius: 5px;
-   height: 125px;
+   /* height: 125px; */
+   padding: 17px 17px;
    display: flex;
    justify-content: space-around;
    align-items: center;
-   width: 290px;
+   /* width: 290px; */
    font-weight: 500;
    margin-left: 25px;
 }
@@ -60,15 +60,21 @@
   margin-right: 25px;
 }
 .DashBoxes p{
-  margin-left: 10px;
-  line-height: 33px;
+  line-height: 45px;
 }
 .boxValue{
   font-size: 20px;
   color: rgb(255, 110, 110);
 }
+.boxValue1{
+  font-size: 20px;
+  color: rgb(255, 110, 110);
+  display: inline-block;
+  margin-right: 10px;
+}
 .DashBoxes img {
   width: 40px;
+  margin-left: 60px;
 }
 .icon4{
   width: 50px !important;
@@ -77,9 +83,12 @@
   color: rgb(114, 119, 159);
 }
 .male,.female{
-  font-size: 12px;
+  font-size: 11px;
   display: inline-block;
   color: rgb(114, 119, 159);
+}
+.male{
+  margin-right: 6px;
 }
 
 

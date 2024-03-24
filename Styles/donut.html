@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Combined Charts with Chart.js</title>
+    <style>
+      .chart-container1 {
+        /* display: inline-block; */
+        height: 50vh;
+        width: 45vw;
+        background-color: aliceblue;
+        padding: 20px;
+      }
+      .chart-container2{
+        /* display: inline-block; */
+        height: 40vh;
+        width: 35vw;
+        background-color: aliceblue;
+        padding: 20px;
+      }
+      .bothCont {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bothCont">
+      <div class="chart-container1">
+        <canvas id="myBarChart"></canvas>
+      </div>
+
+      <div class="chart-container2">
+        <canvas id="myDoughnutChart"></canvas>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var ctxBar = document.getElementById("myBarChart").getContext("2d");
+        var myBarChart = new Chart(ctxBar, {
+          type: "bar",
+          data: {
+            labels: [
+              "Jan",
+              "Feb",
+              "Mar",
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ],
+            datasets: [
+              {
+                label: "# of Votes",
+                data: [12, 19, 3, 5, 2, 3, 8, 10, 15, 7, 6, 11],
+                barThickness: 35,
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(153, 102, 255, 0.2)",
+                  "rgba(255, 159, 64, 0.2)",
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(153, 102, 255, 0.2)",
+                  "rgba(255, 159, 64, 0.2)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+        var ctxDoughnut = document
+          .getElementById("myDoughnutChart")
+          .getContext("2d");
+        var myDoughnutChart = new Chart(ctxDoughnut, {
+          type: "doughnut",
+          data: {
+            labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+            datasets: [
+              {
+                label: "# of Votes",
+                data: [12, 19, 3, 5, 2],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(153, 102, 255, 0.2)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+
+        // Resize the charts when the window resizes
+        window.addEventListener("resize", function () {
+          myBarChart.resize();
+          myDoughnutChart.resize();
+        });
+      });
+    </script>
+  </body>
+</html>
