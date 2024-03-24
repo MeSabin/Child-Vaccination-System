@@ -36,7 +36,7 @@ include "../BackendFiles/graphsBackend.php";
       <div class="boxData">
           <p class="boxName">Child average age</p>
           <?php
-          echo "<p class=boxValue>" .$averageAgeFormatted." Months</p>"; 
+          // echo "<p class=boxValue>" .$averageAgeFormatted." Months</p>"; 
           ?>
         </div>
         <img class="icon" src="../images/vaccineDose.png" alt="Image not found..">
@@ -52,11 +52,11 @@ include "../BackendFiles/graphsBackend.php";
       </div>
     </div>
 
-    <div class="chart-container">
-      <div class="barCont">
+    <div class="bothCont">
+      <div class="chart-container1">
         <canvas id="barChart"></canvas>
       </div>
-      <div class="donutCont">
+      <div class="chart-container2">
         <canvas id="doughnutChart"></canvas>
       </div>
     </div>
@@ -65,19 +65,33 @@ include "../BackendFiles/graphsBackend.php";
       const xValuesBar = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
       const yValuesBar = <?php echo json_encode(array_values($childrenVaccinatedData)); ?>;
       const barColorsBar = [
-        'rgba(255, 99, 132, 0.8)',
-        'rgba(255, 159, 64, 0.8)',
-        'rgba(75, 192, 192, 0.8)',
-        'rgba(74, 162, 235, 0.8)',
-        'rgba(108, 98, 185, 0.8)',
-        'rgba(167, 28, 114, 0.8)',
-        'rgba(74, 162, 34, 0.8)',
-        'rgba(208, 18, 45, 0.8)',
-        'rgba(67, 28, 214, 0.8)',
-        'rgba(194, 62, 235, 0.8)',
-        'rgba(8, 198, 185, 0.8)',
-        'rgba(67, 108, 134, 0.8)'
+                  "rgba(255, 99, 132, 0.3)",
+                  "rgba(54, 162, 235, 0.3)",
+                  "rgba(255, 206, 86, 0.3)",
+                  "rgba(75, 192, 192, 0.3)",
+                  "rgba(153, 102, 255, 0.3)",
+                  "rgba(255, 159, 64, 0.3)",
+                  "rgba(255, 99, 132, 0.3)",
+                  "rgba(54, 162, 235, 0.3)",
+                  "rgba(255, 206, 86, 0.3)",
+                  "rgba(95, 92, 222, 0.3)",
+                  "rgba(153, 102, 255, 0.3)",
+                  "rgba(255, 159, 64, 0.3)",
       ];
+      const borderColorsBar=  [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(95, 92, 222, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                ];
 
       new Chart("barChart", {
         type: "bar",
@@ -88,6 +102,8 @@ include "../BackendFiles/graphsBackend.php";
               backgroundColor: barColorsBar,
               data: yValuesBar,
               barThickness:25,
+              borderColor: borderColorsBar,
+              borderWidth: 1,
             },
           ],
         },
@@ -113,14 +129,14 @@ include "../BackendFiles/graphsBackend.php";
       const xValuesDoughnut = <?php echo json_encode(array_keys($vaccineData)); ?>;
       const yValuesDoughnut = <?php echo json_encode(array_values($vaccineData)); ?>;
       const barColorsDoughnut = [
-              "rgb(255, 99, 132)",
-              "rgb(54, 162, 235)",
-              "rgb(255, 205, 86)",
-              "rgb(75, 192, 192)",
-              "rgba(167, 28, 114)",
-              'rgb(108, 98, 185)',
-              "rgb(75, 192, 192)",
-              "rgb(54, 162, 235)"
+          "rgba(255, 99, 132, 0.7)",
+          "rgba(54, 162, 235, 0.7)",
+          "rgba(255, 206, 186, 0.7)",
+          "rgba(75, 192, 192, 0.7)",
+          "rgba(153, 102, 255, 0.7)",
+          "rgba(255, 159, 64, 0.7)",
+          "rgba(0, 255, 255, 0.7)", 
+          "rgba(255, 0, 255, 0.7)", 
       ];
 
       new Chart("doughnutChart", {
@@ -131,6 +147,7 @@ include "../BackendFiles/graphsBackend.php";
             {
               backgroundColor: barColorsDoughnut,
               data: yValuesDoughnut,
+              borderWidth: 1,
             },
           ],
         },
@@ -150,11 +167,11 @@ include "../BackendFiles/graphsBackend.php";
               left:10,
             },
           },
-          cutoutPercentage: 60,  // adjusting thickess
+          cutoutPercentage: 65,  // adjusting thickess
           aspectRatio: 1,
           maintainAspectRatio: false, 
           legend:{
-            display:true,
+            display:false,
             position: "bottom",
             align: "start",
             labels:{

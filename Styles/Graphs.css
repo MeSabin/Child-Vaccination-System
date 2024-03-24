@@ -8,31 +8,29 @@
     
 }
 
-.chart-container {
-   display: flex;
-   justify-content: space-between;
-   margin-top:40px;
- }
- #barChart {
-   margin-left: 40px;
-   width: 700px !important;
-   background-color: white;
-   border-radius: 5px;
-   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  #doughnutChart{
-    margin-right: 40px;
-    width: 500px !important;
-    height: 370px !important;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
- }
-#doughnutChart legend {
-  display: flex !important;
-  justify-content: space-evenly !important;
-  align-items: center !important;
-  width: 100%; 
+.chart-container1 {
+  height: 398px;
+  width: 55vw;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 0 5px;
+  margin-left:40px;
+  margin-right:40px;
+}
+.chart-container2 {
+  height: 398px;
+  width: 23vw;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 0 30px;
+  margin-right:40px;
+}
+.bothCont {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
  
@@ -40,8 +38,8 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   height: 120px;
-   margin: 35px 15px 15px 15px;
+   /* height: 120px; */
+   margin: 40px 15px 15px 15px;
  }
  .First-box, .Second-box, .Third-box, .Fourth-box{
    background-color: rgb(255, 255, 255);
