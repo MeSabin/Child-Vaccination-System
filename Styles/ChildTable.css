@@ -271,5 +271,15 @@ td, th {
    gap: 25px;
    margin-bottom: 30px;
 }
+.active3{
+   background-color: rgb(205, 205, 255);
+   margin-left: 3px;
+   margin-right: 3px;
+   border-radius: 6px;
+   margin-bottom: 3px;
+}
+.active1{
+   background-color: transparent;
+}
 
 

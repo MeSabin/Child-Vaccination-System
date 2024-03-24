@@ -38,6 +38,16 @@ body {
    font-size: 20px;
    display: inline-block;
 }
+ .active2{
+   background-color: rgb(205, 205, 255);
+   margin-left: 3px;
+   margin-right: 3px;
+   border-radius: 6px;
+   margin-bottom: 3px;
+}
+.active1{
+   background-color: transparent;
+}
 .titleCont img{
    text-align: center;
    width: 35px;

@@ -37,11 +37,11 @@ if(!isset($_SESSION['back'])){
          </div>
          <div class="list-container">
          <ul>
-          <a href="graphs.php"><li><img src="../images/dashboard.png" alt="Not found"><p>Dashboard</p></li></a>
-          <a href="VaccinationHistory.php"><li><img src="../images/vaccinationHistory.png" alt="Not found"><p>Vaccination History</p></li></a>
-          <a href="ChildTable.php"><li><img class="childList" src="../images/childList.png" alt="Not found"><p>Child List</p></li></a>
-          <a href="VaccineTable.php"><li><img src="../images/vaccine.png" alt="Not found"><p>Vaccines List</p></li></a>
-          <li><img src="../images/setting.png" alt="Not found"><p>Settings</p></li>
+          <a href="graphs.php"><li class="active1"><img src="../images/dashboard.png" alt="Not found"><p>Dashboard</p></li></a>
+          <a href="VaccinationHistory.php"><li class="active2"><img src="../images/vaccinationHistory.png" alt="Not found"><p>Vaccination History</p></li></a>
+          <a href="ChildTable.php"><li class="active3"><img class="childList" src="../images/childList.png" alt="Not found"><p>Child List</p></li></a>
+          <a href="VaccineTable.php"><li class="active4"><img src="../images/vaccine.png" alt="Not found"><p>Vaccines List</p></li></a>
+          <li class="active5"><img src="../images/setting.png" alt="Not found"><p>Settings</p></li>
          </ul>
          </div>
         </div>
@@ -73,7 +73,7 @@ if(!isset($_SESSION['back'])){
             </footer>
         <script src="../JavaScript/logoutJs.js"></script>
         <script src="../JavaScript/profileModal.js"></script>
-        
+
       </body>
 </html>
 
